@@ -1,4 +1,12 @@
-<h1>Products</h1>
-{% for c in categories %}
-{{ c.name }}
-{% endfor %}
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <h1>Produts</h1>
+    {% for product in products %}
+        <div class="row">
+            <div class="col-12">
+                {{ product.name }}
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
