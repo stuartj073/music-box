@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p>Wahhhh</p>
+
+{% for category in categories %}
+
+{{ category.name }}
+
+{% endfor %}
+
+{% endblock %}
