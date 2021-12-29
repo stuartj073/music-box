@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-    <h1>Produts</h1>
+<h1>Produts</h1>
+<div class="row">
     {% for product in products %}
-        <div class="row">
-            <div class="col-12">
-                <a href="{% url 'product_detail' product.id %}">{{ product.name }}</a>
-            </div>
-        </div>
-    {% endfor %}
+    <div class="col-12 col-md-6 col-lg-4">
+        <a href="{% url 'product_detail' product.id %}">{{ product.name }}</a>
+    </div>
+</div>
+{% endfor %}
 {% endblock %}

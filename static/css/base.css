@@ -1,4 +1,8 @@
 body {
     color:red;
-    font-size:500px;
 }
+
+a {
+    color:inherit;
+}
+
