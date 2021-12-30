@@ -5,7 +5,7 @@
 
 {% for category in categories %}
 
-{{ category.name }}
+<li><a href="{% url 'category_details' category.id %}">{{ category.name }}</a></li>
 
 {% endfor %}
 
