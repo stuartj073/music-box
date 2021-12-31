@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+{% for product in products %}
+    {% if product.category is null  %}
+        {{ product.name }}
+    {% endif %}
+{% endfor %}
+{% endblock %}

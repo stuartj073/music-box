@@ -22,3 +22,15 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product_details.html', context)
+
+
+def records(request):
+    """ Returns all vinyl records from products. """
+
+    products = Product.objects.all()
+
+    context = {
+        'products': products,
+    }
+
+    return render(request, "products/records.html", context)

@@ -72,7 +72,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Synths</a>
                         <a class="dropdown-item" href="#">CD's</a>
-                        <a class="dropdown-item" href="#">Records</a>
+                        <a class="dropdown-item" href="{% url 'records' %}">Records</a>
                     </div>
                 </li>
                 {% if request.user.is_authenticated %}
