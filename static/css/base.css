@@ -1,17 +1,16 @@
 /************************************* CORE ***/
+html,
 body {
-    color:red;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    display: table;
 }
 
 a {
     color:inherit;
-}
-
-.search-bar {
-    position: relative;
-    top: 0px;
-    bottom: 0;
-    left: 28%;
 }
 
 /************************************* NAVBAR ***/
@@ -22,7 +21,44 @@ a {
 
 /************************************* SITE COVER ***/
 
-#image {
+.landing-page {
+    background-image: url('/media/avi-naim-GNuSRFAN9uY-unsplash.jpg');
     height:500px;
     width:100%;
+    background-size:cover;
+}
+
+.cover {
+    background-color:#E8E8E8;
+    position:absolute;
+    width:50%;
+    top:50%;
+    height:200px;
+    left:25%;
+    text-align: center;
+}
+
+.btn-primary {
+    max-width:30%;
+}
+
+h1 .cover {
+    padding:20px;
+}
+
+.search-bar {
+    bottom: 0;
+    left: 28%;
+    position: relative;
+}
+
+
+/************************************* PRODUCTS ***/
+
+.btn-success {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+    width: 50%;
+    margin: 5px auto;
 }

@@ -1,31 +1,45 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-
-<div class="search-bar">
-    <form action="{% url 'index' %}" method="GET">
-        <div class="input-group">
-            <div class="form-outline">
-                <input type="search" id="form1" class="form-control" name="search" />
-                <label class="form-label" for="form1">Search</label>
-            </div>
-            <button type="button" class="btn btn-primary">
-                <i class="fas fa-search">Search</i>
-            </button>
+<div class="landing-page">
+    <div class="cover">
+        <h1 class="center-align">MUSIC BOX</h1>
+        <p class="center-align"></p>
+        <div class="search-bar">
+            <form action="{% url 'index' %}" method="GET">
+                <div class="input-group">
+                    <div class="form-outline">
+                        <input type="search" id="form1" class="form-control" name="search" placeholder="Search" />
+                    </div>
+                    <button type="button" class="btn btn-primary">
+                        <i class="fas fa-search">Search</i>
+                    </button>
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
 </div>
-<div class="container" id="image">
-    <img class="card-img-top img-fluid" src="media/wes-hicks-MEL-jJnm7RQ-unsplash.jpg" height="100" width="100%" alt="site-cover">
-</div>
-<nav>
+<section class="container-fluid">
+    <h1 class="center-align">Products</h1>
+    {% for product in products %}
+    <div class="col-12 col-md-6 col-lg-4">
+        <div class="card" style="width: 30rem;">
+            {% if product.image_url %}
+                <a href="{% url 'product_detail' product.id %}"><img class="card-img-top" src="{{ product.image_url }}" alt="Card image cap"></a>
+            {% else %}
+                <img class="card-img-top" src="{{ MEDIA_URL }}revolt-xGAG-yRP2PQ-unsplash.jpg" alt="Card image cap">
+            {% endif %}
+            <div class="card-body">
+                <p class="card-text center-align">{{ product.name }}</p>
+                <p class="card-text blocktext">$ {{ product.price }}</p>
+            </div>
+            <button type="button" class="btn btn-success">Add to basket</button>
+        </div>
+    </div>
+    {% endfor %}
     <ul>
-        <li><a href="{% url 'products' %}">Products</a></li>
-        <li><a href="{% url 'category' %}">Categories</a></li>
-        <li></li>
+        <li class="col-12 col-md-6"><a href="{% url 'products' %}">Products</a></li>
+        <li class="col-12 col-md-6"><a href="{% url 'category' %}">Categories</a></li>
     </ul>
-</nav>
-
-<div class="header">
-</div>
+</section>
 {% endblock %}
