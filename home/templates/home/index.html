@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+
 <div class="search-bar">
     <form action="{% url 'index' %}" method="GET">
         <div class="input-group">
@@ -13,6 +14,9 @@
             </button>
         </div>
     </form>
+</div>
+<div class="container" id="image">
+    <img class="card-img-top img-fluid" src="media/wes-hicks-MEL-jJnm7RQ-unsplash.jpg" height="100" width="100%" alt="site-cover">
 </div>
 <nav>
     <ul>

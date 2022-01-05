@@ -4,7 +4,7 @@
 
 {{ category.name }}
 {% for product in products %}
-    {% if category_id == product.category %}
+    {% if product.category == category_id %}
         {{ product.name }}
     {% endif %}
 {% endfor %}

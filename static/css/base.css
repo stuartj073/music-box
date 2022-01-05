@@ -20,3 +20,9 @@ a {
     align-items: flex-end;
 }
 
+/************************************* SITE COVER ***/
+
+#image {
+    height:500px;
+    width:100%;
+}
