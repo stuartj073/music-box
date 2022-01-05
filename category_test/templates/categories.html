@@ -1,12 +1,18 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<p>Wahhhh</p>
 
-{% for category in categories %}
+<h1 class="center-align"><a href="{% url 'index' %}">Products </a>| <a href="{% url 'category' %}">Categories</a></h1>
 
-<li><a href="{% url 'category_details' category.id %}">{{ category.name }}</a></li>
-
-{% endfor %}
+<div class="row">
+    {% for category in categories %}
+    <div class="card">
+        <img class="card-img" src="/media/wes-hicks-MEL-jJnm7RQ-unsplash.jpg" alt="{{ category.name }}">
+        <div class="card-img-overlay">
+            <h5 class="card-title">{{ category.name }}</h5>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 
 {% endblock %}
