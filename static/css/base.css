@@ -60,6 +60,7 @@ h1 .cover {
 
 /************************************* PRODUCTS ***/
 
+
 .btn-success {
     color: #fff;
     background-color: #28a745;
@@ -75,6 +76,9 @@ h1 .cover {
 
 .card img {
     margin: 0 auto;
+    padding:10px;
+    height:400px;
+    width:90%;
 }
 
 .card-body {

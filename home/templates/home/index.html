@@ -23,22 +23,24 @@
 </section>
 <section class="container-fluid">
     <h1 class="center-align">Products | <a href="{% url 'category' %}">Categories</a></h1>
-    {% for product in products %}
-    <div class="col-12 col-md-6 col-lg-4">
-        <div class="card" style="width: 30rem;">
-            {% if product.image_url %}
-                <a href="{% url 'product_detail' product.id %}"><img class="card-img-top" src="{{ product.image_url }}" alt="Card image cap"></a>
-            {% else %}
-                <img class="card-img-top" src="{{ MEDIA_URL }}revolt-xGAG-yRP2PQ-unsplash.jpg" alt="Card image cap">
-            {% endif %}
-            <div class="card-body">
-                <h3 class="card-text center-align">{{ product.name }}</h3>
-                <p class="card-text blocktext">$ {{ product.price }}</p>
+        <div class="row">
+            {% for product in products %}
+            <div class="col-12 col-md-6">
+                <div class="card" style="width: 30rem;">
+                    {% if product.image_url %}
+                        <a href="{% url 'product_detail' product.id %}"><img class="card-img-top" src="{{ product.image_url }}" alt="Card image cap"></a>
+                    {% else %}
+                        <img class="card-img-top" src="{{ MEDIA_URL }}revolt-xGAG-yRP2PQ-unsplash.jpg" alt="Card image cap">
+                    {% endif %}
+                    <div class="card-body">
+                        <h3 class="card-text center-align">{{ product.name }}</h3>
+                        <p class="card-text blocktext">$ {{ product.price }}</p>
+                    </div>
+                    <button type="button" class="btn btn-success">Add to basket</button>
+                </div>
             </div>
-            <button type="button" class="btn btn-success">Add to basket</button>
+            {% endfor %}
         </div>
-    </div>
-    {% endfor %}
     <ul>
         <li class="col-12 col-md-6"><a href="{% url 'products' %}">Products</a></li>
         <li class="col-12 col-md-6"><a href="{% url 'category' %}">Categories</a></li>
