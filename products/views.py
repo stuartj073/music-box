@@ -7,18 +7,19 @@ from django.contrib import messages
 
 
 def products(request):
-    """ Show all products. """
+    """ Show all products along with search and sort features. """
 
     products = Product.objects.all()
     query = None
-    
-    if request.GET:
-        if 'q' in request.method:
+  
+    if request.method == "GET":
+        if 'q' in request.GET:
+            print("Hello there")
             query = request.GET['q']
             if not query:
                 messages.error(request, ("You didn't specify your search"))
-                return redirect(reverse('home'))
-        
+                return redirect(reverse('products'))
+       
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
