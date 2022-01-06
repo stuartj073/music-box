@@ -5,23 +5,11 @@
     <div class="landing-page">
         <div class="cover">
             <h1 class="center-align">MUSIC BOX</h1>
-            <p class="center-align"></p>
-            <div class="search-bar">
-                <form action="{% url 'index' %}" method="GET">
-                    <div class="input-group">
-                        <div class="form-outline">
-                            <input type="search" id="form1" class="form-control" name="search" placeholder="Search" />
-                        </div>
-                        <button type="button" class="btn btn-primary">
-                            <i class="fas fa-search">Search</i>
-                        </button>
-                    </div>
-                </form>
-            </div>
+            <p class="center-align lead"><i>Find what you're missing for your musical needs.</i></p>
         </div>
     </div>
 </section>
-<section class="container-fluid">
+<section class="container-fluid my-auto h-100">
     <h1 class="center-align">Products | <a href="{% url 'category' %}">Categories</a></h1>
         <div class="row">
             {% for product in products %}
