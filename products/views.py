@@ -14,7 +14,6 @@ def products(request):
   
     if request.method == "GET":
         if 'q' in request.GET:
-            print("Hello there")
             query = request.GET['q']
             if not query:
                 messages.error(request, ("You didn't specify your search"))
@@ -22,7 +21,9 @@ def products(request):
        
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
-
+            if not products:
+                print("Sorry nothing was found")
+                
     context = {
         'products': products,
         'search_term': query,

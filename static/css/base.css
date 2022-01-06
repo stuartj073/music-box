@@ -81,6 +81,16 @@ h1 .cover {
     width:90%;
 }
 
+.alert {
+    text-align: center;
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin:20px auto;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    width:50%;
+}
+
 .card-body {
     text-align: center;
 }

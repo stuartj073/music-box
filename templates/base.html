@@ -125,8 +125,15 @@
     </div>
     {% block page_header %}
     {% endblock %}
+
     {% block content %}
     {% endblock %}
+
+    {% if not products %}
+    <div class="alert alert-dark" role="alert">
+        <p class="lead">Sorry, no products matched your search query</p>
+    </div>
+    {% endif %}
 
     {% block postloadjs %}
     {% endblock %}
