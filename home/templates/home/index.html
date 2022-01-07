@@ -18,7 +18,7 @@
                     {% if product.image_url %}
                         <a href="{% url 'product_detail' product.id %}"><img class="card-img-top" src="{{ product.image_url }}" alt="Card image cap"></a>
                     {% else %}
-                        <img class="card-img-top" src="{{ MEDIA_URL }}revolt-xGAG-yRP2PQ-unsplash.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="media/revolt-xGAG-yRP2PQ-unsplash.jpg" alt="Card image cap">
                     {% endif %}
                     <div class="card-body">
                         <h3 class="card-text center-align">{{ product.name }}</h3>
