@@ -3,8 +3,15 @@
 {% block content %}
 <div class="row">
     {% for product in products %}
-    <div class="col-12 col-md-6 col-lg-4 offset-2">
-        <a href="{% url 'product_detail' product.id %}">{{ product.name }}</a>
+    <div class="col-12 col-md-6 col-lg-4">
+            <div class="card-details">
+                <h5>{{ product.name }}</h5>
+                {% if product.image_url %}
+                <a href="{% url 'product_detail' product.id %}"><img src="{{ product.image_url }}" alt="product-image"></a>
+                {% endif %}
+                <p>{{ product.date }}</p>
+            </div>
+        </a>
     </div>
     {% endfor %}
 </div>
