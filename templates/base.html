@@ -123,17 +123,23 @@
             </div>
         </form>
     </div>
+    {% if search_term %}
+        {% if products %}
+            <div class="alert alert-light" role="alert">
+                <p class="lead"><strong>Search result</strong></p>
+            </div>
+        {% else %}
+            <div class="alert alert-dark" role="alert">
+                <p class="lead"><strong>Sorry, no products matched your search query</strong></p>
+            </div>
+        {% endif %}
+    {% endif %}
+    
     {% block page_header %}
     {% endblock %}
 
     {% block content %}
     {% endblock %}
-
-    {% if not products %}
-    <div class="alert alert-dark" role="alert">
-        <p class="lead"><strong>Sorry, no products matched your search query</strong></p>
-    </div>
-    {% endif %}
 
     {% block postloadjs %}
     {% endblock %}
