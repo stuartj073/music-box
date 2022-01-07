@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse
-from .models import Product
+from .models import Product, Category
 from django.db.models import Q
 from django.contrib import messages
 
@@ -9,10 +9,11 @@ from django.contrib import messages
 def products(request):
     """ Show all products along with search and sort features. """
 
-    products = Product.objects.all()
+    products = Product.objects.order_by('-price')
     query = None
   
     if request.method == "GET":
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -47,7 +48,7 @@ def records(request):
     products = Product.objects.all()
 
     context = {
-        'products': products,
+        'product': products,
     }
 
     return render(request, "products/records.html", context)

@@ -4,7 +4,9 @@
 
 <h1 class="center-align"><a href="{% url 'index' %}">Products </a>| <a href="{% url 'category' %}">Categories</a></h1>
 
-<div class="row">
+
+<h1><a href="{% url 'records' %}">Record</a></h1>
+<!-- <div class="row">
     {% for category in categories %}
     <div class="card">
         <img class="card-img" src="/media/wes-hicks-MEL-jJnm7RQ-unsplash.jpg" alt="{{ category.name }}">
@@ -13,6 +15,6 @@
         </div>
     </div>
     {% endfor %}
-</div>
+</div> -->
 
 {% endblock %}

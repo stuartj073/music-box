@@ -2,9 +2,10 @@
 {% load static %}
 {% block content %}
 
-{% for product in products %}
-    {% if product.category is null  %}
-        {{ product.name }}
-    {% endif %}
-{% endfor %}
+        {% if product.name contains "The Joshua Tree" %}
+                <h1>Hello</h1>
+        {% else %}
+                <h1>Bye</h1>
+        {% endif %}
+
 {% endblock %}
