@@ -24,8 +24,10 @@
                         <h3 class="card-text center-align">{{ product.name }}</h3>
                         <p class="card-text blocktext">$ {{ product.price }}</p>
                     </div>
-                    <button type="button" class="btn btn-success" id="add">Add to basket</button>
-                    <button type="button" class="btn btn-secondary">Add Review <i class="fas fa-pencil-alt"></i></button>
+                    {% if user.is_authenticated %}
+                        <button type="button" class="btn btn-success" id="add">Add to basket</button>
+                        <button type="button" class="btn btn-secondary">Add Review <i class="fas fa-pencil-alt"></i></button>
+                    {% endif %}
                 </div>
             </div>
             {% endfor %}
