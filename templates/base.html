@@ -46,7 +46,9 @@
 </header>
 {% if messages %}
     <div class="messages">
-        <h1 class="center-align">Welcome {{ user.username }}!</h1>
+        {% for messages in messages %}
+            {% include 'includes/toasts/toasts_success.html' %}
+        {% endfor %}
     </div>
 {% else %}
     <h2 class="center-align">No messages</h2>
@@ -142,5 +144,8 @@
     {% endblock %}
 
     {% block postloadjs %}
+    <script type="text/javascript">
+        $('.toast').toast('show');
+    </script>
     {% endblock %}
 </body>
