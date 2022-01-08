@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404
-from products.model import Product
+from django.shortcuts import render, get_object_or_404, redirect
+from products.models import Product
 
 # Create your views here.
+
 
 def product_review(request, product_id):
     """ Return the product review page. """
@@ -12,4 +13,4 @@ def product_review(request, product_id):
         'product': product,
     }
 
-    return redirect(request, 'product_review.html', context)
+    return render(request, 'reviews/product_review.html', context)
