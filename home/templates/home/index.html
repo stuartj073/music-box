@@ -24,7 +24,8 @@
                         <h3 class="card-text center-align">{{ product.name }}</h3>
                         <p class="card-text blocktext">$ {{ product.price }}</p>
                     </div>
-                    <button type="button" class="btn btn-success">Add to basket</button>
+                    <button type="button" class="btn btn-success" id="add">Add to basket</button>
+                    <button type="button" class="btn btn-secondary">Add Review <i class="fas fa-pencil-alt"></i></button>
                 </div>
             </div>
             {% endfor %}
@@ -34,4 +35,23 @@
         <li class="col-12 col-md-6"><a href="{% url 'category' %}">Categories</a></li>
     </ul>
 </section>
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+        window.addEventListener('DOMContentLoaded', (event) => {
+        console.log('DOM fully loaded and parsed');
+        });
+        
+        function addToBag() {
+            btn = document.getElementsByTagName('button');
+
+            btn.addEventListener('click', function(){
+                console.log("hi");
+            });
+        }
+
+    </script>
+{% endblock %}
+
 {% endblock %}
