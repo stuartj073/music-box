@@ -9,7 +9,7 @@ def index(request):
     """ Index page request. """
     """ Search bar request. """
     products = Product.objects.all()
-
+    
     context = {
         'products': products,
     }
