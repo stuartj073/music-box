@@ -47,7 +47,11 @@
 {% if messages %}
     <div class="messages">
         {% for messages in messages %}
-            {% include 'includes/toasts/toasts_success.html' %}
+            {% with message.level as level %}
+                {% if level == 25 %}
+                    {% include 'includes/toasts/toast_success.html' %}
+                {% endif %}
+            {% endwith %}
         {% endfor %}
     </div>
 {% else %}
