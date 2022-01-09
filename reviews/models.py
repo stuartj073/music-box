@@ -6,7 +6,7 @@ from products.models import Product, Category
 
 class ProductReview(models.Model):
     """ Allow user to create review based on specific product."""
-    name = models.ForeignKey('products.Product', on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
     category = models.ForeignKey('products.Category', on_delete=models.CASCADE)
     description = models.TextField()
     date = models.DateField(auto_now_add=True, blank=False,
