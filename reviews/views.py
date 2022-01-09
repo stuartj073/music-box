@@ -14,3 +14,5 @@ def product_review(request, product_id):
     }
 
     return render(request, 'reviews/product_reviews.html', context)
+
+
