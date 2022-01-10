@@ -2,23 +2,12 @@
 {% load static %}
 {% block content %}
 
-<div class="row">
-    <div class="col-12 col-md-6">
-        <form method="POST" action="{% url 'add_blog' %}" class="form mb-2" enctype="multipart/form-data">
-            {% csrf_token %}
-            {% for field in form %}
-                {{ field }}
-            {% endfor %}
-            <div class="text-right">
-                <a class="btn btn-outline-black rounded-0" href="{% url 'blog' %}">Cancel</a>
-                <button class="btn btn-black rounded-0" type="submit">Add Product</button>
-            </div>
-        </form>
-    </div>            
-</div>
+<h1>Blogs</h1>
+<a href="{% url 'add_blog' %}"><button type="button" class="btn btn-secondary">Add Blog <i class="fas fa-pencil-alt"></i></button></a>
 {% for blog in blogs %}
 
-    {{ blog.name }}
+{{ blog.name }}
+{{ blog.description }}
 
 {% endfor %}
 

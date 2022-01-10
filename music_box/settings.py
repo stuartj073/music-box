@@ -48,6 +48,9 @@ INSTALLED_APPS = [
     'category_test',
     'reviews',
     'blog',
+
+    # Other
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [

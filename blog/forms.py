@@ -7,9 +7,7 @@ class BlogForm(forms.ModelForm):
 
     class Meta:
         model = Blog
-        field = '__all__'
+        fields = '__all__'
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        topics = Topic.objects.all()
-        friendly_names = [(t.id, t.get_friendly_name()) for t in topics]
