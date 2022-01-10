@@ -2,6 +2,21 @@
 {% load static %}
 {% block content %}
 <h1>Hello</h1>
-    {{ product.name }}
 
-{% endblock %}
+{{ product.name }}
+
+{% for product_review in product_reviews %}
+
+<h2>Past Reviews</h1>
+<div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{ product_review.name }}</h5>
+        <p class="card-text">Created by: </p>
+        <a href="#" class="btn btn-primary"></a>
+    </div>
+</div>
+
+    {% endfor %}
+
+    {% endblock %}
