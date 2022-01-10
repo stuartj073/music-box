@@ -2,6 +2,10 @@
 {% load static %}
 {% block content %}
 
-<h1>Blogs</h1>
+{% for topic in topics %}
+
+    {{ topic.name }}
+
+{% endfor %}
 
 {% endblock %}

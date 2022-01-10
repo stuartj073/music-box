@@ -1,8 +1,8 @@
-from django import forms 
-from .widgets import CustomClearableFileInput
-from .models import Product, Category
+from django import forms
+from .models import Topic, Blog
 
-class BlogForm(models.ModelForm):
+
+class BlogForm(forms.ModelForm):
     """ Create a form using the blog model fields. """
 
     class Meta:
