@@ -12,8 +12,6 @@ def product_review(request, product_id):
 
     product_reviews = ProductReview.objects.all()
 
-    product_review = ProductReview()
-
     context = {
         'product': product,
         'product_reviews': product_reviews,
