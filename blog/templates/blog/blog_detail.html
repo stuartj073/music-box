@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="card-details">
+    <h1>{{ blog.name }}</h1>
+    {% if product.image_url %}
+        <img src="{{ product.image_url }}" alt="product-image">
+    {% endif %}
+    <p>{{ blog.subject }}</p>
+    <p>{{ blog.category }}</p>
+    <p>{{ blog.description }}</p>
+</div>
+{% endblock %}
