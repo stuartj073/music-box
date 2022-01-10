@@ -1,7 +1,24 @@
 from django.db import models
-from products.models import Category
+
 
 # Create your models here.
+
+class Topic(models.Model):
+    """ Allow user to select a topic to blog about. """
+    class Meta:
+        """ Adjust plural form in admin. """
+        verbose_name_plural = "Topics"
+
+    name = models.CharField(max_length=254)
+    friendly_name = models.CharField(max_length=254, null=True, blank=True)
+
+    def __str__(self):
+        """ Return string representation of name. """
+        return self.name
+
+    def get_friendly_name(self):
+        """ Return string representation of type field. """
+        return self.friendly_name
 
 
 class Blog(models.Model):
@@ -9,11 +26,10 @@ class Blog(models.Model):
 
     name = models.CharField(max_length=200)
     subject = models.CharField(max_length=200)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Topic, on_delete=models.CASCADE)
     description = models.TextField()
     date = models.DateField(auto_now_add=True)
     models.URLField(max_length=1024, null=True, blank=True)
 
     def __str__(self):
-        """ Return the blog post's name as it's title. """
-        return self.name()
+        return self.name
