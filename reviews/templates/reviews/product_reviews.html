@@ -3,20 +3,42 @@
 {% block content %}
 <h1>Hello</h1>
 
-{{ product.name }}
+<form method="POST" action="{% url 'product_review' %}">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Name</label>
+      <input type="product" class="form-control" value="{{ product.name }}" aria-describedby="emailHelp" name="name" readonly>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Category</label>
+      <input type="text" class="form-control" value="{{ product.category }}" id="exampleInputPassword1" name="category" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Category</label>
+        <textarea type="textarea" class="form-control" id="exampleInputPassword1" name="desc"></textarea>
+      </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 
-{% for product_review in product_reviews %}
 
 <h2>Past Reviews</h1>
-<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">{{ product_review.name }}</h5>
-        <p class="card-text">Created by: </p>
-        <a href="#" class="btn btn-primary"></a>
+<!-- <div class="row">
+{% for product_review in product_reviews %}
+<div class="col-12 col-md-6 col-lg-4">
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ product_review.name }}</h5>
+            <p class="card-text">Created by: </p>
+            <a href="#" class="btn btn-primary"></a>
+        </div>
     </div>
 </div>
+{% endfor %}
+</div> -->
+{% endblock %}
 
-    {% endfor %}
 
-    {% endblock %}

@@ -12,9 +12,12 @@ def product_review(request, product_id):
 
     product_reviews = ProductReview.objects.all()
 
+    product_review = ProductReview()
+
     context = {
         'product': product,
         'product_reviews': product_reviews,
+        'product_review': product_review,
     }
 
     return render(request, 'reviews/product_reviews.html', context)
