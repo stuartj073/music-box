@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from .models import Topic, Blog
 from .forms import BlogForm
 
@@ -41,6 +41,13 @@ def add_blog(request):
     }
 
     return render(request, template, context)
+
+
+def delete_blog(request, blog_id):
+    """ Delete specific blog post for user. """
+    blog = get_object_or_404(Blog, pk=blog_id)
+    blog.delete()
+    return redirect(reverse('blog'))
 
 
 def blog_details(request, blog_id):

@@ -10,7 +10,9 @@
 <div class="col-12 col-md-6 col-lg-4">
     <div class="card" style="width: 18rem;">
         {% if not blog.image %}
-            <img src="..." class="card-img-top" alt="blog-post">
+            <a href="{% url 'blog_details' blog.id %}">
+                <img src="..." class="card-img-top" alt="blog-post">
+            </a>
         {% endif %}
         <div class="card-body">
         <h5 class="card-title">{{ blog.name }}</h5>
