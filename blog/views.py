@@ -7,11 +7,12 @@ from .models import Topic, Blog
 def blog(request):
     """ Display all blog posts by users. """
 
-    blog = Blog.objects.all()
+    blogs = Blog.objects.all()
     topic = Topic.objects.all()
 
     context = {
-        'blog': blog,
+        'blogs': blogs,
+        'topic': topic,
     }
 
     return render(request, "blog/blog.html", context)
