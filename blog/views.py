@@ -41,3 +41,14 @@ def add_blog(request):
     }
 
     return render(request, template, context)
+
+
+def blog_details(request, blog_id):
+    """ Show each blog on its individual page. """
+    blog = get_object_or_404(Blog, pk=blog_id)
+
+    context = {
+        'blog': blog,
+    }
+
+    return render(request, 'blog/blog_detail.html', context)
