@@ -50,6 +50,31 @@ def delete_blog(request, blog_id):
     return redirect(reverse('blog'))
 
 
+def update_blog(request, blog_id):
+    """ Allow user to update their own blog posts. """
+    instance = Blog.objects.get(id=topic_id)
+    topic = instance.topic
+
+    if request.method == "GET":
+        form = BlogForm(instance=entry, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('blog_details', blog_id = blog.id)
+        else:
+            print("Form invalid")
+            return redirect(reverse('blog'))
+    else:
+        form = BlogForm(instance=entry)
+    
+    context = {
+        'entry': entry,
+        'form': form, 
+        'topic': topic,
+    }
+
+    return render(request, 'blog/blog.html', context)
+
+
 def blog_details(request, blog_id):
     """ Show each blog on its individual page. """
     blog = get_object_or_404(Blog, pk=blog_id)
