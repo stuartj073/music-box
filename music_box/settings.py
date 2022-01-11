@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '11wo440l&f&66)xt%votw11tpfemy5iarpi##
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['music-box-stuartj-herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['music-box-stuartj.herokuapp.com', 'localhost']
 
 
 # Application definition
