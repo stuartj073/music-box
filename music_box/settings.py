@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-^v%#7xjcr$w=skr*(s*vj!ynyc7m)^nlr+ai6efm153^g-jweh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['music-box-stuartj-herokuapp.com', 'localhost']
 
 
 # Application definition
