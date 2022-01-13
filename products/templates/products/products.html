@@ -7,6 +7,9 @@
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 {% endblock %}
 {% block content %}
+<a href="{% url 'add_product' %}">
+  <button type="button" class="btn btn-secondary">Add Product <i class="fas fa-pencil-alt"></i></button>
+</a>
 <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
     aria-expanded="false">
