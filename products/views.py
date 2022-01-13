@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404, reverse
 from .models import Product, Category
 from django.db.models import Q
 from django.contrib import messages
+from .forms import ProductForm
 
 # Create your views here.
 
@@ -65,14 +66,15 @@ def records(request):
 def add_product(request):
     """ Present add product form to user based off the model. """
 
-    if request.method == "GET":
+    if request.method == "POST":
+        form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
-            form = ProductForm(request.POST, request.files )
             print("Form is valid")
-            form.save()
+            product = form.save()
+            return redirect('products')
         else:
             print("Form invalid")
-            return reverse("products.html")
+            return reverse("products")
     else:
         #  No data submitted
         form = ProductForm()
