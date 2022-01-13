@@ -62,6 +62,30 @@ def records(request):
     return render(request, "products/records.html", context)
 
 
+def add_product(request):
+    """ Present add product form to user based off the model. """
+
+    if request.method == "GET":
+        if form.is_valid():
+            form = ProductForm(request.POST, request.files )
+            print("Form is valid")
+            form.save()
+        else:
+            print("Form invalid")
+            return reverse("products.html")
+    else:
+        #  No data submitted
+        form = ProductForm()
+
+    template = 'products/add_product.html'
+
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
+
+
 
 
 
