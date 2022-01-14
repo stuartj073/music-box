@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from .models import Topic, Blog
 from .forms import BlogForm
+from django.contrib import messages
 
 # Create your views here.
 
@@ -25,8 +26,9 @@ def add_blog(request):
         form = BlogForm(request.POST, request.FILES)
         if form.is_valid():
             blog = form.save()
-            print("Blog saved")
-            return redirect('blog')
+            messages.success(request, "Blog saved")
+            print("YAP")
+            return redirect(reverse('blog_details', args=[blog.id]))
         else:
             print("Form invalid, please try again.")
             return redirect('blog')

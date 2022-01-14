@@ -88,13 +88,33 @@ def add_product(request):
     return render(request, template, context)
 
 
+def update_product(request, product_id):
+    """ Allow user to update their own blog posts. """
+
+    product = get_object_or_404(Product, pk=product_id)
+
+    if request.method == "GET":
+        form = ProductForm(request.POST, request.FILES, instance=form)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('product_details', args=[blog.id]))
+        else:
+            print("Form invalid")
+    else:
+        form = ProductForm(instance=product)
+
+    context = {
+        'product': product,
+        'form': form,
+    }
+
+    return render(request, 'product/products.html', context)
+
+
 def delete_product(request, product_id):
     """ Delete specific blog post for user. """
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     return redirect(reverse('products'))
-
-
-
 
 

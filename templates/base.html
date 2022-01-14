@@ -45,7 +45,7 @@
 
 </header>
 {% if messages %}
-    <div class="messages">
+    <div>
         {% for messages in messages %}
             {% with message.level as level %}
                 {% if level == 25 %}
@@ -70,6 +70,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'products' %}">Products</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"

@@ -140,3 +140,24 @@ h1 .cover {
     background-size:cover;
 }
 
+
+/************************************* PRODUCTS ***/
+
+/* .message {
+    height:300px;
+    width:25%;
+    color:black;
+    background-color: grey;
+    position:fixed;
+    z-index: 50;
+    top:10px;
+    left:37.5%;
+
+} */
+
+.toast {
+    top:10px;
+    left:10px;
+    color:white;
+    background-color: black;
+}
