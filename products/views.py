@@ -67,6 +67,9 @@ def records(request):
 @login_required
 def add_product(request):
     """ Present add product form to user based off the model. """
+    if not user.is_authenticated:
+        print("Sorry, you must be logged in to access this page.")
+        return redirect(reverse("products"))
 
     if request.method == "POST":
         form = ProductForm(request.POST, request.FILES)
