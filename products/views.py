@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse
 from .models import Product, Category
 from django.db.models import Q
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import ProductForm
 
@@ -12,7 +13,7 @@ def products(request):
 
     products = Product.objects.order_by('-price')
     query = None
-  
+
     if request.method == "GET":
 
         if 'q' in request.GET:
@@ -20,12 +21,12 @@ def products(request):
             if not query:
                 messages.error(request, ("You didn't specify your search"))
                 return redirect(reverse('products'))
-       
+     
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
             if not products:
                 print("Sorry nothing was found")
-        
+     
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
@@ -33,7 +34,7 @@ def products(request):
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
 
-                
+              
     context = {
         'products': products,
         'search_term': query,
@@ -63,6 +64,7 @@ def records(request):
     return render(request, "products/records.html", context)
 
 
+@login_required
 def add_product(request):
     """ Present add product form to user based off the model. """
 
@@ -71,6 +73,7 @@ def add_product(request):
         if form.is_valid():
             print("Form is valid")
             product = form.save()
+            messages.success(request, "Product added")
             return redirect('products')
         else:
             print("Form invalid")
@@ -88,6 +91,7 @@ def add_product(request):
     return render(request, template, context)
 
 
+@login_required
 def update_product(request, product_id):
     """ Allow user to update their own blog posts. """
 
@@ -111,10 +115,10 @@ def update_product(request, product_id):
     return render(request, 'product/products.html', context)
 
 
+@login_required
 def delete_product(request, product_id):
     """ Delete specific blog post for user. """
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
+    messages.success(request, "Product deleted")
     return redirect(reverse('products'))
-
-
