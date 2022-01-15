@@ -146,27 +146,18 @@ h1 .cover {
 .message {
     top:30px;
     left:10px;
-    border-radius:5px;
-    height:50px;
-    width:200px;
     position:fixed;
     border:1.5px solid black;
+    z-index:999;
 }
 
 .toast {
     top:30px;
     left:10px;
-    border:1.5px solid black;
-    border-radius:5px;
-    height:50px;
-    width:200px;
     position:fixed;
+    overflow:visible;
 } 
 
-.toast-body {
-    color:black;
-    z-index: 9999;
-}
 
 .fade {
     transition: opacity 3s linear;
