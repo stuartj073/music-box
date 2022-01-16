@@ -1,4 +1,7 @@
 /************************************* CORE ***/
+
+@import url('https://fonts.googleapis.com/css2?family=Junge&display=swap');
+
 html,
 body {
     width: 100%;
@@ -49,6 +52,10 @@ h1, h2, h3, h4, h5 {
 
 h1 .cover {
     padding:20px;
+}
+
+.cover p {
+    font-family: 'Gloria Hallelujah', cursive;
 }
 
 .search-bar {

@@ -14,4 +14,4 @@ def basket_contents(request):
         'basket_item_count': basket_item_count,
     }
 
-    return render(request, "basket.html", context)
+    return context
