@@ -9,7 +9,7 @@
 </div>
 <div class="row">
     <div class="col">
-        {% if basket_items %}
+        {% if basket_item_count %}
             {% for basket_item in basket_items %}
             <div class="card" style="width: 18rem;">
                 {% if basket_item.image %}
@@ -18,9 +18,10 @@
                     <img class="card-img-top" src="#" alt="Default item image">
                 {% endif %}
                 <div class="card-body">
-                  <p class="card-text">{{ basket_item.name }}</p>
+                    <p class="card-text">{{ basket_item.name }}</p>
                 </div>
             </div>
+            {% endfor %}
         {% else %}
             <div class="alert alert-dark" role="alert">
                 <p class="lead">
