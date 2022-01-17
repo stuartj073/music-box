@@ -129,8 +129,16 @@ WSGI_APPLICATION = 'music_box.wsgi.application'
 #         }
 #     }
 
-DATABASES = {
-        'default': dj_database_url.parse('postgres://ekpethcdrwlbus:a8ba3d9622b34ede91ff6c4d49ba20e78d867e5e17aa16ec2755b448495ea82a@ec2-54-228-95-1.eu-west-1.compute.amazonaws.com:5432/d9qla4llc807cc')
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
     }
 
 # Password validation
@@ -185,8 +193,8 @@ if 'USE_AWS' in os.environ:
     }
     
     # Bucket configuration
-    AWS_STORAGE_BUCKET_NAME = 'ckz8780-boutique-ado'
-    AWS_S3_REGION_NAME = 'us-east-1'
+    AWS_STORAGE_BUCKET_NAME = 'music-box-stuartj'
+    AWS_S3_REGION_NAME = 'eu-west-1'
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
