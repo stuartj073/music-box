@@ -11,8 +11,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-from .env import load_dotenv
-load_dotenv()
 
 import os
 import dj_database_url
