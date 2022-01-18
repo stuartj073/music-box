@@ -1,6 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from products.models import Product
-from .models import ProductReview
+from django.contrib import messages
+from .forms import ProductReviewForm
 
 # Create your views here.
 
@@ -9,15 +10,21 @@ def product_review(request, product_id):
     """ Show product review form. """
 
     product = get_object_or_404(Product, pk=product_id)
+    
+    if request.method == "POST":
+        form = ProductReviewForm(request.POST, request.FILES)
+        if form.is_valid():
+            review = form.save()
+            messages.success(request, "Review saved")
+            print("YAP")
+            return redirect(reverse('blog_details', args=[review.id]))
+        else:
+            print("Form is invalid")
+            return redirect(reverse("product_review"))
 
-    product_reviews = ProductReview.objects.all()
+    else:
+        form = ProductReviewForm()
+        form.save()
 
-    context = {
-        'product': product,
-        'product_reviews': product_reviews,
-        'product_review': product_review,
-    }
-
-    return render(request, 'reviews/product_reviews.html', context)
 
 
