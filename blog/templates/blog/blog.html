@@ -3,7 +3,9 @@
 {% block content %}
 
 <h1>Blogs</h1>
-<a href="{% url 'add_blog' %}"><button type="button" class="btn btn-secondary">Add Blog <i class="fas fa-pencil-alt"></i></button></a>
+<div class="product-buttons m-20">
+    <a href="{% url 'add_blog' %}"><button type="button" class="btn btn-secondary">Add Blog <i class="fas fa-pencil-alt"></i></button></a>
+</div>
 
 <div class="row">
 {% for blog in blogs %}
