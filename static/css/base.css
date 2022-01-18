@@ -149,7 +149,7 @@ h1 .cover {
 }
 
 
-/************************************* PRODUCTS ***/
+/************************************* MESSAGES ***/
 
 .message {
     top:30px;
@@ -169,4 +169,45 @@ h1 .cover {
 
 .fade {
     transition: opacity 3s linear;
+}
+
+/************************************* BLOG FORM ***/
+
+.blog-form {
+    margin:0 auto;
+    text-align:center;
+}
+
+.form-field {
+    margin:0 auto;
+}
+
+.buttons {
+    background-color:grey;
+    width:20%;
+    margin:0 auto;
+}
+
+.form-control {
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn-success-blog {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+    margin: 5px auto; 
 }

@@ -1,16 +1,26 @@
 {% extends "base.html" %}
 {% load static %}
+
+{% load crispy_forms_filters %}
+
 {% block content %}
-<div class="row">
-    <div class="col-12 col-md-6">
-        <form method="POST" action="{% url 'add_blog' %}" class="form mb-2" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <div class="text-right">
-                <a class="btn btn-outline-black rounded-0" href="{% url 'blog' %}">Cancel</a>
-                <button class="btn btn-black rounded-0" type="submit">Add Product</button>
+<div class="blog-form">
+    <form method="POST" action="{% url 'add_blog' %}" class="form mb-2" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-field">
+                {{ field | as_crispy_field }}
             </div>
-        </form>
-    </div>
+        {% endfor %}
+        <div>
+            <button>
+                <a class="btn btn-outline-black rounded-0" href="{% url 'blog' %}">Cancel</a>
+            </button>
+            <button class="btn btn-black rounded-0" type="submit">
+                <a class="btn btn-outline-black rounded-0 btn-success-blog" href="{% url 'add_blog' %}">Add Product</a>
+            </button>
+        </div>
+    </form>
 </div>
+
 {% endblock %}
