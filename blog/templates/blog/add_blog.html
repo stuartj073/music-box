@@ -8,19 +8,18 @@
     <form method="POST" action="{% url 'add_blog' %}" class="form mb-2" enctype="multipart/form-data">
         {% csrf_token %}
         {% for field in form %}
-            <div class="form-field">
-                {{ field | as_crispy_field }}
-            </div>
-        {% endfor %}
-        <div>
-            <button>
-                <a class="btn btn-outline-black rounded-0" href="{% url 'blog' %}">Cancel</a>
-            </button>
-            <button class="btn btn-black rounded-0" type="submit">
-                <a class="btn btn-outline-black rounded-0 btn-success-blog" href="{% url 'add_blog' %}">Add Product</a>
-            </button>
+        <div class="form-field">
+            {{ field | as_crispy_field }}
         </div>
+        {% endfor %}
+        <button>
+            <a class="btn btn-outline-black rounded-0" href="{% url 'blog' %}">Cancel</a>
+        </button>
+        <button class="btn btn-black rounded-0" type="submit">
+            <a class="btn btn-outline-black rounded-0 btn-success-blog" type="submit">Add Product</a>
+        </button>
     </form>
+</div>
 </div>
 
 {% endblock %}

@@ -64,7 +64,6 @@ def records(request):
     return render(request, "products/records.html", context)
 
 
-@login_required
 def add_product(request):
     """ Present add product form to user based off the model. """
     if request.method == "POST":
