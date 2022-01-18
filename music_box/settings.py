@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+from .env import load_dotenv
+load_dotenv()
 
 import os
 import dj_database_url
@@ -23,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', '')
+SECRET_KEY = os.environ.get('SECRET_KEY', '11wo440l&f&66)xt%votw11tpfemy5iarpi##51d*^ja6abt!m')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -214,3 +216,5 @@ if 'USE_AWS' in os.environ:
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
