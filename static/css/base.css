@@ -90,8 +90,9 @@ h1 .cover {
 }
 
 .card {
-    margin: 5px;
-    text-align:center;
+    text-align: center;
+    margin: 5px auto;
+    padding: 20px;
 }
 
 .card img {
@@ -113,6 +114,10 @@ h1 .cover {
 
 .card-body {
     text-align: center;
+}
+
+.product-buttons {
+
 }
 
 

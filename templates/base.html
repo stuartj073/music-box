@@ -133,8 +133,8 @@
     </div>
     {% if messages %}
     <div class="message">
-        {% for messages in messages %}
-            {% include 'includes/toasts/toast_success.html' %}
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }} toasts"{% endif %}>{{ message }}</li>
         {% endfor %}
     </div>
     {% endif %}
