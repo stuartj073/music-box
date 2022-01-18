@@ -116,8 +116,13 @@ h1 .cover {
     text-align: center;
 }
 
-.product-buttons {
+.product-buttons  {
+    margin: 0 auto;
+    text-align: center;
+}
 
+.product-buttons buttons {
+    width, margin:auto;
 }
 
 
