@@ -13,12 +13,12 @@
     <h1>Products | <a href="{% url 'category' %}">Categories</a></h1>
         <div class="row">
             {% for product in products %}
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                 <div class="card" style="width: 25rem;">
                     {% if product.image_url %}
                         <a href="{% url 'product_detail' product.id %}"><img class="card-img-top" src="{{ product.image_url }}" alt="Image field"></a>
                     {% else %}
-                        <img class="card-img-top" src="media/revolt-xGAG-yRP2PQ-unsplash.jpg" alt="Default product image">
+                        <a href="{% url 'product_detail' product.id %}"><img class="card-img-top" src="media/revolt-xGAG-yRP2PQ-unsplash.jpg" alt="Default product image"></a>
                     {% endif %}
                     <div class="card-body">
                         <h3 class="card-text center-align">{{ product.name }}</h3>
