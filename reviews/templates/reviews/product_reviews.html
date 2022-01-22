@@ -3,11 +3,6 @@
 {% block content %}
 <h1>Hello</h1>
 
-<form method="POST" action="{% url 'product_review' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
 
 
 <h2>Past Reviews</h1>

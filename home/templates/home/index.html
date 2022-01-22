@@ -6,37 +6,13 @@
         <div class="cover">
             <h1 class="center-align">MUSIC BOX</h1>
             <p class="center-align lead"><i>Find what you're missing for your musical needs.</i></p>
+            <div class="products-link mt-10">
+                <button class="btn btn-info">See our products</button>
+            </div>
         </div>
     </div>
 </section>
-<section class="container-fluid my-auto h-100">
-    <h1>Products | <a href="{% url 'category' %}">Categories</a></h1>
-        <div class="row">
-            {% for product in products %}
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="card" style="width: 25rem;">
-                    {% if product.image_url %}
-                        <a href="{% url 'product_detail' product.id %}"><img class="card-img-top" src="{{ product.image_url }}" alt="Image field"></a>
-                    {% else %}
-                        <a href="{% url 'product_detail' product.id %}"><img class="card-img-top" src="media/revolt-xGAG-yRP2PQ-unsplash.jpg" alt="Default product image"></a>
-                    {% endif %}
-                    <div class="card-body">
-                        <h3 class="card-text center-align">{{ product.name }}</h3>
-                        <p class="card-text blocktext">$ {{ product.price }}</p>
-                    </div>
-                    {% if user.is_authenticated %}
-                        <button type="button" class="btn btn-success" id="add">Add to basket</button>
-                        <a href="{% url 'product_review' product.id %}"><button type="button" class="btn btn-secondary">Review <i class="fas fa-pencil-alt"></i></button></a>
-                    {% endif %}
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    <ul>
-        <li class="col-12 col-md-6"><a href="{% url 'products' %}">Products</a></li>
-        <li class="col-12 col-md-6"><a href="{% url 'category' %}">Categories</a></li>
-    </ul>
-</section>
+
 
 {% block postloadjs %}
     {{ block.super }}

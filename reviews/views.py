@@ -17,7 +17,7 @@ def product_review(request, product_id):
             review = form.save()
             messages.success(request, "Review saved")
             print("YAP")
-            return redirect(reverse('blog_details', args=[review.id]))
+            return redirect(reverse('product_review', args=[review.id]))
         else:
             print("Form is invalid")
             return redirect(reverse("product_review"))
