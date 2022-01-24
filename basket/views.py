@@ -11,6 +11,9 @@ def basket(request):
         'basket': basket,
     }
 
+    print(basket)
+    print("HEY")
+
     return render(request, "basket.html", context)
 
 
@@ -28,7 +31,6 @@ def add_to_basket(request, item_id):
         messages.success(request, "Item added")
 
     request.session['basket'] = basket
-    print(request.session['basket'])
     print("YEHO")
 
     return redirect(redirect_url)
