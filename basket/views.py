@@ -11,9 +11,6 @@ def basket(request):
         'basket': basket,
     }
 
-    print(basket)
-    print("HEY")
-
     return render(request, "basket.html", context)
 
 

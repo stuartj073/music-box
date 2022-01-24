@@ -7,30 +7,47 @@
         <h2>Shopping bag</h2>
     </div>
 </div>
-<div class="row">
-    <div class="col">
-        {% if basket_items %}
-            {% for basket_item in basket_items %}
-            <div class="card" style="width: 18rem;">
-                <h2>{{ basket_item.name }}</h2>
-                {% if basket_item.image %}
-                    <img class="card-img-top" src="{{ basket.item.name }}" alt="Basket item image">
-                {% else %}
-                    <img class="card-img-top" src="#" alt="Default item image">
-                {% endif %}
-                <div class="card-body">
-                    <p class="card-text">{{ basket_item.name }}</p>
-                </div>
-            </div>
-            {% endfor %}
-        {% else %}
-            <div class="alert alert-dark" role="alert">
-                <p class="lead">
-                    <strong>Your basket is empty. Click <a href="{% url 'products' %}">here</a> to find more products.</strong>
-                </p>
-            </div>
-        {% endif %}
-    </div>
+{% if checkout_total %}
+<div class="shopping-bag">
+    <h2 class="display-2">${{ checkout_total }}</h2>
 </div>
+{% endif %}
+
+{% if checkout_total < settings.FREE_DELIVERY_THRESHOLD %}
+
+<h3 class="display-2">{{ free_delivery_delta }}</h3>
+
+{% endif %}
+<section class="basket">
+    <div class="row">
+        <div class="col">
+            {% if basket_items %}
+                {% for basket_item in basket_items %}
+                <div class="card">
+                    <div class="row">
+                        <div class="col-8">
+                            {% if basket_item.product.image_url %}
+                                <h2>Image</h2>
+                            {% else %}
+                                <h2>No image</h2>
+                            {% endif %}
+                        </div>
+                        <div class="col-4">
+                            <p class="lead mt-3">{{ basket_item.product.name }}</p>
+                            <p class="lead mt-3">{{ basket_item.product.price }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="alert alert-dark" role="alert">
+                    <p class="lead">
+                        <strong>Your basket is empty. Click <a href="{% url 'products' %}">here</a> to find more products.</strong>
+                    </p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
 
 {% endblock %}
