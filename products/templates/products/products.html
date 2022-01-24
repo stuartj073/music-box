@@ -36,11 +36,11 @@
         <a href="{% url 'product_detail' product.id %}"><img class="card-img-top" src="media/revolt-xGAG-yRP2PQ-unsplash.jpg" alt="Default product image"></a>
       {% endif %}
       <p>{{ product.date }}</p>
-    </div>
-      <a href="#"><button type="button" class="btn btn-secondary">Add To basket <i class="fas fa-pencil-alt"></i></button></a>
-      </a>
-      <a href="{% url 'delete_product' product.id %}"><button type="button" class="btn btn-secondary">Remove product<i class="fas fa-pencil-alt"></i></button></a>
+    <a href="#"><button type="button" class="btn btn-info"><i class="fas fa-shopping-basket"></i></button></a>
     </a>
+    <a href="{% url 'delete_product' product.id %}"><button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button></a>
+    </a>
+    </div>
   </div>
   {% endfor %}
 </div>
