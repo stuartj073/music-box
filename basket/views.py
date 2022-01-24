@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from decimal import Decimal
 
 # Create your views here.
 
