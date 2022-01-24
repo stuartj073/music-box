@@ -194,24 +194,23 @@ h1 .cover {
 
 /************************************* MESSAGES ***/
 
-.message {
-    top:30px;
-    left:10px;
-    position:fixed;
-    border:1.5px solid black;
-    z-index:999;
+.message-container {
+    position: fixed;
+    top: 72px;
+    left:20px;
+    z-index: 99999999999;
 }
 
-.toast {
-    top:30px;
-    left:10px;
-    position:fixed;
-    overflow:visible;
-} 
+.toast .span {
+    top:15px;
+}
 
+.custom-toast {
+    overflow: visible;
+}
 
-.fade {
-    transition: opacity 3s linear;
+.toast-capper {
+    height: 2px;
 }
 
 /************************************* BLOG FORM ***/

@@ -24,3 +24,15 @@ def category_details(request, category_id):
     }
 
     return render(request, 'category_details.html', context)
+
+
+def records(request):
+    """ Return all records from the products. """
+
+    records = Products.objects.filter(Category = "records")
+
+    context = {
+        'records': records,
+    }
+
+    return render(request, "records.html", context)

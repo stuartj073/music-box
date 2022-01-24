@@ -71,7 +71,7 @@ def add_product(request):
         if form.is_valid():
             print("Form is valid")
             product = form.save()
-            messages.success(request, "Product added")
+            messages.success(request, "Product added lak")
             return redirect('products')
         else:
             print("Form invalid")
@@ -113,7 +113,6 @@ def update_product(request, product_id):
     return render(request, 'product/products.html', context)
 
 
-@login_required
 def delete_product(request, product_id):
     """ Delete specific blog post for user. """
     product = get_object_or_404(Product, pk=product_id)

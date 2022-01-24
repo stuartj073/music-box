@@ -37,12 +37,10 @@
       {% endif %}
       <p>{{ product.date }}</p>
     </div>
-    {% if user.is_authenticated %}
       <a href="#"><button type="button" class="btn btn-secondary">Add To basket <i class="fas fa-pencil-alt"></i></button></a>
       </a>
       <a href="{% url 'delete_product' product.id %}"><button type="button" class="btn btn-secondary">Remove product<i class="fas fa-pencil-alt"></i></button></a>
     </a>
-    {% endif %}
   </div>
   {% endfor %}
 </div>
