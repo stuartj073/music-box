@@ -33,13 +33,13 @@ def add_to_basket(request, item_id):
     return redirect(redirect_url)
 
 
-def remove_from_basket(request, item_id):
-    """ Remove item from basket. """
+# def remove_from_basket(request, item_id):
+#     """ Remove item from basket. """
 
-    product = get_object_or_404(Product, pk=item_id)
-    basket = request.session.get('basket', {})
+#     product = get_object_or_404(Product, pk=item_id)
+#     basket = request.session.get('basket', {})
 
-    basket.pop(item_id)
-    messages.success(request, f'Removed {product.name} from basket.')
+#     basket.pop(item_id)
+#     messages.success(request, f'Removed {product.name} from basket.')
 
-    return redirect("basket")
+#     return redirect("basket")

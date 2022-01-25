@@ -137,6 +137,13 @@ h1 .cover {
     width:0%;
 }
 
+.w-50 {
+    margin:0 auto;
+}
+
+.card-details .form-control {
+    width:80%;
+}
 
 /************************************* MESSAGES ***/
 
@@ -171,7 +178,7 @@ h1 .cover {
 }
 
 .total {
-    width:50%;
+    width:40%;
     margin:0 auto;
 }
 

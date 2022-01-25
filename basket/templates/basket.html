@@ -33,17 +33,16 @@
                             {% endif %}
                         </div>
                         <div class="col-4">
-                            <p class="lead mt-3">{{ basket_item.product.name }}</p>
-                            <p class="lead mt-3">{{ basket_item.product.price }}</p>
+                            <p class="lead mt-3">Product: {{ basket_item.product.name }}</p>
+                            <p class="lead mt-3">${{ basket_item.product.price }}</p>
+                            <p class="lead mt-3">Amount: {{ basket_item.quantity }}</p>
                         </div>
                     </div>
-                    <a href="{% url 'remove_from_basket' product.id %}"><button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button></a>
-                    </a>
                 </div>
                 {% endfor %}
                 <div class="total">
                     <div class="row">
-                        <div class="col-md-3 .offset-md-3">
+                        <div class="col-6">
                             <h4>Bag total: </h4>
                         </div>
                         <div class="col-6">
