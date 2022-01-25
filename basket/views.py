@@ -42,4 +42,4 @@ def remove_from_basket(request, item_id):
     basket.pop(item_id)
     messages.success(request, f'Removed {product.name} from basket.')
 
-    return render(reverse('basket'))
+    return redirect("basket")

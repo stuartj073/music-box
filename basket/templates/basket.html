@@ -37,29 +37,29 @@
                             <p class="lead mt-3">{{ basket_item.product.price }}</p>
                         </div>
                     </div>
-                        <a href="{% url 'remove_from_basket' product.id %}"><button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button></a>
-                        </a>
+                    <a href="{% url 'remove_from_basket' product.id %}"><button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button></a>
+                    </a>
                 </div>
                 {% endfor %}
+                <div class="total">
+                    <div class="row">
+                        <div class="col-md-3 .offset-md-3">
+                            <h4>Bag total: </h4>
+                        </div>
+                        <div class="col-6">
+                            <h4>{{ checkout_total }}</h4>
+                        </div>
+                        {% if checkout_total < settings.FREE_DELIVERY_THRESHOLD %}
+                            <h4>Whats up</h4>
+                        {% endif %}
+                    </div>
+                </div>
             {% else %}
                 <div class="alert alert-dark" role="alert">
                     <p class="lead">
                         <strong>Your basket is empty. Click <a href="{% url 'products' %}">here</a> to find more products.</strong>
                     </p>
                 </div>
-            {% endif %}
-        </div>
-    </div>
-    <div class="total">
-        <div class="row">
-            <div class="col-md-3 .offset-md-3">
-                <h4>Bag total: </h4>
-            </div>
-            <div class="col-6">
-                <h4>{{ checkout_total }}</h4>
-            </div>
-            {% if checkout_total < settings.FREE_DELIVERY_THRESHOLD %}
-                <h4>Whats up</h4>
             {% endif %}
         </div>
     </div>
