@@ -34,7 +34,6 @@ def products(request):
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
 
-              
     context = {
         'products': products,
         'search_term': query,
@@ -113,6 +112,7 @@ def update_product(request, product_id):
     return render(request, 'product/products.html', context)
 
 
+@login_required
 def delete_product(request, product_id):
     """ Delete specific blog post for user. """
     product = get_object_or_404(Product, pk=product_id)

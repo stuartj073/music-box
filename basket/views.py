@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 
 # Create your views here.
@@ -42,4 +42,4 @@ def remove_from_basket(request, item_id):
     basket.pop(item_id)
     messages.success(request, f'Removed {product.name} from basket.')
 
-    return render(redirect_url)
+    return render(reverse('basket'))
