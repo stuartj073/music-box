@@ -81,9 +81,9 @@
                         Categories
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Synths</a>
-                        <a class="dropdown-item" href="#">CD's</a>
-                        <a class="dropdown-item" href="{% url 'records' %}">Records</a>
+                        <a class="dropdown-item" href="{% url 'products' %}?category={{ product.category.name }}"></a>
+                        <a class="dropdown-item" href="{% url 'products' %}?category={{ product.category.name }}">CD's</a>
+                        <a class="dropdown-item" href="{% url 'products' %}?category={{ product.category.name }}">Records</a>
                     </div>
                 </li>
                 {% if request.user.is_authenticated %}
