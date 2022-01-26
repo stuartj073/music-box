@@ -36,6 +36,30 @@
                             <p class="lead mt-3">Product: {{ basket_item.product.name }}</p>
                             <p class="lead mt-3">${{ basket_item.product.price }}</p>
                             <p class="lead mt-3">Amount: {{ basket_item.quantity }}</p>
+                            <div class="form-group w-50">
+                                <input class="form-control qty_input" type="number"
+                                name="amount" value="{{ basket_item.quantity }}" min="1" max="99"
+                                data-item_id="{{ product.id }}"
+                                id="id_qty_{{ product.id }}">    
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                      <button class="decrement-qty btn btn-red" 
+                                        data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
+                                        <span class="icon">
+                                          <i class="far fa-minus-square"></i>
+                                        </span>
+                                      </button>
+                                    </div>                    
+                                    <div class="input-group-append">
+                                      <button class="increment-qty btn btn-green"
+                                        data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                          <span class="icon">
+                                          <i class="far fa-plus-square"></i>
+                                        </span>
+                                      </button>
+                                    </div>
+                                  </div>
+                              </div>
                         </div>
                     </div>
                 </div>
@@ -48,9 +72,6 @@
                         <div class="col-6">
                             <h4>{{ checkout_total }}</h4>
                         </div>
-                        {% if checkout_total < settings.FREE_DELIVERY_THRESHOLD %}
-                            <h4>Whats up</h4>
-                        {% endif %}
                     </div>
                 </div>
             {% else %}

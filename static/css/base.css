@@ -145,6 +145,10 @@ h1 .cover {
     width:80%;
 }
 
+.input-group button {
+    padding:50px;
+}
+
 /************************************* MESSAGES ***/
 
 .user {

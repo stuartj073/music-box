@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
+from products.models import Product
 
 # Create your views here.
 
@@ -23,11 +24,12 @@ def add_to_basket(request, item_id):
     size = None
     if 'product_size' in request.POST:
         size = request.POST['product_size']
-    basket = request.session.get('basket', {basket
+    basket = request.session.get('basket', {})
+    
     if size:
         if item_id in list(basket.keys()):
             if size in basket[item_id]['items_by_size'].keys():
-                basket[item_id]['items_by_size'][siamount
+                basket[item_id]['items_by_size'][size] += amount
                 messages.success(request,
                                  (f'Updated size {size.upper()} '
                                   f'{product.name} amount to '
@@ -46,12 +48,13 @@ def add_to_basket(request, item_id):
         if item_id in list(basket.keys()):
             basket[item_id] += amount
             messages.success(request,
-                             (f'Added {product.name} '
+                             (f'Updated {product.name} '
                               f'amount to {basket[item_id]}'))
         else:
             basket[item_id] = amount
             messages.success(request, f'{product.name} has been added to your basket.')
 
+    print("ADD")
     request.session['basket'] = basket
     return redirect(redirect_url)
 
@@ -81,7 +84,7 @@ def edit_basket(request, item_id):
                              (f'Adjusted size {size.upper()} '
                               f'{product.name} from your basket'))
     else:
-        if amount > 0
+        if amount > 0:
             basket[item_id] = amount
             messages.success(request,
                              (f'Updated {product.name} '

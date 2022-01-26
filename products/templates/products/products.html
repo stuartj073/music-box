@@ -112,3 +112,8 @@
   })
   </script>
 {% endblock %}
+
+{% block postloadsjs %}
+{{ block.super }}
+{% include 'products/inclues/qty_input_script.html' %}
+{% endblock %}
