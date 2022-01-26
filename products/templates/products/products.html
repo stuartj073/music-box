@@ -35,7 +35,11 @@
       {% else %}
         <a href="{% url 'product_detail' product.id %}"><img class="card-img-top" src="media/revolt-xGAG-yRP2PQ-unsplash.jpg" alt="Default product image"></a>
       {% endif %}
-      <p>{{ product.date }}</p>
+      <p><a href="{% url 'products' %}?category={{ product.category.name }}">{{ product.category.friendly_name }}</a></p>
+      {% if product.date %}
+        <p>{{ product.date }}</p>
+      {% endif %}
+      <p class="lead">{{ product.price }}</p>
       <a href="#"><button type="button" class="btn btn-info"><i class="fas fa-shopping-basket"></i></button></a>
       </a>
       <a href="{% url 'delete_product' product.id %}"><button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button></a>

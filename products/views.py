@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse
 from .models import Product, Category
 from django.db.models import Q
+from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import ProductForm
@@ -13,8 +14,15 @@ def products(request):
 
     products = Product.objects.order_by('-price')
     query = None
+    categories = None
+    sort = None
+    direction = None
 
     if request.method == "GET":
+        if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
+            products = products.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -33,6 +41,14 @@ def products(request):
             if sortkey == 'name':
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
+            
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            products = products.order_by(sortkey)
+
+    current_sorting = f'{sort}_{direction}'
 
     context = {
         'products': products,
