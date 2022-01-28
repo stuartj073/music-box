@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404, HttpResponse
+from django.shortcuts import render, redirect, get_object_or_404, HttpResponse, reverse
 from django.contrib import messages
 from products.models import Product
 
@@ -96,7 +96,7 @@ def edit_basket(request, item_id):
                               f'from your basket'))
 
     request.session['basket'] = basket
-    return redirect(reverse('view_basket'))
+    return redirect(reverse('basket'))
 
 
 def remove_from_basket(request, item_id):
