@@ -26,5 +26,11 @@ def product_review(request, product_id):
         form = ProductReviewForm()
         form.save()
 
+    context ={
+        'product': product,
+    }
+
+    return render(request, 'product_reviews.html', context)
+
 
 
