@@ -21,6 +21,8 @@ class Order(models.Model):
     county = models.CharField(max_length=50, null=True, blank=True)
     country = CountryField(null=False, blank=False)
     postcode = models.CharField(max_length=20, null=True, blank=True)
+    order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
+    checkout_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
 
     def _generate_order_number(self):
         """ Create unique order number. """
