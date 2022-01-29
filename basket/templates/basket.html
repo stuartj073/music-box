@@ -9,14 +9,8 @@
 </div>
 {% if checkout_total %}
 <div class="shopping-bag">
-    <h2 class="display-2">${{ checkout_total }}</h2>
+    <h2 class="display-2">${{ checkout_total | floatformat:2 }}</h2>
 </div>
-{% endif %}
-
-{% if checkout_total < settings.FREE_DELIVERY_THRESHOLD %}
-
-<h3 class="display-2">{{ free_delivery_delta }}</h3>
-
 {% endif %}
 <section class="basket">
     <div class="row">
@@ -79,7 +73,28 @@
                             <h4>Bag total: </h4>
                         </div>
                         <div class="col-6">
-                            <h4>{{ checkout_total }}</h4>
+                            <h4>{{ total | floatformat:2 }}</h4>
+                        </div>
+                        {% if checkout_total > free_delivery_threshold %}
+                            <div class="col-6">
+                                <h4>Devlivery Cost: </h4>
+                            </div>
+                            <div class="col-6">
+                                <h4>FREE</h4>
+                            </div>
+                        {% else %}
+                            <div class="col-6">
+                                <h4>Devlivery Cost: </h4>
+                            </div>
+                            <div class="col-6">
+                                <h4>${{ delivery | floatformat:2 }}</h4>
+                            </div>
+                        {% endif %}
+                        <div class="col-6">
+                            <h4>Checkout Total: </h4>
+                        </div>
+                        <div class="col-6">
+                            <h4>${{ checkout_total | floatformat:2 }}</h4>
                         </div>
                     </div>
                 </div>
