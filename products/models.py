@@ -25,8 +25,8 @@ class Category(models.Model):
 
 class Product(models.Model):
     """ More specific information about particular good. """
-    category = models.ForeignKey('Category', null=False, blank=False,
-                                 on_delete=models.CASCADE)
+    category = models.ForeignKey('Category', null=True, blank=True,
+                                 on_delete=models.SET_NULL)
     name = models.CharField(max_length=254)
     description = models.TextField()
     condition = models.TextField()
