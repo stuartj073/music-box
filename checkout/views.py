@@ -1,5 +1,6 @@
-from django.shortcuts import render, reverse
+from django.shortcuts import render, reverse, redirect
 from .forms import OrderForm
+from django.contrib import messages
 
 # Create your views here.
 
@@ -22,10 +23,12 @@ def checkout(request):
             return redirect('checkout')
     else:
         # No data submitted
-        order_form = OrderForm()()
+        order_form = OrderForm()
     
+    template = 'checkout/checkout.html'
+
     context = {
         'order_form': order_form,
     }
 
-    return render(request, 'checkout.html', context)
+    return render(request, template, context)
