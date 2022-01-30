@@ -1,10 +1,10 @@
-from django import crispy_forms
+from django import forms
 from .models import Order
 
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
-        fields = ('first_name', 'surname', 'date', 'email', 'phone_number', 
+        fields = ('first_name', 'surname', 'email', 'phone_number', 
                   'street_address1', 'street_address2', 'town_or_city', 
                   'county', 'country', 'postcode')
 
@@ -23,13 +23,13 @@ class OrderForm(forms.ModelForm):
             'county': 'County',
             'country': 'Country',
             'postcode': 'Postcode',
-    }
+        }
 
-    self.fields['first_name'].widget.attrs['autofocus'] = True
-    for field in self.fields:
-        if fields != 'country':
-            if self.fields[field].required:
-                placeholder = f'{placeholders[field]} *'
-            else:
-                placeholder = placeholders[field]
-            self.fields[field].widget.attrs['placeholder'] = placeholder
+        self.fields['first_name'].widget.attrs['autofocus'] = True
+        for field in self.fields:
+            if fields != 'country':
+                if self.fields[field].required:
+                    placeholder = f'{placeholders[field]} *'
+                else:
+                    placeholder = placeholders[field]
+                self.fields[field].widget.attrs['placeholder'] = placeholder
