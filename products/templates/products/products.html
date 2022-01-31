@@ -33,7 +33,7 @@
       {% if product.image_url %}
         <a href="{% url 'product_detail' product.id %}"><img src="{{ product.image_url }}" alt="product-image"></a>
       {% else %}
-        <a href="{% url 'product_detail' product.id %}"><img class="card-img-top" src="media/revolt-xGAG-yRP2PQ-unsplash.jpg" alt="Default product image"></a>
+        <a href="{% url 'product_detail' product.id %}"><img class="card-img-top" src="{{ MEDIA_URL }}revolt-xGAG-yRP2PQ-unsplash.jpg" alt="Default product image"></a>
       {% endif %}
       <p><a href="{% url 'products' %}?category={{ product.category.name }}">{{ product.category.friendly_name }}</a></p>
       {% if product.date %}

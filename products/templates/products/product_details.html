@@ -6,7 +6,7 @@
         {% if product.image_url %}
             <img src="{{ product.image_url }}" class="mb-4" alt="product-image">
         {% else %}
-            <img src="media/revolt-xGAG-yRP2PQ-unsplash.jpg" class="mb-4" alt="product-image">
+            <img src="{{ MEDIA_URL }}revolt-xGAG-yRP2PQ-unsplash.jpg" class="mb-4" alt="product-image">
         {% endif %}
         <p>{{ product.description }}</p>
         <p>{{ product.condition }}</p>
