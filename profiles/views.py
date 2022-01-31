@@ -3,7 +3,7 @@ from .models import Users
 
 # Create your views here.
 
-def profiles(request):
+def profile(request):
     """ Display a user's profile. """
     template = 'profiles/profiles.html'
 
