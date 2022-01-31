@@ -149,6 +149,15 @@ h1 .cover {
     padding:50px;
 }
 
+
+/************************************* FORMS ***/
+
+.shipping-form {
+    margin:0 auto;
+    text-align:center;
+}
+
+
 /************************************* MESSAGES ***/
 
 .user {

@@ -14,7 +14,7 @@ def checkout(request):
     if request.method == "POST":
         order_form = OrderForm(request.POST, request.FILES)
         if order_form.is_valid():
-            order = form.save()
+            order = order_form.save()
             messages.success(request, "Order saved")
             print("ORDER SAVED")
             return redirect(reverse('products'))
