@@ -1,8 +1,8 @@
 from django.db import models
 from products.models import Category
 from django.contrib.auth.models import User
+from django_countries.fields import CountryField
 
-# Create your models here.
 
 class Users(models.Model):
     """ Model to display the info needed to register account. """
@@ -23,5 +23,17 @@ class Users(models.Model):
                                         null=True, blank=True)
     default_country = CountryField(blank_label='Country',
                                    null=True, blank=True)
+
+    def __str__(self):
+        return self.user.username
+
+@receiver(post_save, sender=User)
+def create_or_update_user(sender, instance, created, **kwargs):
+    """ 
+    Create/update user.
+    """
+    if created:
+        UserProfile.objects.create(user=instance)
+    instance.userprofile.save()
 
 
