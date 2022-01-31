@@ -4,13 +4,15 @@ from django.db import models
 from django_countries.fields import CountryField
 from django.db.models import Sum
 from django.conf import settings
-from products.models import Product
 
-# Create your models here.
+from products.models import Product
+from profiles.models import Users
 
 class Order(models.Model):
     """ Information needed for each transaction. """
     order_number = models.CharField(max_length=32, null=False, editable=False)
+    user_profile = models.ForeignKey(Users, on_delete=models.SET_NULL, null=True,
+                                     blank=True, related_name='orders')
     first_name = models.CharField(max_length=30, null=False, blank=False)
     surname = models.CharField(max_length=30, null=False, blank=False)
     date = models.DateTimeField(auto_now_add=True)

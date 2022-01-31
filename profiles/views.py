@@ -5,10 +5,6 @@ from .models import Users
 
 def profiles(request):
     """ Display a user's profile. """
-    users = get_object_or_404(Users, pk=user_id)
+    template = 'profiles/profiles.html'
 
-    context = {
-        'users': users
-    }
-
-    return render(request, 'profiles.html', context)
+    return render(request, template)
