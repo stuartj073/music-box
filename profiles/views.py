@@ -5,6 +5,8 @@ from django.contrib import messages
 from .models import Users
 from .forms import UserForm
 
+from checkout.models import Order
+
 # Create your views here.
 
 def profile(request):
@@ -27,5 +29,21 @@ def profile(request):
     }
 
     template = 'profiles/profiles.html'
+
+    return render(request, template, context)
+
+
+def orders(request, order_number):
+    """
+    Show each order associated with logged in user
+    """
+    order = get_object_or_404(Order, order_number=order_number)
+
+    template = 'checkout/checkout_success.html'
+    
+    context = {
+        'order': order,
+        'from_profile': from_profile,
+    }
 
     return render(request, template, context)
