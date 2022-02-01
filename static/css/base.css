@@ -129,7 +129,8 @@ h1 .cover {
 }
 
 .product-buttons buttons {
-    width, margin:auto;
+    width:auto;
+    margin:auto;
 }
 
 .card-details .btn-secondary {

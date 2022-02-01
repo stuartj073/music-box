@@ -29,13 +29,14 @@ class Users(models.Model):
     def __str__(self):
         return self.user.username
 
+
 @receiver(post_save, sender=User)
 def create_or_update_user(sender, instance, created, **kwargs):
     """ 
     Create/update user.
     """
     if created:
-        UserProfile.objects.create(user=instance)
-    instance.userprofile.save()
+        Users.objects.create(user=instance)
+    instance.user.save()
 
 
