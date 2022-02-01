@@ -1,5 +1,4 @@
 from django.db import models
-from products.models import Category
 from django.contrib.auth.models import User
 from django_countries.fields import CountryField
 
@@ -30,7 +29,7 @@ class Users(models.Model):
         return self.user.username
 
 
-@receiver(post_save, sender=User)
+@receiver(post_save, sender=Users)
 def create_or_update_user(sender, instance, created, **kwargs):
     """ 
     Create/update user.

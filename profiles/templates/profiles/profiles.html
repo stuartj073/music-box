@@ -2,6 +2,14 @@
 {% load static %}
 
 {% block content %}
-    <h1>{{ user.password }}</h1>
 <h1>Profile</h1>
+
+<h2>{{ user.username }}</h2>
+
+<form action="" method="POST">
+    {% csfr_token %}
+    {{ form|crispy }}
+</form>
+
+
 {% endblock %}

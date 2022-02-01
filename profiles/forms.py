@@ -1,5 +1,6 @@
 from django import forms
-from .models import Order
+from checkout.models import Order
+from .models import Users
 
 class UserForm(forms.ModelForm):
     class Meta:
