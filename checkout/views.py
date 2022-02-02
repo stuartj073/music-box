@@ -9,7 +9,6 @@ from .models import OrderLineItem
 
 import stripe
 
-# Create your views here.
 
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
@@ -20,7 +19,7 @@ def checkout(request):
 
         form_data = {
             'first_name' : request.POST['first_name'],
-            'second_name' : request.POST['second_name'],
+            'surname' : request.POST['second_name'],
             'email' : request.POST['email'],
             'phone_number' : request.POST['phone_number'],
             'street_address_1' : request.POST['street_address_1'],
@@ -65,7 +64,8 @@ def checkout(request):
             return redirect(reverse('checkout_success',
                                     args=[order.order_number]))
         else:
-            messages.error(request, ('There was an error with your form.'))
+            messages.success(request, ('There was an error with your form.'))
+            print
     
     else:
         basket = request.session.get('basket', {})
