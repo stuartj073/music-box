@@ -26,6 +26,8 @@
                     <h3 class="mb-5">Payment</h3>
                     <div class="mb-3" id="card-element"></div>
                     <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                    <!-- Pass the client secret to the view so we can get the payment intent id -->
+                    <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 </fieldset>
                 <button type="submit" id="submit-button">Submit Form</button>
             </form>
@@ -69,7 +71,7 @@
 
     {{ block.super }}
     {{ stripe_public_key|json_script:"id_stripe_public_key" }}
-    {{ client_public_key|json_script:"id_client_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
     <script src="{% static 'checkout/js/stripe.js' %}"></script>
 
 {% endblock %}
