@@ -28,6 +28,10 @@ def checkout(request):
     if not basket:
         messages.error(request, "Sorry, your bag is empty")
         return redirect(reverse('products'))
+
+    if not stripe_public_key:
+        messages.error(request, "Stripe public key is missing. \
+                    Please check environment configurations.")
     
     if request.method == "POST":
         order_form = OrderForm(request.POST, request.FILES)
@@ -47,7 +51,7 @@ def checkout(request):
 
     context = {
         'order_form': order_form,
-        'stripe_public_key': 'pk_test_51KOR5pF4c4G15bFhDBWJcD3dHL21GSDy29nh14KLTkwkCEHToCNnXopNKekdu2EQbencBwlYG3KoTnqSMyxyMOFk00StSAVqYS',
+        'stripe_public_key': stripe_public_key,
         'client_secret': 'test client secret',
     }
 
