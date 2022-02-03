@@ -1,8 +1,8 @@
 from django.shortcuts import render, reverse, redirect, get_object_or_404
-from .forms import OrderForm
 from django.contrib import messages
 from django.conf import settings
 
+from .forms import OrderForm
 from basket.contexts import basket_contents
 from products.models import Product
 from .models import OrderLineItem
@@ -19,16 +19,16 @@ def checkout(request):
 
         form_data = {
             'first_name' : request.POST['first_name'],
-            'surname' : request.POST['second_name'],
+            'surname' : request.POST['surname'],
             'email' : request.POST['email'],
             'phone_number' : request.POST['phone_number'],
-            'street_address_1' : request.POST['street_address_1'],
-            'street_address_2' : request.POST['street_address_2'],
+            'street_address1' : request.POST['street_address1'],
+            'street_address2' : request.POST['street_address2'],
             'town_or_city' : request.POST['town_or_city'],
             'county' : request.POST['county'],
             'postcode' : request.POST['postcode'],
         }
-        order_form = OrderForm(data)
+        order_form = OrderForm(form_data)
         
         if order_form.is_valid():
             order = order_form.save
