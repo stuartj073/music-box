@@ -4,9 +4,13 @@ from django.conf import settings
 from django.views.decorators.http import require_POST
 
 from .forms import OrderForm
+from .models import Order, OrderLineItem
 from basket.contexts import basket_contents
 from products.models import Product
-from .models import OrderLineItem
+
+from profiles.models import Users
+from profiles.forms import UserForm
+
 
 import stripe
 
@@ -23,9 +27,10 @@ def cache_checkout_data(request):
         })
         return HttpResponse(status=200)
     except Exception as e:
-        messages.error(request, ('Sorry, your payment cannot be '
+        messages.success(request, ('Sorry, your payment cannot be '
                                  'processed right now. Please try '
                                  'again later.'))
+        print("form failed")
         return HttpResponse(content=e, status=400)
 
 
@@ -50,7 +55,7 @@ def checkout(request):
         order_form = OrderForm(form_data)
         
         if order_form.is_valid():
-            order = order_form.save
+            order = order_form.save(commit=False)
             for item_id, item_data in basket.items():
                 try:
                     product = Product.objects.get(id=item_id)
@@ -90,7 +95,6 @@ def checkout(request):
             messages.error(request, "Sorry, your basket is empty")
             return redirect(reverse('products'))
 
-        basket = request.session.get('basket', {})
         current_basket = basket_contents(request)
         total = current_basket['checkout_total']
         stripe_total = round(total * 100)
@@ -103,7 +107,7 @@ def checkout(request):
         order_form = OrderForm()
     
     if not stripe_public_key:
-        messages.warning(request, 'Stripe public key is missing. \
+        messages.success(request, 'Stripe public key is missing. \
             Check your environment variables.')
 
     template = 'checkout/checkout.html'
