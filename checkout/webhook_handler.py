@@ -24,18 +24,18 @@ class StripeWH_Handler:
         save_info = intent.metadata.save_info
 
         billing_details = intent.charges.data[0].billing_details
-        shipping_details = intent.shipping_details
+        shipping_details = intent.shipping
         checkout_total = round(intent.data.charges[0].amount / 100, 2)
         
         for field, value in shipping_details.address.items():
-            if value = "":
+            if value == "":
                 shipping_details.address[field] = None
         
         order_exists = False
         try:
             order = Order.objects.get(
-                first_name__iexact=shipping_details.name,
-                last_name__iexact=shipping_details.name,
+                first_name=billing_details.name.split(" ")[0],
+                surname=billing_details.name.split(" ")[1],
                 email__iexact=billing_details.email,
                 phone_number__iexact=shipping_details.phone,
                 country__iexact=shipping_details.address.country,

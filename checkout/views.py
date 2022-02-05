@@ -54,6 +54,7 @@ def checkout(request):
             'postcode' : request.POST['postcode'],
         }
         order_form = OrderForm(form_data)
+        print("UPPAA", intent)
         
         if order_form.is_valid():
             order = order_form.save(commit=False)
@@ -81,23 +82,26 @@ def checkout(request):
                             )
                             order_line_item.save()
                 except Product.DoesNotExist:
-                    messages.error(request, (
+                    messages.success(request, (
                         "One of the products in your basket wasn't "
                         "found in our database.")
                     )
                     order.delete()
                     return redirect(reverse('basket'))
+                print("YES LAD", intent)
 
             # Save user's info to profile
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success',
                                     args=[order.order_number]))
         else:
-            messages.success(request, ('There was an error with your form.'))    
+            messages.success(request, ('There was an error with your form.'))
+            print("OH YA", intent)
     else:
+        print("OH NO", intent)
         basket = request.session.get('basket', {})
         if not basket:
-            messages.error(request, "Sorry, your basket is empty")
+            messages.success(request, "Sorry, your basket is empty")
             return redirect(reverse('products'))
 
         current_basket = basket_contents(request)
@@ -117,11 +121,13 @@ def checkout(request):
 
     template = 'checkout/checkout.html'
 
+    print("intent is defined as", intent)
     context = {
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
     }
+
 
     return render(request, template, context)
 
