@@ -31,7 +31,7 @@ def cache_checkout_data(request):
         messages.success(request, ('Sorry, your payment cannot be '
                                  'processed right now. Please try '
                                  'again later.'))
-        print("form failed")
+        print("FORM FAILED")
         return HttpResponse(content=e, status=400)
 
 
@@ -54,7 +54,6 @@ def checkout(request):
             'postcode' : request.POST['postcode'],
         }
         order_form = OrderForm(form_data)
-        print("UPPAA", intent)
         
         if order_form.is_valid():
             order = order_form.save(commit=False)
@@ -88,7 +87,7 @@ def checkout(request):
                     )
                     order.delete()
                     return redirect(reverse('basket'))
-                print("YES LAD", intent)
+                print("A", intent)
 
             # Save user's info to profile
             request.session['save_info'] = 'save-info' in request.POST
@@ -96,9 +95,8 @@ def checkout(request):
                                     args=[order.order_number]))
         else:
             messages.success(request, ('There was an error with your form.'))
-            print("OH YA", intent)
+            print("FORM INVALID")
     else:
-        print("OH NO", intent)
         basket = request.session.get('basket', {})
         if not basket:
             messages.success(request, "Sorry, your basket is empty")
@@ -121,7 +119,6 @@ def checkout(request):
 
     template = 'checkout/checkout.html'
 
-    print("intent is defined as", intent)
     context = {
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
