@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 
 
+
 class StripeWH_Handler:
     """Handle webhooks"""
 
@@ -20,12 +21,13 @@ class StripeWH_Handler:
         Handle the payment_intent_succeeded webhook event from stripe
         """
         intent = event.data.object
+        pid = intent.id
         basket = intent.metadata.basket
         save_info = intent.metadata.save_info
 
         billing_details = intent.charges.data[0].billing_details
         shipping_details = intent.shipping
-        checkout_total = round(intent.data.charges[0].amount / 100, 2)
+        checkout_total = round(intent.charges.data[0].amount / 100, 2)
         
         for field, value in shipping_details.address.items():
             if value == "":
