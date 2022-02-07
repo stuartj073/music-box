@@ -69,6 +69,7 @@ class StripeWH_Handler:
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
                 status=200)
         else:
+            order = None
             try:
                 order = Order.objects.create(
                     first_name__iexact=shipping_details.name.split(" ")[0],
@@ -81,7 +82,8 @@ class StripeWH_Handler:
                     street_address1__iexact=shipping_details.address.line1,
                     street_address2__iexact=shipping_details.address.line2,
                     county__iexact=shipping_details.address.state,
-                    checkout_total=checkout_total,
+                    original_basket=basket,
+                    stripe_pid=pid,
                 )
                 product = Product.objects.get(id=item_id)
                 if isinstance(item_data, int):
