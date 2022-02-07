@@ -30,6 +30,7 @@ class StripeWH_Handler:
         pid = intent.id
         basket = intent.metadata.basket
         save_info = intent.metadata.save_info
+        print(intent)
 
         billing_details = intent.charges.data[0].billing_details
         shipping_details = intent.shipping
@@ -40,27 +41,34 @@ class StripeWH_Handler:
                 shipping_details.address[field] = None
         
         order_exists = False
-        try:
-            order = Order.objects.get(
-                first_name=billing_details.name.split(" ")[0],
-                surname=billing_details.name.split(" ")[1],
-                email__iexact=billing_details.email,
-                phone_number__iexact=shipping_details.phone,
-                country__iexact=shipping_details.address.country,
-                postcode__iexact=shipping_details.address.postal_code,
-                town_or_city__iexact=shipping_details.address.city,
-                street_address1__iexact=shipping_details.address.line1,
-                street_address2__iexact=shipping_details.address.line2,
-                county__iexact=shipping_details.address.state,
-                checkout_total=checkout_total,
-                original_basket=basket,
-                stripe_pid=pid,
-            )
-            order_exists = True
+        attempt = 1
+        while <= 5:
+            try:
+                order = Order.objects.get(
+                    first_name=billing_details.name.split(" ")[0],
+                    surname=billing_details.name.split(" ")[1],
+                    email__iexact=billing_details.email,
+                    phone_number__iexact=shipping_details.phone,
+                    country__iexact=shipping_details.address.country,
+                    postcode__iexact=shipping_details.address.postal_code,
+                    town_or_city__iexact=shipping_details.address.city,
+                    street_address1__iexact=shipping_details.address.line1,
+                    street_address2__iexact=shipping_details.address.line2,
+                    county__iexact=shipping_details.address.state,
+                    checkout_total=checkout_total,
+                    original_basket=basket,
+                    stripe_pid=pid,
+                )
+                order_exists = True
+                break
+            except Order.DoesNotExist:
+                attempt += 1
+                time.sleep(5)
+        if order_exists:
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
                 status=200)
-        except Order.DoesNotExist:
+        else:
             try:
                 order = Order.objects.create(
                     first_name__iexact=shipping_details.name.split(" ")[0],
@@ -95,9 +103,9 @@ class StripeWH_Handler:
             except Exception as e:
                 if order:
                     order.delete()
-                return HttpResponse(
-                    content=f'Webhook received:{event["type"]} | ERRORL {e}',
-                    status=500)
+        return HttpResponse(
+            content=f'Webhook received:{event["type"]} | ERRORL {e}',
+            status=500)
                 
 
     
@@ -106,7 +114,6 @@ class StripeWH_Handler:
         Handle the payment_intent_failed webhook event from stripe
         """
         intent = event.data.object
-        print(intent)
         return HttpResponse(
             content=f'Webhook received: {event["type"]}',
             status=200)
