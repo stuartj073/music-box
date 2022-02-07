@@ -42,7 +42,7 @@ class StripeWH_Handler:
         
         order_exists = False
         attempt = 1
-        while <= 5:
+        while attempt <= 5:
             try:
                 order = Order.objects.get(
                     first_name=billing_details.name.split(" ")[0],
@@ -85,29 +85,33 @@ class StripeWH_Handler:
                     original_basket=basket,
                     stripe_pid=pid,
                 )
-                product = Product.objects.get(id=item_id)
-                if isinstance(item_data, int):
-                    order_line_item = OrderLineItem(
-                        order=order,
-                        product=product,
-                        quantity=item_data,
-                    )
-                    order_line_item.save()
-                else:
-                    for size, quantity in item_data['items_by_size'].items():
+                for item_id, item_data in json.loads(basket).items():
+                    product = Product.objects.get(id=item_id)
+                    if isinstance(item_data, int):
                         order_line_item = OrderLineItem(
                             order=order,
                             product=product,
-                            quantity=quantity,
-                            product_size=size,
+                            quantity=item_data,
                         )
                         order_line_item.save()
+                    else:
+                        for size, quantity in item_data['items_by_size'].items():
+                            order_line_item = OrderLineItem(
+                                order=order,
+                                product=product,
+                                quantity=quantity,
+                                product_size=size,
+                            )
+                            order_line_item.save()
             except Exception as e:
                 if order:
                     order.delete()
+                return HttpRespsone(
+                    content=f'Webhook received: {event["type"]} | ERROR: {e}',
+                    status=500)
         return HttpResponse(
-            content=f'Webhook received:{event["type"]} | ERRORL {e}',
-            status=500)
+            content=f'Webhook received:{event["type"]} | SUCCESS: Created webhook',
+            status=200)
                 
 
     
