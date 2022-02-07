@@ -1,0 +1,21 @@
+Hey {{ order.first_name }}!
+
+This is just a confirmation email regarding your recent order with us over at Music Box.
+
+Your order had the following details:
+
+Date : {{ order.date }}
+
+Number : {{ order.order_number }}
+
+Cost of delivery : {{ order.delivery_cost }}
+
+Total cost : {{ order.checkout_total }}
+
+Your order will be arriving to {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country }} very soon.
+
+If you have any queries please don't hesitate to get in touch.
+
+Yours faithfully, 
+
+Music Box.
