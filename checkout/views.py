@@ -51,10 +51,11 @@ def checkout(request):
             'street_address2' : request.POST['street_address2'],
             'town_or_city' : request.POST['town_or_city'],
             'county' : request.POST['county'],
+            'country' : request.POST['country'],
             'postcode' : request.POST['postcode'],
         }
         order_form = OrderForm(form_data)
-        
+        print(order_form.errors)
         if order_form.is_valid():
             order = order_form.save()
             for item_id, item_data in basket.items():
@@ -83,7 +84,7 @@ def checkout(request):
                     )
                     order.delete()
                     return redirect(reverse('basket'))
-                print("A", intent)
+                # print("A", intent)
 
             # Save user's info to profile
             request.session['save_info'] = 'save-info' in request.POST
