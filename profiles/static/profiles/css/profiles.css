@@ -1,0 +1,8 @@
+.past-order {
+    height:300px;
+    width:300px;
+    background-color: bisque;
+    border:1px solid gold;
+    border-radius: 2px;
+    text-align: center;
+}
