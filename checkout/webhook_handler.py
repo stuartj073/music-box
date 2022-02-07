@@ -63,8 +63,8 @@ class StripeWH_Handler:
         except Order.DoesNotExist:
             try:
                 order = Order.objects.create(
-                    first_name__iexact=shipping_details.name,
-                    last_name__iexact=shipping_details.name,
+                    first_name__iexact=shipping_details.name.split(" ")[0],
+                    surname__iexact=shipping_details.name.split(" ")[1],
                     email__iexact=billing_details.email,
                     phone_number__iexact=shipping_details.phone,
                     country__iexact=shipping_details.address.country,
