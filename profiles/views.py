@@ -21,14 +21,16 @@ def profile(request):
         else:
             messages.error(request, "Info not saved. Try again.")
     else:
-        form = UserForm()
+        form = UserForm(instance=profile)
+    orders = profile.orders.all()
+
+    template = 'profiles/profiles.html'
 
     context = {
         'form': form,
         'on_profile': True,
+        'orders': orders,
     }
-
-    template = 'profiles/profiles.html'
 
     return render(request, template, context)
 
