@@ -1,0 +1,56 @@
+/************************************* NAVBAR ***/
+
+.float-right {
+    align-items: flex-end;
+}
+
+.input-group-append {
+    margin-left: -1px;
+    min-width: 26%;
+    max-width: 30%;
+}
+
+/************************************* SITE COVER ***/
+
+.landing-page {
+    background-image: url('/media/avi-naim-GNuSRFAN9uY-unsplash.jpg');
+    height:100vh;
+    width:100%;
+    background-size:cover;
+    position:relative;
+    margin:10px;
+}
+
+.cover {
+    background-color:#E8E8E8;
+    position:absolute;
+    width:50%;
+    top:50%;
+    height:200px;
+    left:25%;
+    text-align: center;
+}
+
+.btn-primary {
+    max-width:30%;
+}
+
+h1 .cover {
+    padding:20px;
+}
+
+.cover p {
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+.search-bar {
+    bottom: 0;
+    position: relative;
+    margin: 5px auto;
+    width: 50%;
+}
+
+.products {
+    background-size:cover;
+    position:relative;
+}

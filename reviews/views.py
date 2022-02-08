@@ -25,15 +25,15 @@ def add_review(request, product_id):
     any given product
     """
     product = get_object_or_404(Product, pk=product_id)
-
     if request.method == "POST":
-        form = ProductReviewForm(request.FILES, reuqest.POST, instance=product)
+        form = ProductReviewForm(request.FILES, request.POST, instance=product)
+        print(form.errors)
         if form.is_valid():
             messages.success(request, "New product review created.")
             form.save()
         else:
             messages.error(request, "Form invalid, please try again.")
-            return redirect(reverse('product_details', args=[product.id]))
+            return redirect(reverse('products'))
     else:
         form = ProductReviewForm()
 
@@ -47,5 +47,15 @@ def add_review(request, product_id):
     return render(request, template, context)
 
 
+def review_details(request, productreview_id):
+    """
+    Show the individual review page of each item
+    """
+    review = get_object_or_404(ProductReview, pk=productreview_id)
 
+    context = {
+        'review': review,
+    }
+
+    return render(request, 'products/product_details.html', context)
 

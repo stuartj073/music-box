@@ -89,7 +89,7 @@ def add_product(request):
         if form.is_valid():
             print("Form is valid")
             product = form.save()
-            messages.success(request, "Product added lak")
+            messages.success(request, "Product added.")
             return redirect('products')
         else:
             print("Form invalid")
