@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
+{% endblock %}
 {% block content %}
 <section class="container-fluid">
     <div class="landing-page">
@@ -11,22 +14,23 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="about">
+        <hr>
+        <h4>Music Box</h4>
+        <hr>
         <div class="row">
-            <div class="col-12 col-md-4">
-                <div class="heading products">
-                    <h3>Top of the range musical goods from world renowned music creators!</h3>
-                </div>
-            </div>
-            <div class="col-12 col-md-8">
-                <div class="products">
-                    <img src="{{ MEDIA_URL }}puk-khantho-sWbGwr1fOUk-unsplash.jpg">
-                </div>
+            <div class="col-9 offset-2">
+                <p>Music box is essentially a mixture of two things. First and foremost, it is a site for musicians from all skill levels
+                    that wish to purchase musical equipment to enjoy and further their skill levels. Secondly, it is an online meeting place 
+                    for those with a musical interest to share with others their insights into a particular area of music in which they have interest
+                    in. 
+
+                    Furthermore, users can put up for sale their own equipment they are currently finished with and even their own vinyl records.
+
+                </p>
             </div>
         </div>
     </div>
-    <div></div>
-    <div></div>
 </section>
 
 
