@@ -96,9 +96,10 @@ h1, h2, h3, h4, h5 {
     text-align: center;
 }
 
-.product-buttons buttons {
+.product-buttons button {
     width:auto;
-    margin:auto;
+    margin:10px auto;
+
 }
 
 .card-details .btn-secondary {

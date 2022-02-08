@@ -19,27 +19,25 @@
 </div>
 <!-- Search bar results -->
 {% if search_term %}
-{% if products %}
-<div class="alert alert-light" role="alert">
-  <p class="lead"><strong>Search result</strong></p>
-</div>
-{% else %}
-<div class="alert alert-dark" role="alert">
-  <p class="lead"><strong>Sorry, no products matched your search query</strong></p>
-</div>
-{% endif %}
+  {% if products %}
+    <div class="alert alert-light" role="alert">
+      <p class="lead"><strong>Search result</strong></p>
+    </div>
+    {% else %}
+    <div class="alert alert-dark" role="alert">
+      <p class="lead"><strong>Sorry, no products matched your search query</strong></p>
+    </div>
+  {% endif %}
 {% endif %}
 
 <div class="product-buttons mx-auto">
   <a href="{% url 'add_product' %}">
     <button type="button" class="btn btn-secondary">Add Product <i class="fas fa-pencil-alt"></i></button>
   </a>
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+  <button class="btn btn-secondary " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
     aria-expanded="false">
-    Sort Products by:
-    <select id="sort-selector"
-      class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
-      <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+    <select id="sort-selector">
+      <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort products by...</option>
       <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
       <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)
       </option>
