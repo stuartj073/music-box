@@ -114,8 +114,16 @@ h1, h2, h3, h4, h5 {
     width:80%;
 }
 
-.input-group button {
-    padding:50px;
+/************************************* SEARCH BAR ***/
+
+.search-bar {
+    width: 50%;
+    height:30px;
+    margin:10px auto;
+}
+
+.search-bar form {
+    margin:0 auto;
 }
 
 
