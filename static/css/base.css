@@ -99,7 +99,11 @@ h1, h2, h3, h4, h5 {
 .product-buttons button {
     width:auto;
     margin:10px auto;
+}
 
+.product-buttons a {
+    width:auto;
+    margin:10px auto;
 }
 
 .card-details .btn-secondary {
@@ -185,7 +189,7 @@ h1, h2, h3, h4, h5 {
     -ms-flex-direction: column;
     flex-direction: column;
     min-width: 0;
-    max-width:50%;
+    width:85%;
     word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
