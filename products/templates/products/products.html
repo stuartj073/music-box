@@ -41,9 +41,8 @@
       {% endif %}
       <p class="lead">{{ product.price }}</p>
       <a href="#"><button type="button" class="btn btn-info"><i class="fas fa-shopping-basket"></i></button></a>
-      </a>
       <a href="{% url 'delete_product' product.id %}"><button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button></a>
-      </a>
+      <a href="{% url 'edit_product' product.id %}"><button type="button" class="btn btn-info"><i class="far fa-trash-alt"></i></button></a>
     </div> 
   </div>
   {% endfor %}

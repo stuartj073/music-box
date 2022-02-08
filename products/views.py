@@ -1,10 +1,13 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse
-from .models import Product, Category
+
 from django.db.models import Q
 from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required
+
 from django.contrib import messages
+
 from .forms import ProductForm
+from .models import Product, Category
 
 # Create your views here.
 
@@ -104,28 +107,30 @@ def add_product(request):
     return render(request, template, context)
 
 
-@login_required
-def update_product(request, product_id):
+def edit_product(request, product_id):
     """ Allow user to update their own blog posts. """
 
     product = get_object_or_404(Product, pk=product_id)
 
     if request.method == "GET":
-        form = ProductForm(request.POST, request.FILES, instance=form)
+        form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             form.save()
-            return redirect(reverse('product_details', args=[blog.id]))
+            messages.success(request, f"Successfully updated {product.name}.")
+            return redirect(reverse('product_details', args=[product.id]))
         else:
             print("Form invalid")
+            messages.error(request, f"Failed to update product description.")
     else:
         form = ProductForm(instance=product)
 
+    template = 'products/edit_product.html'
     context = {
         'product': product,
         'form': form,
     }
 
-    return render(request, 'product/products.html', context)
+    return render(request, template, context)
 
 
 @login_required

@@ -57,10 +57,11 @@ def update_blog(request, blog_id):
 
     blog = get_object_or_404(Blog, pk=blog_id)
 
-    if request.method == "GET":
+    if request.method == "POST":
         form = BlogForm(request.POST, request.FILES, instance=blog)
         if form.is_valid():
             form.save()
+            messages.success(request, "Blog has been updated.")
             return redirect(reverse('blog_details', args=[blog.id]))
         else:
             print("Form invalid")
