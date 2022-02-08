@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_filters %}
+{% block content %}
+
+<form class="review-form" method="POST" action="{% url 'add_review' product.id %}">
+    {% csrf_token %}
+    {% form | crispy %}
+</form>
+
+{% endblock %}

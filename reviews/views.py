@@ -33,4 +33,32 @@ def product_review(request, product_id):
     return render(request, 'product_reviews.html', context)
 
 
+def add_review(request, product_id):
+    """ 
+    Render form to allow user to write review on 
+    any given product
+    """
+    product = get_object_or_404(Product, pk=product_id)
+
+    if request.method == "POST":
+        form = ProductReviewForm(request.FILES, reuqest.POST, instance=product)
+        if form.is_valid():
+            messages.success(request, "New product review created.")
+            form.save()
+        else:
+            messages.error(request, "Form invalid, please try again.")
+            return render(reverse("add_product", args=[product.id]))
+    else:
+        form = ProductReviewForm()
+
+    template = 'reviews/add_review.html'
+
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
+
+
+
 
