@@ -7,6 +7,10 @@
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 {% endblock %}
 {% block content %}
+{% block page_header %}
+  <h2>Products</h2>
+  <hr>
+{% endblock %}
 <div class="search">
   <div class="center-search">
     <form method="GET" action="{% url 'products' %}">
@@ -53,13 +57,14 @@
   {% for product in products %}
   <div class="col-12 col-md-6 col-lg-4">
     <div class="card-details">
-      <h5>{{ product.name }}</h5>
       {% if product.image_url %}
       <a href="{% url 'product_detail' product.id %}"><img src="{{ product.image_url }}" alt="product-image"></a>
       {% else %}
       <a href="{% url 'product_detail' product.id %}"><img class="card-img-top"
           src="{{ MEDIA_URL }}revolt-xGAG-yRP2PQ-unsplash.jpg" alt="Default product image"></a>
       {% endif %}
+      <h5>{{ product.name }}</h5>
+      <hr>
       <p><a href="{% url 'products' %}?category={{ product.category.name }}">{{ product.category.friendly_name }}</a>
       </p>
       {% if product.date %}
@@ -68,18 +73,19 @@
       <p class="lead">{{ product.price }}</p>
       <hr>
       <div class="card-buttons">
-        <a href=""class="btn btn-danger">
-          <i class="fas fa-shopping-basket"></i>
-        </a>
         <a href="{% url 'delete_product' product.id %}"  class="btn btn-danger">
           <i class="far fa-trash-alt"></i>
         </a>
         <a href="{% url 'edit_product' product.id %}" class="btn btn-info">
-          <i class="far fa-trash-alt"></i>
+          <i class="fa-solid fa-marker"></i>
         </a>
-        <a href="{% url 'add_review' product.id %}" class="btn btn-info">
-          Add review
-          <i class="far fa-trash-alt"></i></a>
+        <div class="row">
+          <div class="col-12">
+            <a href="{% url 'add_review' product.id %}" class="btn btn-info">
+              Add review
+              <i class="far fa-trash-alt"></i></a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
