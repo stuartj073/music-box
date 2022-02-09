@@ -4,6 +4,8 @@ from .models import ProductReview
 from django.contrib import messages
 from .forms import ProductReviewForm
 
+from profiles.models import Users
+
 # Create your views here.
 
 
@@ -24,16 +26,20 @@ def add_review(request, product_id):
     Render form to allow user to write review on 
     any given product
     """
-    product = get_object_or_404(Product, pk=product_id)
+    user = Users.objects.get(user=request.user)
+    product = Product.objects.get(id=product_id)
     if request.method == "POST":
-        form = ProductReviewForm(request.FILES, request.POST, instance=product)
+        form = ProductReviewForm(request.POST)
         print(form.errors)
         if form.is_valid():
+            review = form.save()
+            review.name = product
+            review.user = user 
+            review.save()
             messages.success(request, "New product review created.")
-            form.save()
         else:
             messages.error(request, "Form invalid, please try again.")
-            return redirect(reverse('products'))
+            return redirect(reverse('product_details', args=[product.id]))
     else:
         form = ProductReviewForm()
 

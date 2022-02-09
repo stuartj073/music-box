@@ -9,11 +9,12 @@ class ProductReview(models.Model):
     """ Allow user to create review based on a specific product."""
     name = models.ForeignKey(Product, null=True, blank=True,
                                  on_delete=models.SET_NULL)
-    user = models.ForeignKey(Users, null=False, blank=False,
+    user = models.ForeignKey(Users, null=True, blank=True,
                                  on_delete=models.CASCADE)
+    title = models.TextField(max_length=30, default="Review Title")
     description = models.TextField()
     date = models.DateField(auto_now_add=True, blank=False,
                             null=False)
 
     def __str__(self):
-        return self.name
+        return self.title

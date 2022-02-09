@@ -9,7 +9,7 @@
 </header>
 <form class="review-form" method="POST" action="{% url 'add_review' product.id %}">
     {% csrf_token %}
-    <div value="{{ product.name }}">{{ form.name | as_crispy_field }}</div>
+    {{ form.title | as_crispy_field }}
     {{ form.description | as_crispy_field }}
     <button class="btn btn-success" type="submit">Add review</button>
 </form>
