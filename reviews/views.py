@@ -1,18 +1,17 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.contrib import messages
+
 from products.models import Product
 from .models import ProductReview
-from django.contrib import messages
 from .forms import ProductReviewForm
 
 from profiles.models import Users
 
-# Create your views here.
-
 
 def product_reviews(request, product_id):
     """ Show product review form. """
-
-    reviews = ProductReview.objects.all()
+    product = get_object_or_404(Product, pk=product_id)
+    reviews = ProductReview.objects.get(name=product_id)
 
     context = {
         'reviews': reviews,
