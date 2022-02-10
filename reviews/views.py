@@ -8,17 +8,32 @@ from .forms import ProductReviewForm
 from profiles.models import Users
 
 
-def product_reviews(request, product_id):
+def product_reviews(request):
     """ Show product review form. """
-    product = get_object_or_404(Product, pk=product_id)
-    reviews = ProductReview.objects.get(name=product_id)
+    reviews = ProductReview.objects.all()
+
+    template =  'reviews/product_reviews.html'
 
     context = {
         'reviews': reviews,
     }
 
-    return render(request, 'product_reviews.html', context)
+    return render(request, template, context)
 
+
+def review_detail(request, product_review_id):
+    """ 
+    Show individual review
+    """
+    reviews = get_object_or_404(ProductReview, pk=product_review_id)
+
+    template = 'reviews/review_details.html'
+
+    context = {
+        'review': review,
+    }
+
+    return render(request, template, context)
 
 def add_review(request, product_id):
     """ 
