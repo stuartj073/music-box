@@ -12,9 +12,7 @@ def product_reviews(request, product_id):
     """ Show product review form. """
     product = get_object_or_404(Product, pk=product_id)
 
-    name = product.name
-
-    reviews = ProductReview.objects.get(name=name)
+    reviews = ProductReview.objects.filter(name=product)
 
     template =  'reviews/product_reviews.html'
 

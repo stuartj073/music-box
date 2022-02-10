@@ -6,6 +6,7 @@
 <hr>
 
 <div class="row">
+    <h2>{{ product.name }}</h2>
     {% if reviews %}
             {% for review in reviews %}
             <div class="col-12 col-md-6 col-lg-4">
@@ -16,12 +17,15 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ review.title }}</h5>
                         <p class="card-text">Created by: {{ review.user }}</p>
+                        <p class="card-text">Date by: {{ review.date }}</p>
                     </div>
                 </div>
             </div>
             {% endfor %}
         {% else %}
-        <p>Sorry, there are no reviews associated with this product yet.</p>
+        <div>
+            <p>Sorry, there are no reviews associated with this product yet.</p>
+        </div>
     {% endif %}
 </div>
 {% endblock %}
