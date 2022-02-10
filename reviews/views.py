@@ -8,9 +8,13 @@ from .forms import ProductReviewForm
 from profiles.models import Users
 
 
-def product_reviews(request):
+def product_reviews(request, product_id):
     """ Show product review form. """
-    reviews = ProductReview.objects.all()
+    product = get_object_or_404(Product, pk=product_id)
+
+    name = product.name
+
+    reviews = ProductReview.objects.get(name=name)
 
     template =  'reviews/product_reviews.html'
 
