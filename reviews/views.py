@@ -21,11 +21,11 @@ def product_reviews(request):
     return render(request, template, context)
 
 
-def review_detail(request, product_review_id):
+def review_detail(request, review_id):
     """ 
     Show individual review
     """
-    reviews = get_object_or_404(ProductReview, pk=product_review_id)
+    review = get_object_or_404(ProductReview, pk=review_id)
 
     template = 'reviews/review_details.html'
 
@@ -34,6 +34,7 @@ def review_detail(request, product_review_id):
     }
 
     return render(request, template, context)
+
 
 def add_review(request, product_id):
     """ 
@@ -51,6 +52,7 @@ def add_review(request, product_id):
             review.user = user 
             review.save()
             messages.success(request, "New product review created.")
+            return redirect(reverse('review_detail', args=[review.id]))
         else:
             messages.error(request, "Form invalid, please try again.")
             return redirect(reverse('product_details', args=[product.id]))
