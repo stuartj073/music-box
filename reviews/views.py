@@ -78,7 +78,7 @@ def edit_review(request, review_id):
     review = get_object_or_404(ProductReview, pk=review_id)
 
     if request.method == "POST":
-        form = ProductReview(request.POST, request.FILES, instance=review)
+        form = ProductReviewForm(request.POST, request.FILES, instance=review)
         if form.is_valid():
             form.save()
             messages.success(request, f"Successfully updated review.")
@@ -87,7 +87,7 @@ def edit_review(request, review_id):
             print("Form invalid")
             messages.error(request, f"Failed to update review.")
     else:
-        form = ProductReview()
+        form = ProductReviewForm(instance=review)
 
     template = 'reviews/edit_review.html'
 

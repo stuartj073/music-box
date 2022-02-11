@@ -114,7 +114,6 @@ def edit_product(request, product_id):
 
     if request.method == "POST":
         form = ProductForm(request.POST, request.FILES, instance=product)
-        print(form.errors)
         if form.is_valid():
             form.save()
             messages.success(request, f"Successfully updated {product.name}.")

@@ -53,6 +53,15 @@
     </select>
   </button>
 </div>
+
+<div>
+  <div class="category-list">
+    {% for category in categories %}
+    <p>{{ category.name }}</p>
+    {% endfor %}
+  </div>
+</div>
+
 <div class="row">
   {% for product in products %}
   <div class="col-12 col-md-6 col-lg-4">

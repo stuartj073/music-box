@@ -28,6 +28,10 @@ h1, h2, h3, h4, h5 {
     text-align:center;
 }
 
+.container-body {
+    margin: 0 auto;
+    width:60%;
+}
 
 /************************************* TITLE ***/
 
@@ -130,6 +134,20 @@ h1, h2, h3, h4, h5 {
 
 .card-details .form-control {
     width:80%;
+}
+
+.vl {
+    border-left: 6px solid green;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 0;
+  }
+
+.category-list {
+    margin:0 auto;
+    text-align:center;
 }
 
 /************************************* SEARCH BAR ***/

@@ -4,33 +4,36 @@
 <hr>
 <h1>Past Reviews</h1>
 <hr>
-
-<div class="row">
-    <h2>{{ product.name }}</h2>
-    {% if reviews %}
-            {% for review in reviews %}
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card" style="width: 18rem;">
-                    <a href="{% url 'review_detail' review.id %}">
-                        <img src="..." class="card-img-top" alt="...">
-                    </a>
-                    <div class="card-body">
-                        <h5 class="card-title">{{ review.title }}</h5>
-                        <p class="card-text">Created by: {{ review.user }}</p>
-                        <p class="card-text">Date by: {{ review.date }}</p>
+<div class="container">
+    <div class="container-body">
+        <div class="row">
+            <h2>{{ product.name }}</h2>
+            {% if reviews %}
+                    {% for review in reviews %}
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card" style="width: 18rem;">
+                            <a href="{% url 'review_detail' review.id %}">
+                                <img src="..." class="card-img-top" alt="...">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ review.title }}</h5>
+                                <p class="card-text">Created by: {{ review.user }}</p>
+                                <p class="card-text">Date by: {{ review.date }}</p>
+                            </div>
+                            <a href="{% url 'edit_review' review.id %}" class="btn btn-info">
+                                Edit review
+                                <i class="far fa-trash-alt"></i>
+                            </a>
+                        </div>
                     </div>
-                    <a href="{% url 'edit_review' review.id %}" class="btn btn-info">
-                        Edit review
-                        <i class="far fa-trash-alt"></i>
-                    </a>
+                    {% endfor %}
+                {% else %}
+                <div>
+                    <p>Sorry, there are no reviews associated with this product yet.</p>
                 </div>
-            </div>
-            {% endfor %}
-        {% else %}
-        <div>
-            <p>Sorry, there are no reviews associated with this product yet.</p>
+            {% endif %}
         </div>
-    {% endif %}
+    </div>
 </div>
 {% endblock %}
 

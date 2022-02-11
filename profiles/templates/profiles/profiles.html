@@ -43,17 +43,16 @@
     <h2>Your reviews</h2>
     <hr>
     <div class="row">
-            {% for review in reviews %}
-            <div class="col-12 col-md-6 col-lg-4 mb-8">
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p class="card-text">{{ review.title }}</p>
-                    </div>
+        {% for review in reviews %}
+        <div class="col-12 col-md-6 col-lg-4 mb-8">
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">{{ review.title }}</p>
                 </div>
             </div>
-            {% endfor %}
         </div>
+        {% endfor %}
     </div>
 </div>
 
