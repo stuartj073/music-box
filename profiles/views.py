@@ -7,11 +7,14 @@ from .forms import UserForm
 
 from checkout.models import Order
 
+from reviews.models import ProductReview
+
 # Create your views here.
 
 def profile(request):
     """ Display a user's profile. """
     profile = get_object_or_404(Users, user=request.user)
+    reviews = ProductReview.objects.filter(user=profile)
 
     if request.method == "POST":
         form = UserForm(request.POST, instance=profile)
@@ -30,6 +33,7 @@ def profile(request):
         'form': form,
         'on_profile': True,
         'orders': orders,
+        'reviews': reviews,
     }
 
     return render(request, template, context)
