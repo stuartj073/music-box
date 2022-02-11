@@ -278,6 +278,14 @@ h1, h2, h3, h4, h5 {
     height: 2px;
 }
 
+
+/************************************* FOOTER ***/
+
+footer p a:hover {
+    text-decoration: underline;
+}
+
+
 /************************************* BLOG FORM ***/
 
 .blog-form {
