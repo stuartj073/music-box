@@ -71,6 +71,34 @@ def add_review(request, product_id):
     return render(request, template, context)
 
 
+def edit_review(request, review_id):
+    """
+    Allow a user to edit their review
+    """
+    review = get_object_or_404(ProductReview, pk=review_id)
+
+    if request.method == "POST":
+        form = ProductReview(request.POST, request.FILES, instance=review)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f"Successfully updated review.")
+            return redirect(reverse('review_details', args=[review.id]))
+        else:
+            print("Form invalid")
+            messages.error(request, f"Failed to update review.")
+    else:
+        form = ProductReview()
+
+    template = 'reviews/edit_review.html'
+
+    context = {
+        'review': review,
+        'form': form,
+    }
+
+    return render(request, template, context)
+
+
 def review_details(request, productreview_id):
     """
     Show the individual review page of each item

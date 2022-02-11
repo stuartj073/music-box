@@ -55,7 +55,6 @@ def checkout(request):
             'postcode' : request.POST['postcode'],
         }
         order_form = OrderForm(form_data)
-        print(order_form.errors)
         if order_form.is_valid():
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
