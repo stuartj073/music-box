@@ -10,7 +10,7 @@ body {
     padding: 0px;
     overflow-x: hidden;
     display: table;
-    background-color: #f7eae9;
+    background-color: #f0e8e6;
     font-family: 'Junge', serif;
 }
 
@@ -32,6 +32,14 @@ h1, h2, h3, h4, h5 {
     margin: 0 auto;
     width:60%;
 }
+
+
+/************************************* HEADER ***/
+
+.header {
+    width:100%;
+}
+
 
 /************************************* TITLE ***/
 
@@ -283,6 +291,10 @@ h1, h2, h3, h4, h5 {
 
 footer p a:hover {
     text-decoration: underline;
+}
+
+footer {
+    border: .5px solid #495057;
 }
 
 
