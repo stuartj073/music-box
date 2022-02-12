@@ -99,7 +99,7 @@ h1, h2, h3, h4, h5 {
     margin: 0 auto;
     padding:10px;
     height:400px;
-    width:90%;
+    width:50%;
 }
 
 .alert {
@@ -228,7 +228,7 @@ h1, h2, h3, h4, h5 {
     -ms-flex-direction: column;
     flex-direction: column;
     min-width: 0;
-    width:85%;
+    width:50%;
     word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
@@ -236,6 +236,13 @@ h1, h2, h3, h4, h5 {
     border-radius: 0.25rem;
     padding:20px;
 } 
+
+.card-details-box {
+    position:relative;
+    width:80%;
+    height:80%;
+    border:1px solid black;
+}
 
 .card-details hr {
     color:black;
@@ -246,6 +253,8 @@ h1, h2, h3, h4, h5 {
 .card-details img {
     margin:0 auto;
     padding-bottom:20px;
+    height:50%;
+    width:50%;
 }
 
 .card-buttons a {
@@ -259,8 +268,6 @@ h1, h2, h3, h4, h5 {
 }
 
 .card-img {
-    height:400px;
-    width:400px;
     background-size:cover;
 }
 
