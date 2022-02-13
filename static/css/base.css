@@ -297,7 +297,7 @@ h1, h2, h3, h4, h5 {
     height: 150px;
     overflow: hidden;
     font-size: .875rem;
-    background-color: rgba(214, 204, 209, 0.8);
+    background-color: rgba(51, 47, 49, 0.83);
     background-clip: padding-box;
     border: 1px solid rgba(0,0,0,.1);
     box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 10%);

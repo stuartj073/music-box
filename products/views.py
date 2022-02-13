@@ -117,7 +117,7 @@ def edit_product(request, product_id):
         if form.is_valid():
             form.save()
             messages.success(request, f"Successfully updated {product.name}.")
-            return redirect(reverse('product_details', args=[product.id]))
+            return redirect(reverse('product_detail', args=[product.id]))
         else:
             print("Form invalid")
             messages.error(request, f"Failed to update product description.")
