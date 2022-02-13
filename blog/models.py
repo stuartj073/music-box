@@ -33,3 +33,15 @@ class Blog(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Comments(models.Model):
+    """ 
+    Allow users to comment on eachother's
+    blog posts
+    """
+    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
+    posted_by = models.ForeignKey(Users, on_delete=models.CASCADE)
+    date = models.DateField(auto_now=True)
+    comment = models.TextField()
+
