@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from .models import Topic, Blog
-from .forms import BlogForm
+from .models import Topic, Blog, Comments
+from .forms import BlogForm, CommentsForm
 from django.contrib import messages
 
 # Create your views here.
@@ -85,3 +85,30 @@ def blog_details(request, blog_id):
     }
 
     return render(request, 'blog/blog_detail.html', context)
+
+
+def blog_comment(request):
+    """ Allow user's to comment on blog posts """
+    blog = get_object_or_404(Blog, pk=blog_id)
+    if request.method == "POST":
+        comment_form = Comments(request.POST, request.FILES)
+        if comment_form.is_valid():
+            comment = comment_form.save()
+            comment.blog = blog
+            comment.posted_by = request.user
+            comment.save()
+            messages.success(request, "Comment saved")
+            return redirect(reverse('blog_details', args=[blog.id]))
+        else:
+            messages.error(request, "Something went wrong, please try again.")
+            return redirect('blog')
+    else:
+        comment_form = Comments()
+    
+    template = 'blog/blog_details.html'
+
+    context = {
+        'comment_form': comment_form,
+    }
+
+    return redirect(request, template, context)

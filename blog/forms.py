@@ -1,5 +1,5 @@
 from django import forms
-from .models import Topic, Blog
+from .models import Topic, Blog, Comments
 
 
 class BlogForm(forms.ModelForm):
@@ -13,4 +13,12 @@ class BlogForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
 
 
-        
+class CommentsForm(forms.ModelForm):
+    """ 
+    Create comments form using the comments
+    model 
+    """
+    class Meta:
+        model = Comments
+        fields = ('comment',)
+

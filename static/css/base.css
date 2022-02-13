@@ -355,6 +355,11 @@ footer {
     text-align:center;
 }
 
+.comment-form {
+    margin:0 auto;
+    text-align:center;
+}
+
 .form-field {
     margin:0 auto;
 }

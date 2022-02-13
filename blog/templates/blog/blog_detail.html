@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_filters %}
 {% block content %}
 <div class="card-details">
     <h1>{{ blog.name }}</h1>
@@ -9,5 +10,16 @@
     <p>{{ blog.subject }}</p>
     <p>{{ blog.category }}</p>
     <p>{{ blog.description }}</p>
+</div>
+
+<hr>
+<h5>Add a comment</h5>
+<hr>
+<div class="comment-form">
+    <form action="POST" class="mt-5 mb-5" href="{% url 'blog_comment' %}">
+        {% csrf_token %}
+        {{ comment_form.comment | as_crispy_field }}
+        <button class="btn btn-info" type="submit">Submit comment</button>
+    </form>
 </div>
 {% endblock %}

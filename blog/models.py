@@ -1,7 +1,6 @@
 from django.db import models
+from profiles.models import Users
 
-
-# Create your models here.
 
 class Topic(models.Model):
     """ Allow user to select a topic to blog about. """
