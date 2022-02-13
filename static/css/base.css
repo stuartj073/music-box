@@ -276,17 +276,60 @@ h1, h2, h3, h4, h5 {
 
 .message-container {
     position: fixed;
-    top: 72px;
-    left:20px;
+    top: 20%;
+    left:40%;
     z-index: 99999999999;
+    -webkit-animation: fadeinout 2s linear forwards;
+    animation: fadeinout 5s linear forwards;
+    opacity: 0;
+}
+
+@-webkit-keyframes fadeinout {
+    50% {opacity: 1;}
+}
+  
+@keyframes fadeinout {
+    50% {opacity: 1;}
+}
+
+.toast {
+    max-width: 200px;
+    height: 150px;
+    overflow: hidden;
+    font-size: .875rem;
+    background-color: rgba(214, 204, 209, 0.8);
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.1);
+    box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 10%);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    border-radius: 0.25rem;
+    background-color:green;
+}
+
+.message-body {
+    padding: 10px;
+    border: 2px solid grey;
+    height: 200px;
+    width: 300px;
+    background-color: rgba(214, 204, 209, 0.8);
+    color: white;
+    font-size: 2rem;
+    border-radius: 5px;
+    text-align:center;
+}
+
+.message-body:hover {
+    opacity: 0;
+}
+
+.message-body p {
+    font-size:3rem;
 }
 
 .toast .span {
     top:15px;
-}
-
-.custom-toast {
-    overflow: visible;
 }
 
 .toast-capper {
