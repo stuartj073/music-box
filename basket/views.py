@@ -52,7 +52,7 @@ def add_to_basket(request, item_id):
                               f'amount to {basket[item_id]}'))
         else:
             basket[item_id] = amount
-            messages.success(request, f'{product.name} has been added to your basket lakkkk.')
+            messages.success(request, f'{product.name} has been added to your basket.')
 
     print(amount)
     request.session['basket'] = basket

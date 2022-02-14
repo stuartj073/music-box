@@ -27,7 +27,6 @@ def add_blog(request):
         if form.is_valid():
             blog = form.save()
             messages.success(request, "Blog saved")
-            print("YAP")
             return redirect(reverse('blog_details', args=[blog.id]))
         else:
             print("Form invalid, please try again.")

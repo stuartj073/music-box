@@ -28,7 +28,7 @@ def cache_checkout_data(request):
         })
         return HttpResponse(status=200)
     except Exception as e:
-        messages.success(request, ('Sorry, your payment cannot be '
+        messages.error(request, ('Sorry, your payment cannot be '
                                  'processed right now. Please try '
                                  'again later.'))
         print("FORM FAILED")
@@ -81,7 +81,7 @@ def checkout(request):
                             )
                             order_line_item.save()
                 except Product.DoesNotExist:
-                    messages.success(request, (
+                    messages.error(request, (
                         "One of the products in your basket wasn't "
                         "found in our database.")
                     )
@@ -94,8 +94,7 @@ def checkout(request):
             return redirect(reverse('checkout_success',
                                     args=[order.order_number]))
         else:
-            messages.success(request, ('There was an error with your form.'))
-            print("FORM INVALID")
+            messages.error(request, ('There was an error with your form.'))
     else:
         basket = request.session.get('basket', {})
         if not basket:
@@ -114,7 +113,7 @@ def checkout(request):
         order_form = OrderForm()
     
     if not stripe_public_key:
-        messages.success(request, 'Stripe public key is missing. \
+        messages.error(request, 'Stripe public key is missing. \
             Check your environment variables.')
 
     template = 'checkout/checkout.html'
