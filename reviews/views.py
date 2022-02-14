@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 from products.models import Product
 from .models import ProductReview
@@ -71,6 +72,7 @@ def add_review(request, product_id):
     return render(request, template, context)
 
 
+@login_required
 def edit_review(request, review_id):
     """
     Allow a user to edit their review
