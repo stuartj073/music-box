@@ -61,8 +61,6 @@ h1, h2, h3, h4, h5 {
     text-align: right;
 }
 
-
-
 .title .navbar-brand {
    top:20px;
 }
@@ -246,6 +244,12 @@ form {
 .basket-list img {
     height:100%;
     width:100%;
+    object-fit: cover;
+}
+
+.basket {
+    margin:0 auto;
+    text-align: center;
 }
 
 
@@ -286,6 +290,7 @@ form {
     margin:0 auto;
     height:100%;
     width:100%;
+    object-fit: cover;
 }
 
 .card-buttons a {
@@ -296,6 +301,7 @@ form {
 
 .card-img-overlay {
     text-align:center;
+    object-fit: cover;
 }
 
 .card-img {
@@ -356,7 +362,7 @@ form {
     border: 2px solid grey;
     height: 200px;
     width: 300px;
-    background-color: rgba(214, 204, 209, 0.8);
+    background-color: rgba(209, 63, 5, 0.8);
     color: white;
     font-size: 2rem;
     border-radius: 5px;
@@ -368,7 +374,7 @@ form {
     border: 2px solid grey;
     height: 200px;
     width: 300px;
-    background-color: rgba(214, 204, 209, 0.8);
+    background-color: rgba(82, 80, 175, 0.8);
     color: white;
     font-size: 2rem;
     border-radius: 5px;
@@ -380,7 +386,7 @@ form {
     border: 2px solid grey;
     height: 200px;
     width: 300px;
-    background-color: rgba(214, 204, 209, 0.8);
+    background-color: rgba(236, 0, 0, 0.8);
     color: white;
     font-size: 2rem;
     border-radius: 5px;

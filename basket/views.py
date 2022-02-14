@@ -119,6 +119,7 @@ def remove_from_basket(request, item_id):
         else:
             basket.pop(item_id)
             messages.success(request, f'Removed {product.name} from your basket')
+            return redirect(reverse('basket'))
 
         request.session['basket'] = basket
         return HttpResponse(status=200)

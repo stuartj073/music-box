@@ -16,9 +16,9 @@
                 <div class="row">
                     <div class="col-8">
                         {% if basket_item.product.image_url %}
-                            <img src="{{ basket_item.product.image_url }}">
+                        <img src="{{ basket_item.product.image_url }}">
                         {% else %}
-                            <img src="{{ MEDIA_URL }}revolt-xGAG-yRP2PQ-unsplash.jpg">
+                        <img src="{{ MEDIA_URL }}revolt-xGAG-yRP2PQ-unsplash.jpg">
                         {% endif %}
                     </div>
                     <div class="col-4">
@@ -51,8 +51,12 @@
                                                     </span>
                                                 </button>
                                             </div>
-                                            <div>
-                                                <button type="submit">Update</button>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div>
+                                                        <button type="submit" class="btn btn-light mt-3">Update</button>
+                                                    </div>
+                                                </div>
                                             </div>
                                             {% if item.product.has_sizes %}
                                             <input type="hidden" name="product_size" value="{{ item.size }}">
@@ -66,7 +70,7 @@
                                     action="{% url 'remove_from_basket' basket_item.item_id %}">
                                     {% csrf_token %}
                                     <div>
-                                        <button type="submit">Remove</button>
+                                        <button type="submit" class="btn btn-danger">Remove</button>
                                     </div>
                                 </form>
                             </div>
@@ -118,11 +122,13 @@
             </div>
         </div>
         {% else %}
-        <div class="alert alert-dark" role="alert">
-            <p class="lead">
-                <strong>Your basket is empty. Click <a href="{% url 'products' %}">here</a> to find more
-                    products.</strong>
-            </p>
+        <div class="col-12">
+            <div class="alert alert-dark" role="alert">
+                <p class="lead">
+                    <strong>Your basket is empty. Click <a href="{% url 'products' %}">here</a> to find more
+                        products.</strong>
+                </p>
+            </div>
         </div>
         {% endif %}
     </div>
