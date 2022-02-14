@@ -1,8 +1,33 @@
-.past-order {
-    height:300px;
-    width:300px;
-    background-color: bisque;
-    border:1px solid gold;
+.order-details{
+    min-height:100px;
+    width:80%;
+    margin:10px auto;
+    background-color: rgb(216, 203, 187);
+    border:1px solid black;
     border-radius: 2px;
     text-align: center;
+}
+
+.past-order {
+    min-height:100px;
+    width:80%;
+    margin:10px auto;
+    background-color: rgb(228, 224, 218);
+    border:1px solid black;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.past-order p .total {
+    text-align: right;
+}
+
+.past-order p {
+    font-size: 1rem;
+    margin:10px;
+}
+
+.form {
+    margin: 10px auto;
+    width:80%;
 }
