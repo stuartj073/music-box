@@ -65,7 +65,10 @@ h1, h2, h3, h4, h5 {
 
 .title .navbar-brand {
    top:20px;
+}
 
+nav {
+    position: fixed;
 }
 
 .login {
@@ -196,6 +199,13 @@ form {
     height:50px;
     width:100%;
     text-align:center;
+    position:fixed;
+    z-index:10000000000;
+    right:1px;
+}
+
+.user .items a {
+    font-size:1.5rem;
 }
 
 .items {
@@ -205,6 +215,7 @@ form {
     height:50px;
     margin:5px auto;
     padding:5px;
+    right:0px;
 }
 
 .items i {
@@ -225,6 +236,16 @@ form {
 .total {
     width:40%;
     margin:0 auto;
+}
+
+.basket-list {
+    background-color:#495057;
+    color:white;
+}
+
+.basket-list img {
+    height:100%;
+    width:100%;
 }
 
 
@@ -318,7 +339,43 @@ form {
     background-color:green;
 }
 
-.message-body {
+.messages-success {
+    padding: 10px;
+    border: 2px solid grey;
+    height: 200px;
+    width: 300px;
+    background-color: rgba(214, 204, 209, 0.8);
+    color: white;
+    font-size: 2rem;
+    border-radius: 5px;
+    text-align:center;
+}
+
+.messages-warning {
+    padding: 10px;
+    border: 2px solid grey;
+    height: 200px;
+    width: 300px;
+    background-color: rgba(214, 204, 209, 0.8);
+    color: white;
+    font-size: 2rem;
+    border-radius: 5px;
+    text-align:center;
+}
+
+.messages-info {
+    padding: 10px;
+    border: 2px solid grey;
+    height: 200px;
+    width: 300px;
+    background-color: rgba(214, 204, 209, 0.8);
+    color: white;
+    font-size: 2rem;
+    border-radius: 5px;
+    text-align:center;
+}
+
+.messages-error {
     padding: 10px;
     border: 2px solid grey;
     height: 200px;
