@@ -1,25 +1,34 @@
 {% extends "base.html" %}
 {% load static %}
 {% load crispy_forms_filters %}
-{% block content %}
-<div class="card-details">
-    <h1>{{ blog.name }}</h1>
-    {% if product.image_url %}
-        <img src="{{ product.image_url }}" alt="product-image">
-    {% endif %}
-    <p>{{ blog.subject }}</p>
-    <p>{{ blog.category }}</p>
-    <p>{{ blog.description }}</p>
-</div>
 
-<hr>
-<h5>Add a comment</h5>
-<hr>
-<div class="comment-form">
-    <form action="POST" class="mt-5 mb-5" href="{% url 'blog_comment' %}">
-        {% csrf_token %}
-        {% form|crispy_form %}
-        <button class="btn btn-info" type="submit">Submit comment</button>
-    </form>
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card-details">
+            <h1>{{ blog.name }}</h1>
+            {% if product.image_url %}
+                <img src="{{ product.image_url }}" alt="product-image">
+            {% endif %}
+            <p>{{ blog.subject }}</p>
+            <p>{{ blog.category }}</p>
+            <p>{{ blog.description }}</p>
+        </div>
+    </div>
+    <div class="col-12">
+        <!-- <h2>Comments</h2> -->
+    </div>
+</div>
+<div class="col-12">
+    <hr>
+    <h5>Add a comment</h5>
+    <hr>
+    <div class="comment-form">
+        <form action="POST" class="mt-5 mb-5" href="{% url 'blog_comment' %}">
+            {% csrf_token %}
+            {{ comment_form.as_p }}
+            <button class="btn btn-info" type="submit">Submit comment</button>
+        </form>
+    </div>
 </div>
 {% endblock %}

@@ -264,7 +264,7 @@ form {
     -ms-flex-direction: column;
     flex-direction: column;
     min-width: 0;
-    width:70%;
+    width:60%;
     word-wrap: break-word;
     background-color: rgba(118, 92, 106, 0.3);
     background-clip: border-box;
