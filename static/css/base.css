@@ -136,6 +136,10 @@ h1, h2, h3, h4, h5 {
     width:0%;
 }
 
+.product-info {
+    margin: 30px auto;
+}
+
 .w-50 {
     margin:0 auto;
 }
@@ -178,6 +182,13 @@ h1, h2, h3, h4, h5 {
     text-align:center;
 }
 
+form {
+    margin:0 auto;
+}
+
+.form-row {
+    display:block;
+}
 
 /************************************* MESSAGES ***/
 
