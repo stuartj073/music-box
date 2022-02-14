@@ -90,7 +90,7 @@ def blog_comment(request):
     """ Allow user's to comment on blog posts """
     blog = get_object_or_404(Blog, pk=blog_id)
     if request.method == "POST":
-        comment_form = Comments(request.POST, request.FILES)
+        comment_form = CommentsForm(request.POST)
         if comment_form.is_valid():
             comment = comment_form.save()
             comment.blog = blog
@@ -102,7 +102,7 @@ def blog_comment(request):
             messages.error(request, "Something went wrong, please try again.")
             return redirect('blog')
     else:
-        comment_form = Comments()
+        comment_form = CommentsForm()
     
     template = 'blog/blog_details.html'
 

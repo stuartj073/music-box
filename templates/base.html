@@ -94,9 +94,13 @@
         </ul>
         <!-- Left links -->
       </div>
-      <div class="d-flex align-items-center">
+      <div class="d-flex align-items-center basket-profile">
         <!-- Icon -->
-        <a href="{% url 'basket' %}"><i class="fas fa-shopping-bag"></i></a>
+        <a href="{% url 'basket' %}"><i class="fas fa-shopping-bag"></i>
+        </a>
+        {% if basket %}
+          <p>€{{ checkout_total | floatformat:2 }}</p>
+        {% endif %}
         <a href="{% url 'profile' %}"><i class="fas fa-male"></i></a>
       </div>
       <!-- Right elements -->
@@ -188,9 +192,17 @@
     {% if messages %}
     <div class="message-container">
         {% for message in messages %}
-            {% with message.level as level %}
+          {% with message.level as level %}
+            {% if level == 40 %}
+                {% include 'includes/toasts/toast_error.html' %}
+            {% elif level == 30 %}
+                {% include 'includes/toasts/toast_warning.html' %}
+            {% elif level == 25 %}
                 {% include 'includes/toasts/toast_success.html' %}
-            {% endwith %}
+            {% else %}
+                {% include 'includes/toasts/toast_info.html' %}
+            {% endif %}
+          {% endwith %}
         {% endfor %}
     </div>
     {% endif %}

@@ -252,6 +252,17 @@ form {
     text-align: center;
 }
 
+.basket-profile a  {
+    font-size:3rem;
+    color:red;
+    padding-right:20px;
+    line-height: 10px;
+}
+
+.basket-profile p {
+    font-size: 1.5rem;
+}
+
 
 /************************************* PRODUCTS DETAILS ***/
 
