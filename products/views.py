@@ -53,9 +53,12 @@ def products(request):
 
     current_sorting = f'{sort}_{direction}'
 
+    categories = Category.objects.all()
+
     context = {
         'products': products,
         'search_term': query,
+        'categories': categories,
     }
     return render(request, 'products/products.html', context)
 
@@ -82,6 +85,7 @@ def records(request):
     return render(request, "products/records.html", context)
 
 
+@login_required
 def add_product(request):
     """ Present add product form to user based off the model. """
     if request.method == "POST":
@@ -107,6 +111,7 @@ def add_product(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_product(request, product_id):
     """ Allow user to update their own blog posts. """
 

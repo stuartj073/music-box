@@ -8,9 +8,10 @@
 {% endblock %}
 {% block content %}
 {% block page_header %}
-  <h2>Products</h2>
-  <hr>
 {% endblock %}
+<hr>
+<h1>Products</h1>
+<hr>
 <div class="search">
   <div class="center-search">
     <form method="GET" action="{% url 'products' %}">
@@ -25,7 +26,7 @@
 {% if search_term %}
   {% if products %}
     <div class="alert alert-light" role="alert">
-      <p class="lead"><strong>Search result</strong></p>
+      <p class="lead"><strong>The following item(s) were found.</strong></p>
     </div>
     {% else %}
     <div class="alert alert-dark" role="alert">
@@ -57,7 +58,12 @@
 <div>
   <div class="category-list">
     {% for category in categories %}
-    <p>{{ category.name }}</p>
+    <div>
+      <img class="card-img-top" src="{{ category.image }}" alt="category-image">
+      <div>
+        <p>{{ category.name }}</p>
+      </div>
+    </div>
     {% endfor %}
   </div>
 </div>
@@ -90,15 +96,13 @@
         </a>
         <div class="row">
           <div class="col-12 col-md-6">
-            <a href="{% url 'add_review' product.id %}" class="btn btn-info">
-              Add review
-              <i class="far fa-trash-alt"></i>
+            <a href="{% url 'add_review' product.id %}" class="mt-2 mb-2 btn btn-light">
+              Review
             </a>
           </div>
           <div class="col-12 col-md-6">
-            <a href="{% url 'product_reviews' product.id %}" class="btn btn-info">
-              See reviews
-              <i class="far fa-trash-alt"></i>
+            <a href="{% url 'product_reviews' product.id %}" class="mt-2 btn btn-warning">
+              Ratings
             </a>
           </div>
         </div>

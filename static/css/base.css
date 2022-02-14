@@ -228,13 +228,13 @@ h1, h2, h3, h4, h5 {
     -ms-flex-direction: column;
     flex-direction: column;
     min-width: 0;
-    width:50%;
+    width:70%;
     word-wrap: break-word;
-    background-color: #fff;
+    background-color: rgba(118, 92, 106, 0.3);
     background-clip: border-box;
     border: 1px solid rgba(0,0,0,.125);
     border-radius: 0.25rem;
-    padding:20px;
+    padding:10px;
 } 
 
 .card-details-box {
@@ -252,9 +252,8 @@ h1, h2, h3, h4, h5 {
 
 .card-details img {
     margin:0 auto;
-    padding-bottom:20px;
-    height:50%;
-    width:50%;
+    height:100%;
+    width:100%;
 }
 
 .card-buttons a {
