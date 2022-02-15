@@ -55,19 +55,12 @@
   </button>
 </div>
 
-<div>
+<h3 class="mt-10">Browse by category</h3>
   <div class="category-list">
     {% for category in categories %}
-      <div>
-        <img class="card-img-top" src="{{ category.image }}" alt="category-image">
-      </div>
-      <div>
-        <p><a href="#">{{ category.name }}</a></p>
-        <p>{{ category.friendly_name }}</p>
-      </div>
-      {% endfor %}
+      <a class="btn btn-info rounded-5">{{ category.friendly_name }}</a>
+    {% endfor %}
   </div>
-</div>
 
 <div class="row">
   {% for product in products %}

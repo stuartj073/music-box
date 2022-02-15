@@ -159,8 +159,13 @@ nav {
   }
 
 .category-list {
-    margin:0 auto;
+    margin:20px auto;
     text-align:center;
+}
+
+.category-list a {
+    margin:5px;
+    color:white;
 }
 
 /************************************* SEARCH BAR ***/
