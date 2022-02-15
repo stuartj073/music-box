@@ -33,14 +33,33 @@
 ## UX/UI
 
 ### Scope
-
+From the outset of this project, I drafted up possible features to be included. These were then compared against eachother in terms of overall practicality for every potential visitor to the site.
 
 
 #### Current Features
 
+The following features were included within the site:
 
+- Home page (with links to every part of the site)
+- Products page 
+- Interactive features
+- Search bar
+- Review feature
+- Blog feature 
+- All CRUD operations
+- Log in page
+- Register page
+- Profile page
+- Add product feature
+- Back to top button
+- Social links
+- About section
+- Shopping basket (available on every page - bar profile)
 
 #### Features left to implement
+
+- Direct messaging feature. Which allows user's to contact eachother regarding blog posts or products.
+- Shop coupons. Eventually, I would like to incorporate a shop 'coupons' feature that rewards active members and those that are making quite a lot of purchase orders. With the project only in it's inception I would prefer to leave this feature to a later time.
 
 
 ### Structure
