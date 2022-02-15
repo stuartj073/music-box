@@ -35,7 +35,7 @@
   {% endif %}
 {% endif %}
 
-<div class="product-buttons mx-auto">
+<div class="product-buttons mx-auto mb-10">
   <a href="{% url 'add_product' %}" class="btn btn-secondary">
     Add Product <i class="fas fa-pencil-alt"></i>
   </a>
@@ -66,12 +66,16 @@
   {% for product in products %}
   <div class="col-12 col-md-6 col-lg-4">
     <div class="card-details">
-      <div class="card-image">
+      <div class="card-image mb-5">
       {% if product.image_url %}
-        <a href="{% url 'product_detail' product.id %}"><img src="{{ product.image_url }}" alt="product-image"></a>
+        <a href="{% url 'product_detail' product.id %}">
+          <img src="{{ product.image_url }}" alt="product-image">
+        </a>
         {% else %}
-        <a href="{% url 'product_detail' product.id %}"><img class="card-img-top"
-            src="{{ MEDIA_URL }}revolt-xGAG-yRP2PQ-unsplash.jpg" alt="Default product image"></a>
+        <a href="{% url 'product_detail' product.id %}">
+          <img class="card-img-top"
+            src="{{ MEDIA_URL }}revolt-xGAG-yRP2PQ-unsplash.jpg" alt="Default product image">
+          </a>
         {% endif %}
       </div>
       <h5>{{ product.name }}</h5>
@@ -81,7 +85,7 @@
       {% if product.date %}
         <p>{{ product.date }}</p>
       {% endif %}
-      <p class="lead">{{ product.price }}</p>
+      <p class="lead">€{{ product.price }}</p>
       <hr>
       <div class="card-buttons">
         <a href="{% url 'delete_product' product.id %}"  class="btn btn-danger">
