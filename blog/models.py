@@ -33,17 +33,13 @@ class Blog(models.Model):
     category = models.ForeignKey(Topic, on_delete=models.CASCADE)
     description = models.TextField()
     slug = models.SlugField(max_length=200, unique=True)
-    user = models.ForeignKey(Users, on_delete=models.CASCADE)
     date = models.DateField(auto_now_add=True)
+    user = models.ForeignKey(Users, on_delete=models.CASCADE, default="")
     image = models.URLField(max_length=1024, null=True, blank=True)
 
     def __str__(self):
         return self.name
 
-
-@receiver(post_delete, sender=Blog)
-def submission_delete(sender, instance, **kwargs):
-    instance.image.delete(False)
 
 
 def pre_save_blog_post_receiver(sender, instance, *args, **kwargs):

@@ -82,42 +82,52 @@
             {% endfor %}
         </div>
         <div class="total">
-            <div class="row">
-                <div class="col-6">
-                    <h4>Bag total: </h4>
+            <div class="total-info">
+                <div class="row">
+                    <div class="col-6">
+                        <p>Bag total: </p>
+                    </div>
+                    <hr>
+                    <div class="col-6">
+                        <p><strong>€{{ total | floatformat:2 }}</strong></p>
+                    </div>
+                    <hr>
                 </div>
-                <div class="col-6">
-                    <h4>{{ total | floatformat:2 }}</h4>
+                <div class="row">
+                    {% if checkout_total > free_delivery_threshold %}
+                    <div class="col-6">
+                        <p>Devlivery Cost: </p>
+                    </div>
+                    <hr>
+                    <div class="col-6">
+                        <p><strong>FREE</strong></p>
+                    </div>
+                    <hr>
+                    {% else %}
+                    <div class="col-6">
+                        <p>Devlivery Cost: </p>
+                    </div>
+                    <hr>
+                    <div class="col-6">
+                        <p><strong>€{{ delivery | floatformat:2 }}</strong></p>
+                    </div>
+                    <hr>
+                    {% endif %}
                 </div>
-            </div>
-            <div class="row">
-                {% if checkout_total > free_delivery_threshold %}
-                <div class="col-6">
-                    <h4>Devlivery Cost: </h4>
+                <div class="row">
+                    <div class="col-6">
+                        <p>Checkout Total: </p>
+                    </div>
+                    <hr>
+                    <div class="col-6">
+                        <p><strong>€{{ checkout_total | floatformat:2 }}</strong></p>
+                    </div>
+                    <hr>
                 </div>
-                <div class="col-6">
-                    <h4>FREE</h4>
-                </div>
-                {% else %}
-                <div class="col-6">
-                    <h4>Devlivery Cost: </h4>
-                </div>
-                <div class="col-6">
-                    <h4>${{ delivery | floatformat:2 }}</h4>
-                </div>
-                {% endif %}
-            </div>
-            <div class="row">
-                <div class="col-6">
-                    <h4>Checkout Total: </h4>
-                </div>
-                <div class="col-6">
-                    <h4>${{ checkout_total | floatformat:2 }}</h4>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <a href="{% url 'checkout' %}">Proceed to checkout</a>
+                <div class="row">
+                    <div class="col-12">
+                        <a href="{% url 'checkout' %}" class="btn btn-secondary rounded-5">Proceed to checkout</a>
+                    </div>
                 </div>
             </div>
         </div>

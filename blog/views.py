@@ -23,11 +23,13 @@ def blog(request):
 def add_blog(request):
     """ Add blog to blogs page. """
     if request.method == "POST":
-        form = BlogForm(request.POST, request.FILES)
+        form = BlogForm(request.POST or None, request.FILES or None)
         if form.is_valid():
-            blog = form.save()
+            blog = form.save(commit=False)
+            blog.user = request.user
+            blog.save()
             messages.success(request, "Blog saved")
-            return redirect(reverse('blog_details', args=[blog.id]))
+            return redirect(reverse('blog_details', args=[blog.slug]))
         else:
             print("Form invalid, please try again.")
             return redirect('blog')
@@ -44,26 +46,27 @@ def add_blog(request):
     return render(request, template, context)
 
 
-def delete_blog(request, blog_id):
+def delete_blog(request, slug):
     """ Delete specific blog post for user. """
-    blog = get_object_or_404(Blog, pk=blog_id)
+    blog = Blog.objects.get(slug=slug)
     blog.delete()
+    messages.success("Blog deleted.")
     return redirect(reverse('blog'))
 
 
-def update_blog(request, blog_id):
+def update_blog(request, slug):
     """ Allow user to update their own blog posts. """
 
-    blog = get_object_or_404(Blog, pk=blog_id)
+    blog = Blog.objects.get(slug=slug)
 
     if request.method == "POST":
-        form = BlogForm(request.POST, request.FILES, instance=blog)
+        form = BlogForm(request.POST or None, request.FILES or None, instance=blog)
         if form.is_valid():
             form.save()
             messages.success(request, "Blog has been updated.")
-            return redirect(reverse('blog_details', args=[blog.id]))
+            return redirect(reverse('blog_details', args=[blog.slug]))
         else:
-            print("Form invalid")
+            messages.error("Form invalid, please try again.")
     else:
         form = BlogForm(instance=blog)
 
