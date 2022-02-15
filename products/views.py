@@ -73,16 +73,15 @@ def product_detail(request, product_id):
     return render(request, 'products/product_details.html', context)
 
 
-def records(request):
-    """ Returns all vinyl records from products. """
+# def browse_category(request, category_id):
+#     """ View all products in a genre """
+#     categories = Category.objects.filter(pk=category_id)
 
-    products = Product.objects.all()
+#     context = {
+#         'categories': categories,
+#     }
 
-    context = {
-        'product': products,
-    }
-
-    return render(request, "products/records.html", context)
+#     return render(request, 'products/products.html', context)
 
 
 @login_required

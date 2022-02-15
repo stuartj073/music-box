@@ -91,12 +91,17 @@ nav {
     padding: 20px;
 }
 
-.card img {
+.card-image {
+    height:500px;
+    width:100%;
+}
+
+/* .card img {
     margin: 0 auto;
     padding:10px;
     height:400px;
     width:50%;
-}
+} */
 
 .alert {
     text-align: center;
@@ -325,10 +330,6 @@ form {
 .card-img-overlay {
     text-align:center;
     object-fit: cover;
-}
-
-.card-img {
-    background-size:cover;
 }
 
 

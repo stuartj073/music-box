@@ -58,16 +58,14 @@
 <div>
   <div class="category-list">
     {% for category in categories %}
-    <div>
       <div>
         <img class="card-img-top" src="{{ category.image }}" alt="category-image">
       </div>
       <div>
-        <p>{{ category.name }}</p>
+        <p><a href="#">{{ category.name }}</a></p>
         <p>{{ category.friendly_name }}</p>
       </div>
-    </div>
-    {% endfor %}
+      {% endfor %}
   </div>
 </div>
 
@@ -75,12 +73,14 @@
   {% for product in products %}
   <div class="col-12 col-md-6 col-lg-4">
     <div class="card-details">
+      <div class="card-image">
       {% if product.image_url %}
-      <a href="{% url 'product_detail' product.id %}"><img src="{{ product.image_url }}" alt="product-image"></a>
-      {% else %}
-      <a href="{% url 'product_detail' product.id %}"><img class="card-img-top"
-          src="{{ MEDIA_URL }}revolt-xGAG-yRP2PQ-unsplash.jpg" alt="Default product image"></a>
-      {% endif %}
+        <a href="{% url 'product_detail' product.id %}"><img src="{{ product.image_url }}" alt="product-image"></a>
+        {% else %}
+        <a href="{% url 'product_detail' product.id %}"><img class="card-img-top"
+            src="{{ MEDIA_URL }}revolt-xGAG-yRP2PQ-unsplash.jpg" alt="Default product image"></a>
+        {% endif %}
+      </div>
       <h5>{{ product.name }}</h5>
       <hr>
       <p><a href="{% url 'products' %}?category={{ product.category.name }}">{{ product.category.friendly_name }}</a>
