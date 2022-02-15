@@ -7,7 +7,9 @@ class BlogForm(forms.ModelForm):
 
     class Meta:
         model = Blog
-        fields = '__all__'
+        fields = ['name', 'subject', 'category', 
+                  'description', 'image',]
+
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -20,8 +22,6 @@ class CommentsForm(forms.ModelForm):
     """
     class Meta:
         model = Comments
-        fields = ('comment',)
-    
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        fields = ['comment',]
+
 

@@ -75,20 +75,13 @@ def update_blog(request, blog_id):
     return render(request, 'blog/update_blog.html', context)
 
 
-def blog_details(request, blog_id):
+def blog_details(request, slug):
     """ Show each blog on its individual page. """
-    blog = get_object_or_404(Blog, pk=blog_id)
+    context = {}
+    blog = Blog.objects.get(slug=slug)
 
-    context = {
-        'blog': blog,
-    }
+    context['blog'] = blog
 
-    return render(request, 'blog/blog_detail.html', context)
-
-
-def blog_comment(request):
-    """ Allow user's to comment on blog posts """
-    blog = get_object_or_404(Blog, pk=blog_id)
     if request.method == "POST":
         comment_form = CommentsForm(request.POST)
         if comment_form.is_valid():
@@ -97,17 +90,43 @@ def blog_comment(request):
             comment.posted_by = request.user
             comment.save()
             messages.success(request, "Comment saved")
-            return redirect(reverse('blog_details', args=[blog.id]))
+            return redirect(reverse('blog_details', slug=blog.slug))
         else:
             messages.error(request, "Something went wrong, please try again.")
             return redirect('blog')
     else:
         comment_form = CommentsForm()
-    
-    template = 'blog/blog_details.html'
 
     context = {
-        'comment_form': comment_form,
+        'blog': blog,
+        'form': form,
     }
 
-    return redirect(request, template, context)
+    return render(request, 'blog/blog_detail.html', context)
+
+
+# def blog_comment(request):
+#     """ Allow user's to comment on blog posts """
+#     blog = get_object_or_404(Blog, pk=blog_id)
+#     if request.method == "POST":
+#         comment_form = CommentsForm(request.POST)
+#         if comment_form.is_valid():
+#             comment = comment_form.save()
+#             comment.blog = blog
+#             comment.posted_by = request.user
+#             comment.save()
+#             messages.success(request, "Comment saved")
+#             return redirect(reverse('blog_details', args=[blog.id]))
+#         else:
+#             messages.error(request, "Something went wrong, please try again.")
+#             return redirect('blog')
+#     else:
+#         comment_form = CommentsForm()
+    
+#     template = 'blog/blog_details.html'
+
+#     context = {
+#         'comment_form': comment_form,
+#     }
+
+#     return redirect(request, template, context)

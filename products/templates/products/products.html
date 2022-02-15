@@ -59,9 +59,12 @@
   <div class="category-list">
     {% for category in categories %}
     <div>
-      <img class="card-img-top" src="{{ category.image }}" alt="category-image">
+      <div>
+        <img class="card-img-top" src="{{ category.image }}" alt="category-image">
+      </div>
       <div>
         <p>{{ category.name }}</p>
+        <p>{{ category.friendly_name }}</p>
       </div>
     </div>
     {% endfor %}

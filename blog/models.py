@@ -1,6 +1,11 @@
 from django.db import models
 from profiles.models import Users
 
+from django.db.models.signals import pre_save
+from django.utils.text import slugify
+from django.db.models.signals import post_delete
+from django.dispatch import receiver
+
 
 class Topic(models.Model):
     """ Allow user to select a topic to blog about. """
@@ -27,11 +32,27 @@ class Blog(models.Model):
     subject = models.CharField(max_length=200)
     category = models.ForeignKey(Topic, on_delete=models.CASCADE)
     description = models.TextField()
+    slug = models.SlugField(max_length=200, unique=True)
+    user = models.ForeignKey(Users, on_delete=models.CASCADE)
     date = models.DateField(auto_now_add=True)
-    models.URLField(max_length=1024, null=True, blank=True)
+    image = models.URLField(max_length=1024, null=True, blank=True)
 
     def __str__(self):
         return self.name
+
+
+@receiver(post_delete, sender=Blog)
+def submission_delete(sender, instance, **kwargs):
+    instance.image.delete(False)
+
+
+def pre_save_blog_post_receiver(sender, instance, *args, **kwargs):
+    if not instance.slug:
+        instance.slug = slugify(
+            instance.user.username + "-" + instance.name)
+
+
+pre_save.connect(pre_save_blog_post_receiver, sender=Blog)
 
 
 class Comments(models.Model):
