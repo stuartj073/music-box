@@ -33,6 +33,10 @@ h1, h2, h3, h4, h5 {
     width:60%;
 }
 
+p {
+    text-align:center;
+}
+
 
 /************************************* HEADER ***/
 
@@ -184,6 +188,10 @@ nav {
    size:.5rem; 
 }
 
+.input-group-btn {
+    
+}
+
 
 /************************************* FORMS ***/
 
@@ -198,6 +206,10 @@ form {
 
 .form-row {
     display:block;
+}
+
+#signup_form {
+    text-align:center;
 }
 
 /************************************* MESSAGES ***/

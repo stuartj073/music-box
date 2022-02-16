@@ -44,6 +44,7 @@
     {% endblock %}
     <title>Music Box</title>
 </head>
+<body>
 <header>
     <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -188,7 +189,6 @@
         </div>
     </div> -->
 </header>
-<body>
     {% if messages %}
     <div class="message-container">
         {% for message in messages %}
@@ -210,8 +210,11 @@
     {% block page_header %}
     {% endblock %}
 
-    {% block content %}
-    {% endblock %}
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+    
 <!-- Footer -->
 <footer class="text-center text-lg-start bg-light mt-10">
     <hr>
@@ -261,3 +264,4 @@
     </script>
     {% endblock %}
 </body>
+</html>
