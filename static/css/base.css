@@ -369,7 +369,7 @@ form {
     z-index: 99999999999;
     -webkit-animation: fadeinout 2s linear forwards;
     animation: fadeinout 5s linear forwards;
-    opacity: 0;
+    opacity: 1;
 }
 
 @-webkit-keyframes fadeinout {
@@ -469,6 +469,23 @@ footer p a:hover {
 
 footer {
     border: .5px solid #495057;
+}
+
+/************************************* CHECKOUT ***/
+
+.checkout-details {
+    width:80%;
+    background-color: #495057;
+    border:1px solid #495057;
+    color:white;
+    padding:4px;
+    border-radius: 5px;
+    text-align: center;
+    margin:0 auto;
+}
+
+.checkout-details p {
+    font-size: 0.9rem;
 }
 
 

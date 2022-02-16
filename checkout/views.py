@@ -154,8 +154,7 @@ def checkout_success(request, order_number):
             user_profile_form = UserForm(profile_data, instance=profile)
             if user_profile_form.is_valid():
                 user_profile_form.save()
-    messages.success(request, f'Order successful! Your order number is {order_number}. \
-                     An email will be sent to {order.email} shortly.')
+    messages.success(request, f'Order successful!')
 
     if 'basket' in request.session:
         del request.session['basket']
