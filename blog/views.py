@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from .models import Topic, Blog, Comments
 from .forms import BlogForm, CommentsForm
 from django.contrib import messages
+from profiles.models import Users
 
 # Create your views here.
 
@@ -20,13 +22,15 @@ def blog(request):
     return render(request, "blog/blog.html", context)
 
 
+@login_required
 def add_blog(request):
     """ Add blog to blogs page. """
+    user = get_object_or_404(Users, user=request.user)
     if request.method == "POST":
         form = BlogForm(request.POST or None, request.FILES or None)
         if form.is_valid():
             blog = form.save(commit=False)
-            blog.user = request.user
+            blog.user = user
             blog.save()
             messages.success(request, "Blog saved")
             return redirect(reverse('blog_details', args=[blog.slug]))
@@ -46,6 +50,7 @@ def add_blog(request):
     return render(request, template, context)
 
 
+@login_required
 def delete_blog(request, slug):
     """ Delete specific blog post for user. """
     blog = Blog.objects.get(slug=slug)
@@ -54,6 +59,7 @@ def delete_blog(request, slug):
     return redirect(reverse('blog'))
 
 
+@login_required
 def update_blog(request, slug):
     """ Allow user to update their own blog posts. """
 
@@ -102,7 +108,7 @@ def blog_details(request, slug):
 
     context = {
         'blog': blog,
-        'form': form,
+        'comment_form': comment_form,
     }
 
     return render(request, 'blog/blog_detail.html', context)

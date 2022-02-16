@@ -132,13 +132,11 @@
             </div>
         </div>
         {% else %}
-        <div class="col-12">
-            <div class="alert alert-dark" role="alert">
-                <p class="lead">
-                    <strong>Your basket is empty. Click <a href="{% url 'products' %}">here</a> to find more
-                        products.</strong>
-                </p>
-            </div>
+        <div class="alert alert-dark" role="alert">
+            <p class="lead">
+                <strong>Your basket is empty. Click <a href="{% url 'products' %}">here</a> to find more
+                    products.</strong>
+            </p>
         </div>
         {% endif %}
     </div>

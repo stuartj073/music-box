@@ -44,8 +44,7 @@ class Blog(models.Model):
 
 def pre_save_blog_post_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:
-        instance.slug = slugify(
-            instance.user.username + "-" + instance.name)
+        instance.slug = slugify(f'{instance.user} - {instance.name}')
 
 
 pre_save.connect(pre_save_blog_post_receiver, sender=Blog)
