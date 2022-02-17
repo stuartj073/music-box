@@ -102,16 +102,15 @@ nav {
 }
 
 .card-image {
-    height:500px;
     width:100%;
 }
 
-/* .card img {
+.card-img-top {
     margin: 0 auto;
-    padding:10px;
-    height:400px;
-    width:50%;
-} */
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
 
 .alert {
     text-align: center;
@@ -311,21 +310,20 @@ form {
 /************************************* PRODUCTS DETAILS ***/
 
 .card-details {
-    margin: 10px auto;
+    margin: 5px auto;
     text-align: center;
     position: relative;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
-    min-width: 0;
-    width:60%;
+    width:90%;
     word-wrap: break-word;
     background-color: rgba(118, 92, 106, 0.3);
     background-clip: border-box;
     border: 1px solid rgba(0,0,0,.125);
     border-radius: 0.25rem;
-    padding:10px;
+    padding:5px;
 } 
 
 .card-details-box {
@@ -339,13 +337,6 @@ form {
     color:black;
     height:2px;
     
-}
-
-.card-details img {
-    margin:0 auto;
-    height:100%;
-    width:100%;
-    object-fit: cover;
 }
 
 .card-buttons a {
