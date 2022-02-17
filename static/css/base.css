@@ -12,7 +12,7 @@ body {
     display: table;
     background-color: #f1f2eb;
     font-family: 'Amatic SC', cursive;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 body > footer {
@@ -83,6 +83,10 @@ nav {
 
 nav a {
     color:#fff;
+}
+
+nav li a {
+    text-align: center;
 }
 
 .login {
