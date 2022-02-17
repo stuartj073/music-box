@@ -1,6 +1,6 @@
 /************************************* CORE ***/
 
-@import url('https://fonts.googleapis.com/css2?family=Junge&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Gloria+Hallelujah&family=Junge&display=swap');
 
 html,
 body {
@@ -11,7 +11,8 @@ body {
     overflow-x: hidden;
     display: table;
     background-color: #f1f2eb;
-    font-family: 'Junge', serif;
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.5rem;
 }
 
 body > footer {
@@ -70,12 +71,18 @@ p {
     text-align: right;
 }
 
-.title .navbar-brand {
-   top:20px;
-}
+
 
 nav {
     position: fixed;
+    background-color: #495057;
+    color:white;
+    font-family: 'Amatic SC', cursive;
+    font-size: 2rem;
+}
+
+nav a {
+    color:#fff;
 }
 
 .login {
