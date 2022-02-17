@@ -501,6 +501,22 @@ select#id_country {
     padding: 2px;
 }
 
+/************************************* STRIPE ***/
+
+.StripeElement, .stripe-style-input {
+    box-sizing: border-box;
+    height: 40px;
+    padding: 10px 12px;
+    max-width: 50%;
+    margin: 0 auto;
+    border: 1px solid transparent;
+    border-radius: 0px;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+}
+
 /************************************* BLOG FORM ***/
 
 .blog-form {
