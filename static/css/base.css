@@ -12,7 +12,7 @@ body {
     display: table;
     background-color: #f1f2eb;
     font-family: 'Amatic SC', cursive;
-    font-size: 1rem;
+    font-size: 1.3rem;
 }
 
 body > footer {
@@ -292,12 +292,19 @@ form {
 .basket-list {
     background-color:#495057;
     color:white;
+    border-radius: 5px;
 }
 
 .basket-list img {
     height:100%;
     width:100%;
     object-fit: cover;
+}
+
+.basket-image {
+    margin:1px;
+    border:1px solid #fff;
+    border-radius: 5px;
 }
 
 .basket {
@@ -490,6 +497,9 @@ footer {
     font-size: 0.9rem;
 }
 
+select#id_country {
+    padding: 2px;
+}
 
 /************************************* BLOG FORM ***/
 

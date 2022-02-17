@@ -13,14 +13,14 @@
             {% for basket_item in basket_items %}
             <div class="basket-list">
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-4">
                         {% if basket_item.product.image_url %}
                         <img src="{{ basket_item.product.image_url }}">
                         {% else %}
                         <img src="{{ MEDIA_URL }}revolt-xGAG-yRP2PQ-unsplash.jpg">
                         {% endif %}
                     </div>
-                    <div class="col-4">
+                    <div class="col-8">
                         <p class="lead mt-3">Product: {{ basket_item.product.name }}</p>
                         <p class="lead mt-3">€ {{ basket_item.product.price }}</p>
                         <p class="lead mt-3">Amount: {{ basket_item.quantity }}</p>
