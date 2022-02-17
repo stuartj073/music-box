@@ -2,11 +2,20 @@
 {% load static %}
 {% block content %}
 
-<div class="card-details">
-    <h1>{{ review.title }}</h1>
-    <p>{{ review.name }}</p>
-    <p>{{ review.description }}</p>
-    <p>{{ review.date }}</p>
+<div class="row">
+    <div class="col-12">
+        <div class="review mt-5 center-text">
+            <h1>{{ review.title }}</h1>
+            <p>{{ review.name }}</p>
+            <p>{{ review.description }}</p>
+            <p>{{ review.date }}</p>
+        </div>
+    </div>
+    <div class="col-12">
+        <a class="btn btn-info rounded-5" href="{% url 'products' %}">
+            <i class="fa-solid fa-arrow-left"></i> Back to products
+        </a>
+    </div>
 </div>
 
 {% endblock %}

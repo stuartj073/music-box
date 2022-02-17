@@ -188,6 +188,14 @@ nav li a {
     color:white;
 }
 
+
+/************************************* REVIEWS ***/
+
+.reviews {
+    width:60%;
+}
+
+
 /************************************* SEARCH BAR ***/
 
 .search-bar {
@@ -574,9 +582,17 @@ select#id_country {
     }
 }
 
-@media (max-width:700px) {
+@media (max-width:770px) {
     .past-order p {
         font-size: 0.5rem;
+    }
+
+    .card-details {
+        width:50%;
+    }
+
+    nav  {
+        text-align: center;
     }
 }
 
