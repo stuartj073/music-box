@@ -484,10 +484,6 @@ footer p a:hover {
     text-decoration: underline;
 }
 
-footer {
-    border: .5px solid #495057;
-}
-
 /************************************* CHECKOUT ***/
 
 .checkout-details {
