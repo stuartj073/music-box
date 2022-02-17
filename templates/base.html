@@ -237,7 +237,7 @@
               <a href="{% url 'blog' %}" class="text-reset">Blogs</a>
             </p>
             <p>
-              <a href="" class="text-reset">Back to top</a>
+              <a href="#" class="text-reset top-link">Back to top</a>
             </p>
           </div>
           <div class="col-12 col-md-6 mx-auto mb-md-0 mb-4">
@@ -261,6 +261,10 @@
     {% block postloadjs %}
     <script type="text/javascript">
         $('.toast').toast('show');
+
+        $('.top-link').click(function(e) {
+          window.scrollTo(0,0)
+        });
     </script>
     {% endblock %}
 </body>
