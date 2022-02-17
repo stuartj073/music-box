@@ -64,6 +64,19 @@ The following features were included within the site:
 
 ### Structure
 
+- The home (index) page will convey to the site visitor an immediate sense as to what the site is all about. The landing image which will show a musician at work amongst a plethora of different musical equipment along with the cover to the site which also contains a link to all products of the site.
+
+- Product page will show every product that is available to purchase on the website. Each product will have basic information about the good along with a link to see the reviews, the create review page and if the user created the good/is the superuser the edit and delete buttons will render also.
+
+- Individual product page will allow the customer to add the product to their shopping basket (along with how many of each said item).
+
+- The basket page will outline the contents in the bag allowing the customer the option to edit the quantity of each item as well as removing the item from the basket entirely.
+
+- Checkout page will render the payment form along with the amount the customer will have to pay. After successfully paying for the good the customer will be redirected to the payment success page which will outline a confirmation message.
+
+- The blog page allows customers to enter information about anything related to music. Each blog will be allowed to view on their individual blog page as well as the option to edit and delte if the appropriate user is logged in.
+
+
 
 ### Skeleton
 
