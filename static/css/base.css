@@ -84,6 +84,10 @@ nav li a {
     text-align: center;
 }
 
+path {
+    color:white;
+}
+
 .login {
     text-align: center;
     float:right;

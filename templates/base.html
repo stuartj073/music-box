@@ -63,6 +63,11 @@
               <li class="nav-item">
                   <a class="nav-link" href="{% url 'blog' %}">Blog</a>
               </li>
+              {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'account_logout' %}">Log out</a>
+              </li>
+              {% endif %}
           </ul>
           <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
             {% if user.is_authenticated %}
@@ -70,17 +75,24 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'basket' %}"><i class="fa-solid fa-bag-shopping"></i></a>
                 </li>
-              {% else %}
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'login' %}"><i class="fa-solid fa-bag-shopping"></i>Log in</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'signup' %}"><i class="fa-solid fa-bag-shopping"></i>Register</a>
-                </li>
+                <p class="my-2">
+                  {% if checkout_total %}
+                      €{{ checkout_total|floatformat:2 }}
+                  {% else %}
+                      €0.00
+                  {% endif %}
+                </p>
               {% endif %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'profile' %}"><i class="fa-solid fa-user"></i></a>
                 </li>
+            {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'account_login' %}">Log in</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'account_signup' %}"></i>Register</a>
+              </li>
             {% endif %}
           </ul>
       </div>
