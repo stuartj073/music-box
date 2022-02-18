@@ -85,28 +85,6 @@
         <a href="{% url 'products' %}?category={{ product.category.name }}">{{ product.category.friendly_name }}</a>
       </p>
       <p class="lead">€{{ product.price }}</p>
-      <!-- <div class="card-buttons">
-        {% if request.user.is_superuser %}
-          <a href="{% url 'delete_product' product.id %}"  class="btn btn-danger">
-            <i class="far fa-trash-alt"></i>
-          </a>
-          <a href="{% url 'edit_product' product.id %}" class="btn btn-info">
-            <i class="fa-solid fa-marker"></i>
-          </a>
-        {% endif %}
-        <div class="row">
-          <div class="col-12 col-md-6">
-            <a href="{% url 'add_review' product.id %}" class="mt-1 btn btn-light">
-              Review
-            </a>
-          </div>
-          <div class="col-12 col-md-6">
-            <a href="{% url 'product_reviews' product.id %}" class="mt-1 btn btn-warning">
-              Ratings
-            </a>
-          </div>
-        </div>
-      </div> -->
     </div>
   </div>
   {% endfor %}

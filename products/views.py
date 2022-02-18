@@ -73,15 +73,21 @@ def product_detail(request, product_id):
     return render(request, 'products/product_details.html', context)
 
 
-# def browse_category(request, category_id):
-#     """ View all products in a genre """
-#     categories = Category.objects.filter(pk=category_id)
+def product_cat(request, category_id):
+    """
+    Return all products associated with category
+    """
+    category = get_object_or_404(Category, pk=category_id)
+    products = Product.objects.filter(category=category)
 
-#     context = {
-#         'categories': categories,
-#     }
+    template = 'products/product.html'
 
-#     return render(request, 'products/products.html', context)
+    context = {
+        'category': category,
+        'products': products,
+    }
+
+    return render(request, template, context)
 
 
 @login_required
