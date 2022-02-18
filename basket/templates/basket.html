@@ -7,133 +7,41 @@
 <hr>
 <h1>Shopping bag</h1>
 <hr>
-    <div class="row">
-        <div class="col-12 col-md-6">
-            {% if basket_items %}
-            {% for basket_item in basket_items %}
-            <div class="basket-list">
-                <div class="row">
-                    <div class="col-4">
-                        {% if basket_item.product.image_url %}
-                        <img src="{{ basket_item.product.image_url }}">
-                        {% else %}
-                        <img src="{{ MEDIA_URL }}revolt-xGAG-yRP2PQ-unsplash.jpg">
-                        {% endif %}
-                    </div>
-                    <div class="col-8">
-                        <p class="lead mt-3">Product: {{ basket_item.product.name }}</p>
-                        <p class="lead mt-3">€ {{ basket_item.product.price }}</p>
-                        <p class="lead mt-3">Amount: {{ basket_item.quantity }}</p>
+    {% if basket_items %}
+        {% for basket_item in basket_items %}
+        <div class="basket-item">
+            <table>
+                <tbody>
+                    <tr>
                         <div class="row">
                             <div class="col-12">
-                                <form class="form update-form" method="POST"
-                                    action="{% url 'edit_basket' basket_item.item_id %}">
-                                    {% csrf_token %}
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <button class="decrement-qty btn btn-sm btn-black rounded-0"
-                                                    data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
-                                                    <span>
-                                                        <i class="fas fa-minus fa-sm"></i>
-                                                    </span>
-                                                </button>
-                                            </div>
-                                            <input class="form-control form-control-sm qty_input" type="number"
-                                                name="amount" value="{{ basket_item.quantity }}" min="1" max="99"
-                                                data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
-                                            <div class="input-group-append">
-                                                <button class="increment-qty btn btn-sm btn-black rounded-0"
-                                                    data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
-                                                    <span>
-                                                        <i class="fas fa-plus fa-sm"></i>
-                                                    </span>
-                                                </button>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <div>
-                                                        <button type="submit" class="btn btn-light mt-3">Update</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            {% if item.product.has_sizes %}
-                                            <input type="hidden" name="product_size" value="{{ item.size }}">
-                                            {% endif %}
-                                        </div>
-                                    </div>
-                                </form>
+                                <td class="item-image">
+                                    {% if basket_item.product.image_url %}
+                                        <img src="{{ basket_item.product.image_url }}" alt="basket_item-img">
+                                    {% else %}
+                                        <img src="{{ MEDIA_URL }}revolt-xGAG-yRP2PQ-unsplash.jpg" alt="default-item-img">
+                                    {% endif %}
+                                </td>
                             </div>
                             <div class="col-12">
-                                <form class="form update-form" method="POST"
-                                    action="{% url 'remove_from_basket' basket_item.item_id %}">
-                                    {% csrf_token %}
-                                    <div>
-                                        <button type="submit" class="btn btn-danger">Remove</button>
-                                    </div>
-                                </form>
+                                <td class="item-description">
+                                    <p class="lead">{{ basket_item.product.name }}</p>
+                                    <p class="lead">{{ basket_item.product.category }}</p>
+                                </td>
+                                <td class="item-total">
+                                    <p>X {{ basket_item.quantity }}</p>
+                                </td>
+                                <td class="item-total">
+                                    <p>€{{ basket_item.product.price }}</p>
+                                </td>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            {% endfor %}
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="col-12 col-md-6">
-            <div class="total">
-                <div class="total-info">
-                    <div class="row">
-                        <div class="col-6">
-                            <p>Bag total: </p>
-                        </div>
-                        <hr>
-                        <div class="col-6">
-                            <p><strong>€{{ total | floatformat:2 }}</strong></p>
-                        </div>
-                        <hr>
-                    </div>
-                    <div class="row">
-                        {% if checkout_total > free_delivery_threshold %}
-                        <div class="col-6">
-                            <p>Devlivery Cost: </p>
-                        </div>
-                        <hr>
-                        <div class="col-6">
-                            <p><strong>FREE</strong></p>
-                        </div>
-                        <hr>
-                        {% else %}
-                        <div class="col-6">
-                            <p>Devlivery Cost: </p>
-                        </div>
-                        <hr>
-                        <div class="col-6">
-                            <p><strong>€{{ delivery | floatformat:2 }}</strong></p>
-                        </div>
-                        <hr>
-                        {% endif %}
-                    </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <p>Checkout Total: </p>
-                        </div>
-                        <hr>
-                        <div class="col-6">
-                            <p><strong>€{{ checkout_total | floatformat:2 }}</strong></p>
-                        </div>
-                        <hr>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <a href="{% url 'checkout' %}" class="btn btn-secondary rounded-5">Proceed to checkout</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-        {% else %}
+        {% endfor %}
+    {% else %}
         <div class="row">
             <div class="col-12">
                 <div class="alert alert-dark" role="alert">
@@ -144,7 +52,7 @@
                 </div>
             </div>
         </div>
-        {% endif %}
+    {% endif %}
 {% endblock %}
 
 {% block postloadjs %}
