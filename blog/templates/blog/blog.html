@@ -11,7 +11,7 @@
 <div class="row">
 {% for blog in blogs %}
 <div class="col-12 col-md-6 col-lg-4">
-    <div class="card" style="width: 18rem;">
+    <div class="card mb-4" style="width: 18rem;">
         {% if not blog.image %}
             <a href="{% url 'blog_details' blog.id %}">
                 <img src="..." class="card-img-top" alt="blog-post">
