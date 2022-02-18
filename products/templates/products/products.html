@@ -85,7 +85,7 @@
         <a href="{% url 'products' %}?category={{ product.category.name }}">{{ product.category.friendly_name }}</a>
       </p>
       <p class="lead">€{{ product.price }}</p>
-      <div class="card-buttons">
+      <!-- <div class="card-buttons">
         {% if request.user.is_superuser %}
           <a href="{% url 'delete_product' product.id %}"  class="btn btn-danger">
             <i class="far fa-trash-alt"></i>
@@ -106,7 +106,7 @@
             </a>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
   {% endfor %}
