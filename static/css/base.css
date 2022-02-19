@@ -574,6 +574,10 @@ select#id_country {
     margin: 5px auto; 
 }
 
+.card path {
+    color:#495057;
+}
+
 @media (max-width:620px) {
     .form-control {
         max-width:100%;

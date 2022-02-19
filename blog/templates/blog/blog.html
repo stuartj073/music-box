@@ -12,13 +12,12 @@
 {% for blog in blogs %}
 <div class="col-12 col-md-6 col-lg-4">
     <div class="card mb-4" style="width: 18rem;">
-        {% if not blog.image %}
-            <a href="{% url 'blog_details' blog.slug %}">
-                <img src="..." class="card-img-top" alt="blog-post">
-            </a>
-        {% endif %}
         <div class="card-body">
-        <h5 class="card-title">{{ blog.title }}</h5>
+        <h5 class="card-title"><i class="fa-solid fa-book"></i>
+            <a href="{% url 'blog_details' blog.slug %}">
+                {{ blog.title }}
+            </a> 
+        </h5>
         <h5 class="card-title">Created by: {{ blog.user }}</h5>
         {% if user.is_authenticated %}
             <a href="{% url 'update_blog' blog.slug %}" class="btn btn-primary">Edit</a>

@@ -24,7 +24,7 @@
     <h5>Add a comment</h5>
     <hr>
     <div class="comment-form">
-        <form action="POST" class="mt-5 mb-5" href="">
+        <form action="." method="POST" class="mt-5 mb-5">
             {% csrf_token %}
             {{ form.as_p }}
             <button class="btn btn-info" type="submit">Submit comment</button>
