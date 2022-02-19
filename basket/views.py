@@ -1,12 +1,14 @@
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponse, reverse
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+
 from products.models import Product
 
 from basket.contexts import basket_contents
 
 # Create your views here.
 
-
+@login_required
 def basket(request):
     """ Show basket page for user. """
 
@@ -17,6 +19,7 @@ def basket(request):
     return render(request, "basket.html", context)
 
 
+@login_required
 def add_to_basket(request, item_id):
     """ View to add product and/or sizes to basket. """
 
@@ -61,6 +64,7 @@ def add_to_basket(request, item_id):
     return redirect(redirect_url)
 
 
+@login_required
 def edit_basket(request, item_id):
     """Edit the amount of any given product in the basket."""
 
@@ -101,6 +105,7 @@ def edit_basket(request, item_id):
     return redirect(reverse('basket'))
 
 
+@login_required
 def remove_from_basket(request, item_id):
     """Remove the item from the shopping basket"""
 
