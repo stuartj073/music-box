@@ -28,9 +28,8 @@ class Topic(models.Model):
 class Blog(models.Model):
     """ Allow users to create blog posts on all things music. """
 
-    name = models.CharField(max_length=200)
-    subject = models.CharField(max_length=200)
-    category = models.ForeignKey(Topic, on_delete=models.CASCADE)
+    title = models.CharField(max_length=50)
+    topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
     description = models.TextField()
     slug = models.SlugField(max_length=200, unique=True)
     date = models.DateField(auto_now_add=True)
@@ -44,7 +43,7 @@ class Blog(models.Model):
 
 def pre_save_blog_post_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:
-        instance.slug = slugify(f'{instance.user} - {instance.name}')
+        instance.slug = slugify(f'{instance.user} - {instance.title}')
 
 
 pre_save.connect(pre_save_blog_post_receiver, sender=Blog)

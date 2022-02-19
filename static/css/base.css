@@ -340,9 +340,7 @@ td.item-description {
     flex-direction: column;
     width:90%;
     word-wrap: break-word;
-    background-color: rgba(118, 92, 106, 0.3);
     background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
     border-radius: 0.25rem;
     padding:5px;
 } 
@@ -531,6 +529,12 @@ select#id_country {
     text-align:center;
 }
 
+.blog-entry {
+    width:70%;
+    margin:0 auto;
+    text-align: center;
+}
+
 .comment-form {
     margin:0 auto;
     text-align:center;
@@ -568,6 +572,12 @@ select#id_country {
     background-color: #28a745;
     border-color: #28a745;
     margin: 5px auto; 
+}
+
+@media (max-width:620px) {
+    .form-control {
+        max-width:100%;
+    }
 }
 
 

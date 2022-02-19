@@ -7,8 +7,7 @@ class BlogForm(forms.ModelForm):
 
     class Meta:
         model = Blog
-        fields = ['name', 'subject', 'category', 
-                  'description', 'image',]
+        exclude = ('slug', 'user',)
 
 
     def __init__(self, *args, **kwargs):
