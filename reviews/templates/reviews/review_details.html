@@ -3,11 +3,12 @@
 {% block content %}
 
 <div class="row">
-    <div class="col-12">
+    <div class="col-12 text-center">
         <div class="review mt-5 center-text">
             <h1>{{ review.title }}</h1>
             <p>{{ review.name }}</p>
             <p>{{ review.description }}</p>
+            <p>Created by: {{ review.user }}</p>
             <p>{{ review.date }}</p>
         </div>
     </div>
