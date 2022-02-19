@@ -126,6 +126,18 @@ path {
     width:50%;
 }
 
+.img {
+    height:80%;
+    width:80%;
+    padding:2px;
+    margin:0 auto;
+}
+
+.img img {
+    max-height:90%;
+    max-width:90%;
+}
+
 .card-body {
     text-align: center;
 }
@@ -179,6 +191,10 @@ path {
 .category-list a {
     margin:5px;
     color:white;
+}
+
+.card-details .product-info {
+    width:100%;
 }
 
 
@@ -296,6 +312,11 @@ form {
     color:grey;
     margin:0 auto;
     border-radius: 5px;
+    text-align: center;
+}
+
+.basket-item form {
+    text-align: center;
 }
 
 .item-image img {
@@ -600,9 +621,9 @@ select#id_country {
         font-size: 0.5rem;
     }
 
-    .card-details {
-        width:50%;
-    }
+    /* .card-details {
+        width:100%;
+    } */
 
     nav  {
         text-align: center;
