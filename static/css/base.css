@@ -347,6 +347,25 @@ td.item-description {
     font-size: 1.5rem;
 }
 
+.input-group {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    top: 30px;
+    width: 100%;
+}
+
+button#decrement-qty_, button#increment-qty_ {
+    background-color: black;
+    height: 30px;
+    top: 10px;
+    border-radius: 10px;
+}
+
 
 /************************************* PRODUCTS DETAILS ***/
 

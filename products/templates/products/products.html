@@ -85,6 +85,7 @@
         <a href="{% url 'products' %}?category={{ product.category.name }}">{{ product.category.friendly_name }}</a>
       </p>
       <p class="lead">€{{ product.price }}</p>
+      <a href="{% url 'remove_from_basket' item.id %}" class="btn btn-danger rounded-5" >Remove</a>
     </div>
   </div>
   {% endfor %}

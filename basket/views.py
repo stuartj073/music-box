@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404, HttpResponse, 
 from django.contrib import messages
 from products.models import Product
 
+from basket.contexts import basket_contents
+
 # Create your views here.
 
 
