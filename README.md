@@ -24,7 +24,7 @@
 ### As admin...
 
 - I want to have control over all user's actions on the site.
-- I want to ensure all infromation provided on the site is just and correct.
+- I want to ensure all information provided on the site is just and correct.
 - I want to control all content on the site.
 - I want to have the ability to remove users and/or their items if I deem the nature of them false/offensive in any way.
 
