@@ -7,7 +7,7 @@
 - I want to land on a site that makes sense immediately.
 - I want to be met with neat and presentable UX/UI.
 - To see the products and/or categories available to me for purchase.
-- See a written backgdrop to the site and the see the main ethos of the site.
+- See a written backdrop to the site and the see the main ethos of the site.
 - Have the option of signing up/ registering.
 - To scroll/navigate the site with ease.
 

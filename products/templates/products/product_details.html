@@ -23,7 +23,9 @@
             <div class="product-info">
                 <h4>{{ product.name }}</h4>
                 <p>{{ product.description }}</p>
-                <p>{{ product.condition }}</p>
+                {% if product.condition %}
+                    <p>Condition: {{ product.condition }}</p>
+                {% endif %}
                 <p>€ {{ product.price }}</p>
                 {% if product.date %}
                     <p>{{ product.date }}</p>
