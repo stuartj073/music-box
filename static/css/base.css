@@ -594,6 +594,14 @@ select#id_country {
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
+p a {
+    color:lightblue;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
 .btn-success-blog {
     color: #fff;
     background-color: #28a745;

@@ -19,7 +19,8 @@
         <!-- <h2>Comments</h2> -->
     </div>
 </div>
-<div class="col-12">
+{% if user.is_authenticated %}
+<div class="text-center">
     <hr>
     <h5>Add a comment</h5>
     <hr>
@@ -30,5 +31,8 @@
             <button class="btn btn-info" type="submit">Submit comment</button>
         </form>
     </div>
+{% else %}
+<p class="text-center"> <a href="{% url 'account_login' %}">Sign in</a> to leave reply in the thread!</p>
+{% endif %}
 </div>
 {% endblock %}
