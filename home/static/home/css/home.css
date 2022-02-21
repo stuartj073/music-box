@@ -14,7 +14,7 @@
 
 .landing-page {
     background-image: url('/media/avi-naim-GNuSRFAN9uY-unsplash.jpg');
-    height:100vh;
+    min-height:100vh;
     width:100%;
     background-size:cover;
     position:relative;
@@ -22,13 +22,15 @@
 }
 
 .cover {
-    background-color:#E8E8E8;
+    background-color:#96908d;
+    color:#fff;
     position:absolute;
-    width:50%;
-    top:50%;
-    height:200px;
-    left:25%;
+    padding:10px;
+    width:30%;
+    top:30%;
+    left:35%;
     text-align: center;
+    border-radius:10px;
 }
 
 .btn-primary {
@@ -70,4 +72,13 @@ h1 .cover {
 .center {
     width:50%;
     margin: 10px auto;
+}
+
+
+@media (max-width:1000px) {
+    .cover {
+        width:90%;
+        left:5%;
+        padding:10px;
+    }
 }

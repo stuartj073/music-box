@@ -105,7 +105,6 @@ def edit_basket(request, item_id):
     return redirect(reverse('basket'))
 
 
-@login_required
 def remove_from_basket(request, item_id):
     """Remove the item from the shopping basket"""
 

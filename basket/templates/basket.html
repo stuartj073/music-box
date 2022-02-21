@@ -56,15 +56,15 @@
                                     <div>
                                         <button type="submit" class="btn btn-light mt-3">Update</button>
                                     </div>
+                                    <a class="remove-item btn btn-danger rounded-5" id="remove_{{ item.item_id }}" data-size="{{ item.size }}">
+                                        Remove
+                                    </a>
                                     {% if item.product.has_sizes %}
                                     <input type="hidden" name="product_size" value="{{ item.size }}">
                                     {% endif %}
                                 </div>
                             </div>
                         </form>
-                        <a class="btn btn-danger rounded-5" href="{% url 'remove_from_basket' product.id %}">
-                            Remove
-                        </a>
                     </div>
                 </div>
             </div>
@@ -90,4 +90,25 @@
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/qty_input_script.html' %}
+<script type="text/javascript">
+    // Update the item quantity every reload
+    $('.update-link').click(function(e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+
+    // Remove relevant item and reload on click
+    $('.remove-item').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var size = $(this).data('size');
+        var url = `/basket/remove/${itemId}`;
+        var data = {'csrfmiddlewaretoken': csrfToken, 'size': size};
+
+        $.post(url, data)
+            .done(function() {
+                location.reload();
+            });
+    })
+</script>
 {% endblock %}
