@@ -5,7 +5,10 @@ from django.shortcuts import get_object_or_404
 from products.models import Product
 
 def basket_contents(request):
-    """ Basket context processor for all apps. """
+    """ 
+    Basket context processor made available
+    for all apps in project
+    """
     
     basket_items = []
     total = 0

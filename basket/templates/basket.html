@@ -56,11 +56,14 @@
                                     <div>
                                         <button type="submit" class="btn btn-light mt-3">Update</button>
                                     </div>
-                                    <a class="remove-item btn btn-danger rounded-5" id="remove_{{ item.item_id }}" data-size="{{ item.size }}">
+                                    <a class="remove-item btn btn-danger rounded-5" href="{% url 'remove_from_basket' basket_item.product.id %}">
                                         Remove
                                     </a>
+                                    <!-- <a class="remove-item btn btn-danger rounded-5" id="remove_{{ item.item_id }}" data-size="{{ item.size }}">
+                                        Remove
+                                    </a> -->
                                     {% if item.product.has_sizes %}
-                                    <input type="hidden" name="product_size" value="{{ item.size }}">
+                                        <input type="hidden" name="product_size" value="{{ item.size }}">
                                     {% endif %}
                                 </div>
                             </div>

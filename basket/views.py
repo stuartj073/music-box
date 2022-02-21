@@ -12,11 +12,7 @@ from basket.contexts import basket_contents
 def basket(request):
     """ Show basket page for user. """
 
-    context = {
-        'basket': basket,
-    }
-
-    return render(request, "basket.html", context)
+    return render(request, "basket.html")
 
 
 @login_required
