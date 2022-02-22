@@ -135,6 +135,7 @@ The following steps were taken in setting up heroku:
 
 1. Log in/ Register to heroku.
 2. Create a new app and fill in all relevant information. (This button is located on the top right of the screen after successfully logging in.)
+(/docs/readme/readme-images/heroku-part1.png)
 3. To configure the connection on gitpod a requirements.txt file has to be created. This can be accomplished by the following CLI command 'pip3 freeze > requirements.txt'.
 4. A Procfile must then be created with CLI command 'web: gunicorn music-box.wsgi:application'. Ensure there is no extra blank lines in the file as this can cause the file to be incorrectly read.
 5. If you have used the fixtures feature from django then the following command can load these files onto heroku. 'python3 manage.py loaddata files.json'.
@@ -145,9 +146,12 @@ The following steps were taken in setting up heroku:
 10. Create a separate superuser to be used on the deployed site.
 11. Return to the heroku site and relevant app name. Located the deploy tab for the app and navigate through to the method section choosing 'Github' as the option.
 12. Search for the github repositoray and connect.
-13. Enable automaic deploys.
+(/docs/readme/readme-images/heroku-part2.png)
+13. You can now either choose to automatically deploy or manually deploy. Automatic deploy will deploy the project as per every change that is pushed from git to your heroku app.
 14. Create a secret key varibale to be used for the env file and heroku configuration variables.
 15. Connect The AWS bucket to configuration variables with all relevant keys and values.
+(/docs/readme/readme-images/heroku-part3.png)
+
 
 ## Credits
 
