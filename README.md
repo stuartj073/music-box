@@ -152,6 +152,48 @@ The following steps were taken in setting up heroku:
 15. Connect The AWS bucket to configuration variables with all relevant keys and values.
 (/docs/readme/readme-images/heroku-part3.png)
 
+#### Amazon AWS
+The next step was to utilise a hosting platform for all media and static files for the site. For this project, I availed of Amazon AWS.
+
+Below are the following steps that were used in order to get Amazon AWS up and running:
+
+1. Register/sign in to the Amazon AWS service.
+2. Create a new bucket below the S3 services section found on the landing screen along with 
+choosing the closest region to you.
+3. Uncheck the block all public access option and then create bucket.
+4. In the properties tab enable the static website hosting option using the default values of index.html and errors.html.
+5. Set up the the CORS configuration tab as follows:
+(/docs/readme/readme-images/CORS.png)
+6. Create a security policy: S3 Bucket Policy allowing all principles by adding a '*' , Amazon S3 services and Get Object action. 
+7. Paste the ARN from your bucket policy and add a statement. Generate policy, copying and pasting into Bucket Policy adding '/*' at the end of the resource key to allow use of all pages.
+8. Under public access select access to all List Objects.
+9. Create a group for the bucket through IAM. 
+10. Create policy by importing AWS S3 Full Access and add ARN from bucket to the policy resources. Attach policy to the group.
+11. Create a user giving programmatic access and add user to the group. 
+12. Download the CSV file to save the access key ID and the secret access key to be added to the environment and configuration variables.
+13. Add AWS_STORAGE_BUCKET_NAME, AWS_S£_REGION_NAME = 'eu-west-2' to settings.py.
+14. Push changes to GitHub and check that all static files have been successfully implemented into the Build Log.
+15. DISABLE_COLLECTSTATIC can now be deleted.
+
+#### Email
+
+The next step involved connecting up an email account to the project to allow for automated email notifications for services such as signing up and site purchases.
+
+For this project, I utilised Gmails automated email service, the following steps were taken to ensure that the automated emails began sending:
+
+1. Change the DEFAULT_FROM_EMAIL value to your own email in settings.py.
+2. Log into your Gmail account and navigate to the settings page.
+(/docs/readme/readme-images/gmail-part1.png)
+3. Click 'Account and Imports' and choose 'other Google Account Settings.'
+(/docs/readme/readme-images/gmail-part2.png)
+4. Navigate to the security tab and select 'Signing in to Google.'
+(/docs/readme/readme-images/gmail-part3.png)
+5. Turn on the 2-step verification If you haven't and then click 'Get Started'.
+6. Sign in and verify your account turning on 2-step verification.
+7. Navigate back to 'Security' and go onto 'App Passwords'.
+8. Enter your password again and set App to 'mail', Device to 'other' and type in 'Django'.
+9. The following code that appears correlates to your 'EMAIL_HOST_PASS' and 'EMAIL_HOST_USER' variables. These are then added to the respective environment and configuration variables.
+
 
 ## Credits
 
