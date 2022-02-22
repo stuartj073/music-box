@@ -32,18 +32,17 @@
                     <td class="py-4">
                         <div class="item-description">
                             <p class="lead">{{ item.product.name }}</p>
-                            <p class="lead">{{ item.product.category }}</p>
                         </div>
                     </td>
-                    <td class="py-3 w-25">
+                    <td class="py-4 w-20">
                         <div class="item-description">
                             <p class="lead">€ {{ item.product.price }}</p>
                         </div>
                     </td>
-                    <td class="py-3">
+                    <td class="py-4 w-25">
                         <div class="item-total">
                             <form class="form update-form" method="POST"
-                                action="#">
+                                action="{% url 'edit_basket' item.product.id %}">
                                 {% csrf_token %}
                                 <div class="form-group">
                                     <div class="input-group">
@@ -70,9 +69,6 @@
                                         <div>
                                             <button type="submit" class="btn btn-light mt-2">Update</button>
                                         </div>
-                                        <!-- <a class="remove-item btn btn-danger mt-2 rounded-5" href="">
-                                            Remove
-                                        </a> -->
                                         <a class="remove-item btn btn-danger mt-2 rounded-5" id="remove_{{ item.item_id }}" data-size="{{ item.size }}">
                                             Remove
                                         </a>
@@ -84,7 +80,7 @@
                             </form>
                         </div>
                     </td>
-                    <td class="py-3">
+                    <td class="py-4">
                         <div class="item-description">
                             <p class="lead">€ {{ item.product.price | calc_subtotal:item.quantity }}</p>
                         </div>
