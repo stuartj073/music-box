@@ -199,8 +199,9 @@ path {
 
 /************************************* REVIEWS ***/
 
-.reviews {
+.review {
     width:60%;
+    margin: 0 auto;
 }
 
 

@@ -5,15 +5,15 @@
 <div class="row">
     <div class="col-12 text-center">
         <div class="review mt-5 center-text">
-            <h1>{{ review.title }}</h1>
-            <p>{{ review.name }}</p>
+            <h3>{{ review.title }}</h3>
+            <h4>{{ review.name }}</h4>
             <p>{{ review.description }}</p>
             <p>Created by: {{ review.user }}</p>
             <p>{{ review.date }}</p>
         </div>
     </div>
     <div class="col-12 text-center">
-        <a class="btn btn-info rounded-5" href="{% url 'products' %}">
+        <a class="btn btn-info rounded-5 mb-5" href="{% url 'products' %}">
             <i class="fa-solid fa-arrow-left"></i> Back to products
         </a>
     </div>
