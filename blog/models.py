@@ -37,7 +37,7 @@ class Blog(models.Model):
     image = models.URLField(max_length=1024, null=True, blank=True)
 
     def __str__(self):
-        return self.name
+        return self.title
 
 
 

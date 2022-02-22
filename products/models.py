@@ -13,7 +13,6 @@ class Category(models.Model):
 
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
-    image = models.ImageField(null=True, blank=False)
 
     def __str__(self):
         """ Return string representation of name. """

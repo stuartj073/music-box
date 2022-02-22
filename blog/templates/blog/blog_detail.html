@@ -3,8 +3,9 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
+
 <div class="row">
-    <div class="col-12">
+    <div class="col-12 col-md-6">
         <div class="blog-entry">
             <h1>{{ blog.title }}</h1>
             {% if product.image_url %}
@@ -15,22 +16,36 @@
             <p>Created by: {{ blog.user }}</p>
         </div>
     </div>
-    <div class="col-12">
-        <!-- <h2>Comments</h2> -->
+    <div class="col-12 col-md-6">
+        <h4><i>Thread</i></h4>
+    {% for comment in comments %}
+        {% if comments %}
+        <p>Comment</p>
+        {% else %}
+            {% if user.is_authenticated %}
+                <p class="lead">There are no comments here yet. Please find the form below to respond.</p>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
     </div>
 </div>
+
 {% if user.is_authenticated %}
-<div class="text-center">
-    <hr>
-    <h5>Add a comment</h5>
-    <hr>
-    <form action="." method="POST" class="mt-5 mb-5">
-        {% csrf_token %}
-        {{ comment_form|crispy }}
-        <button class="btn btn-info" type="submit">Submit comment</button>
-    </form>
-{% else %}
-<p class="text-center"> <a href="{% url 'account_login' %}">Sign in</a> to leave reply in the thread!</p>
-{% endif %}
+<div class="row">
+    <div class="col-12">
+        <div class="text-center">
+            <hr>
+            <h5>Add a comment</h5>
+            <hr>
+            <form action="." method="POST" class="mt-5 mb-5">
+                {% csrf_token %}
+                {{ comment_form|crispy }}
+                <button class="btn btn-info" type="submit">Submit comment</button>
+            </form>
+        {% else %}
+        <p class="text-center"> <a href="{% url 'account_login' %}">Sign in</a> to leave reply in the thread!</p>
+        {% endif %}
+        </div>
+    </div>
 </div>
 {% endblock %}
