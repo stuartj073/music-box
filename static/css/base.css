@@ -356,6 +356,10 @@ button#decrement-qty_, button#increment-qty_ {
     overflow-x: auto;
 }
 
+td.col {
+    width:10%;
+}
+
 
 /************************************* PRODUCTS DETAILS ***/
 
