@@ -11,7 +11,8 @@
     {% csrf_token %}
     {{ form.title | as_crispy_field }}
     {{ form.description | as_crispy_field }}
-    <button class="btn btn-success" type="submit">Add review</button>
+    <a class="btn btn-danger rounded-5" href="{% url 'products' %}">Cancel</a>
+    <button class="btn btn-success rounded-5" type="submit">Add review</button>
 </form>
 
 {% endblock %}

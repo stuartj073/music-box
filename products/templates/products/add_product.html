@@ -8,11 +8,9 @@
         {% for field in form %}
             {{ field | as_crispy_field }}
         {% endfor %}
-        <button>
-            <a class="btn btn-outline-black rounded-0" href="{% url 'products' %}">Cancel</a>
-        </button>
-        <button class="btn btn-black rounded-0" type="submit">
-            <a class="btn btn-outline-black rounded-0 btn-success-blog" type="submit">Add Product</a>
+        <a class="btn btn-danger rounded-5" href="{% url 'products' %}">Cancel</a>
+        <button class="btn btn-success rounded-5" type="submit">
+            Add Product
         </button>
     </form>
 </div>
