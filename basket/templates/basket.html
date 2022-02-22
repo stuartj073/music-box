@@ -9,18 +9,90 @@
 <hr>
 {% if basket_items %}
     <div class="row">
-        <table class="table-responsive rounded-5">
-            <thead class="table-active">
+        <div class="table-responsive rounded"> 
+            <table class="table table-borderless">
+                <thead class="table-active">
+                    <tr>
+                        <td class="col"></td>
+                        <td class="col">Info</td>
+                        <td class="col">Price</td>
+                        <td class="col">Qty</td>
+                        <td class="col">Subtotal</td>
+                    </tr>
+                </thead>
+                {% for item in basket_items %}
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="w-25 item-image">
+                        {% if basket_item.product.image_url %}
+                            <img src="{{ item.product.image_url }}" alt="basket_item-img">
+                        {% else %}
+                            <img src="{{ MEDIA_URL }}revolt-xGAG-yRP2PQ-unsplash.jpg" alt="default-item-img">
+                        {% endif %}
+                    </td>
+                    <td class="py-4">
+                        <div class="item-description">
+                            <p class="lead">{{ item.product.name }}</p>
+                            <p class="lead">{{ item.product.category }}</p>
+                        </div>
+                    </td>
+                    <td class="py-3 w-25">
+                        <div class="item-description">
+                            <p class="lead">€ {{ item.product.price }}</p>
+                        </div>
+                    </td>
+                    <td class="py-3">
+                        <div class="item-total">
+                            <form class="form update-form" method="POST"
+                                action="#">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button class="decrement-qty btn btn-sm btn-black rounded-0"
+                                                data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
+                                                <span>
+                                                    <i class="fas fa-minus fa-sm"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <input class="form-control form-control-sm qty_input" type="number"
+                                            name="amount" value="{{ item.quantity }}" min="1" max="99"
+                                            data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                                        <div class="input-group-append">
+                                            <button class="increment-qty btn btn-sm btn-black rounded-0"
+                                                data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                                <span>
+                                                    <i class="fas fa-plus fa-sm"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <br>                                
+                                        <div>
+                                            <button type="submit" class="btn btn-light mt-3">Update</button>
+                                        </div>
+                                        <a class="remove-item btn btn-danger rounded-5" href="#">
+                                            Remove
+                                        </a>
+                                        <!-- <a class="remove-item btn btn-danger rounded-5" id="remove_{{ item.item_id }}" data-size="{{ item.size }}">
+                                            Remove
+                                        </a> -->
+                                        {% if item.product.has_sizes %}
+                                            <input type="hidden" name="product_size" value="{{ item.size }}">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </td>
+                    <td class="py-3">
+                        <div class="item-description">
+                            <p class="lead">€ {{ item.product.price | calc_subtotal:item.quantity }}</p>
+                        </div>
+                    </td>
                 </tr>
-            </thead>
-            <tr>
-                
-            </tr>
-        </table>
+                {% endfor %}
+            </table>
+        </div>
 {% else %}
 <div class="row">
     <div class="col-12">

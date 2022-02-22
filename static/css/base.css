@@ -348,6 +348,13 @@ button#decrement-qty_, button#increment-qty_ {
     border-radius: 10px;
 }
 
+.table-responsive {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    overflow-x: auto;
+}
+
 
 /************************************* PRODUCTS DETAILS ***/
 
@@ -635,6 +642,15 @@ p a:hover {
 
     nav  {
         text-align: center;
+    }
+}
+
+@media (max-width:860px) {
+    .table-responsive {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+        overflow-x: auto;
     }
 }
 
