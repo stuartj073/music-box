@@ -101,15 +101,14 @@ def edit_review(request, review_id):
     return render(request, template, context)
 
 
-def review_details(request, productreview_id):
-    """
-    Show the individual review page of each item
-    """
-    review = get_object_or_404(ProductReview, pk=productreview_id)
+@login_required
+def delete_review(request, review_id):
+    """ Delete specific blog post for user. """
+    
+    review = get_object_or_404(ProductReview, pk=review_id)
 
-    context = {
-        'review': review,
-    }
-
-    return render(request, 'products/product_details.html', context)
+    review.delete()
+    
+    messages.success(request, "Review deleted")
+    return redirect(reverse('products'))
 
