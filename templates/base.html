@@ -61,7 +61,7 @@
                   <a class="nav-link" href="{% url 'products' %}">Products</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="{% url 'blog' %}">Blog</a>
+                  <a class="nav-link" href="{% url 'blogs' %}">Blog</a>
               </li>
               {% if user.is_authenticated %}
               <li class="nav-item">
@@ -138,7 +138,7 @@
               <a href="{% url 'products' %}" class="text-reset">Products</a>
             </p>
             <p>
-              <a href="{% url 'blog' %}" class="text-reset">Blogs</a>
+              <a href="{% url 'blogs' %}" class="text-reset">Blogs</a>
             </p>
             <p>
               <a href="#" class="text-reset top-link">Back to top</a>

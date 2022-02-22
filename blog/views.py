@@ -8,7 +8,7 @@ from profiles.models import Users
 # Create your views here.
 
 
-def blog(request):
+def blogs(request):
     """ Display all blog posts by users. """
 
     blogs = Blog.objects.all()
@@ -19,7 +19,7 @@ def blog(request):
         'topic': topic,
     }
 
-    return render(request, "blog/blog.html", context)
+    return render(request, "blog/blogs.html", context)
 
 
 @login_required
@@ -36,7 +36,7 @@ def add_blog(request):
             return redirect(reverse('blog_details', args=[blog.slug]))
         else:
             print("Form invalid, please try again.")
-            return redirect('blog')
+            return redirect('blogs')
     else:
         # No data submitted
         form = BlogForm()
@@ -55,8 +55,8 @@ def delete_blog(request, slug):
     """ Delete specific blog post for user. """
     blog = Blog.objects.get(slug=slug)
     blog.delete()
-    messages.success("Blog deleted.")
-    return redirect(reverse('blog'))
+    messages.success(request, "Blog deleted.")
+    return redirect(reverse('blogs'))
 
 
 @login_required
@@ -113,29 +113,3 @@ def blog_details(request, slug):
 
     return render(request, 'blog/blog_detail.html', context)
 
-
-# def blog_comment(request):
-#     """ Allow user's to comment on blog posts """
-#     blog = get_object_or_404(Blog, pk=blog_id)
-#     if request.method == "POST":
-#         comment_form = CommentsForm(request.POST)
-#         if comment_form.is_valid():
-#             comment = comment_form.save()
-#             comment.blog = blog
-#             comment.posted_by = request.user
-#             comment.save()
-#             messages.success(request, "Comment saved")
-#             return redirect(reverse('blog_details', args=[blog.id]))
-#         else:
-#             messages.error(request, "Something went wrong, please try again.")
-#             return redirect('blog')
-#     else:
-#         comment_form = CommentsForm()
-    
-#     template = 'blog/blog_details.html'
-
-#     context = {
-#         'comment_form': comment_form,
-#     }
-
-#     return redirect(request, template, context)
