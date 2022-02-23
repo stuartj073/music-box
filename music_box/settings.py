@@ -92,6 +92,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media', #  media files
                 'basket.contexts.basket_contents',  #  make bag context available to all apps
+                'products.contexts.categories',  #  so categories will be shown in nav throughout site
             ],
         },
     },
