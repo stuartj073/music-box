@@ -41,20 +41,17 @@
   <a href="{% url 'add_product' %}" class="btn btn-secondary rounded-5">
     Add Product <i class="fas fa-pencil-alt"></i>
   </a>
-  <button class="btn btn-secondary " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-    aria-expanded="false">
-    <select id="sort-selector">
-      <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort products by...</option>
-      <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
-      <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)
-      </option>
-      <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
-      <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
-      <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
-      <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)
-      </option>
-    </select>
-  </button>
+  <select id="sort-selector" class="form-select btn btn-secondary rounded-5 form-select-lg mx-auto" aria-label=".form-select-lg example">
+    <option selected>Sort products by</option>
+    <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+    <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)
+    </option>
+    <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+    <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+    <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
+    <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)
+    </option>
+  </select>
 </div>
 
 <h3 class="mt-10">Browse by category</h3>
