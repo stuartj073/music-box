@@ -73,18 +73,23 @@
             {% if user.is_authenticated %}
               {% if basket %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'basket' %}"><i class="fa-solid fa-bag-shopping"></i></a>
+                    <div>
+                      <a class="nav-link" href="{% url 'basket' %}"><i class="fa-solid fa-bag-shopping"></i></a>
+                    </div>
+                    <p class="my-0">
+                      {% if checkout_total %}
+                          €{{ checkout_total|floatformat:2 }}
+                      {% else %}
+                          €0.00
+                      {% endif %}
+                    </p>
                 </li>
-                <p class="my-2">
-                  {% if checkout_total %}
-                      €{{ checkout_total|floatformat:2 }}
-                  {% else %}
-                      €0.00
-                  {% endif %}
-                </p>
               {% endif %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'profile' %}"><i class="fa-solid fa-user"></i></a>
+                    <div>
+                      <a class="nav-link" href="{% url 'profile' %}"><i class="fa-solid fa-user"></i></a>
+                    </div>
+                    <p>Profile</p>
                 </li>
             {% else %}
               <li class="nav-item">

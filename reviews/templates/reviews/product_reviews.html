@@ -7,30 +7,25 @@
 
 <h2>{{ product.name }}</h2>
 {% if reviews %}
-<div class="row">
-    {% for review in reviews %}
-    <div class="col-12 col-md-6 col-lg-4">
-        <div class="card" style="width: 18rem;">
-            <a href="{% url 'review_detail' review.id %}">
-                <img src="..." class="card-img-top" alt="...">
-            </a>
-            <div class="card-body">
-                <h5 class="card-title">{{ review.title }}</h5>
-                <p class="card-text">Created by: {{ review.user }}</p>
-                <p class="card-text">Date by: {{ review.date }}</p>
+    <div class="row">
+        {% for review in reviews %}
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ review.title }}</h5>
+                        <p class="card-text">Created by: {{ review.user }}</p>
+                        <p class="card-text">Date by: {{ review.date }}</p>
+                    </div>
+                    <a href="{% url 'review_detail' review.id %}" class="btn btn-light rounded-5 mt-2 mb-2">
+                        More details
+                    </a>
+                </div>
             </div>
-            <a href="{% url 'edit_review' review.id %}" class="btn btn-info">
-                Edit review
-                <i class="far fa-trash-alt"></i>
-            </a>
+        {% endfor %}
+        {% else %}
+        <div class="text-center">
+            <p>Sorry, there are no reviews associated with this product yet.</p>
         </div>
     </div>
-    {% endfor %}
-    {% else %}
-    <div class="text-center">
-        <p>Sorry, there are no reviews associated with this product yet.</p>
-    </div>
-    {% endif %}
-</div>
-
+{% endif %}
 {% endblock %}

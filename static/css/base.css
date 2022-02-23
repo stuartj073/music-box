@@ -78,12 +78,25 @@ nav {
     font-size: 2rem;
 }
 
-nav a {
+li.nav-item {
+    margin: 10px;
+}
+
+nav li a {
     color:#fff;
+}
+
+a.navbar-brand.d-flex.w-50.mr-auto {
+    font-size: 2rem;
+    color: #fff;
 }
 
 nav li a {
     text-align: center;
+}
+
+.nav-link li a {
+    color:#fff;
 }
 
 path {
@@ -160,7 +173,6 @@ path {
 
 .card-details .btn-secondary {
     margin:5px auto;
-    width:0%;
 }
 
 .card-details h4 {
@@ -459,17 +471,30 @@ td.col {
     font-size: 2rem;
     border-radius: 5px;
     text-align:center;
-    -webkit-animation: fadeinout 2s linear forwards;
+    -webkit-animation: fadeinout .5s linear forwards;
     animation: fadeinout 5s linear forwards;
-    opacity: 1;
+    opacity: 0;
+    font-family: 'Amatic SC', cursive;
+    letter-spacing: 2px;
 }
 
 @-webkit-keyframes fadeinout {
-    50% {opacity: 1;}
+    10% {opacity: 0;}
 }
   
 @keyframes fadeinout {
     50% {opacity: 1;}
+}
+
+.tick {
+    top:200px;
+}
+
+.circle {
+    border-radius: 50%;
+    width: 60px;
+    background-color: #495057;
+    margin: 20px auto;
 }
 
 .messages-warning {
