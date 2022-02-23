@@ -629,6 +629,16 @@ select#id_country {
     margin:0 auto;
 }
 
+.comment {
+    width:50%;
+    background-color: #fff;
+    color:black;
+    border-radius: 20px;
+    text-align: center;
+    padding:15px;
+    margin:10px auto;
+}
+
 .form-control {
     display: inline;
     max-width: 50%;

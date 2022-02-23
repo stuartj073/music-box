@@ -29,12 +29,15 @@ class Blog(models.Model):
     """ Allow users to create blog posts on all things music. """
 
     title = models.CharField(max_length=50)
+    slug = models.SlugField(max_length=200, unique=True)
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
     description = models.TextField()
-    slug = models.SlugField(max_length=200, unique=True)
     date = models.DateField(auto_now_add=True)
     user = models.ForeignKey(Users, on_delete=models.CASCADE, default="")
     image = models.URLField(max_length=1024, null=True, blank=True)
+
+    class Meta:
+        ordering = ['-date']
 
     def __str__(self):
         return self.title
@@ -54,8 +57,11 @@ class Comments(models.Model):
     Allow users to comment on eachother's
     blog posts
     """
-    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
+    blog = models.ForeignKey(Blog, related_name="comments", on_delete=models.CASCADE)
     posted_by = models.ForeignKey(Users, on_delete=models.CASCADE)
     date = models.DateField(auto_now=True)
     comment = models.TextField()
+
+    def __str__(self):
+        return  self.blog.title
 

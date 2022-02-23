@@ -86,20 +86,22 @@ def update_blog(request, slug):
 
 def blog_details(request, slug):
     """ Show each blog on its individual page. """
-    context = {}
+    
     blog = Blog.objects.get(slug=slug)
+    user = get_object_or_404(Users, user=request.user)
+    context = {}
 
     context['blog'] = blog
 
     if request.method == "POST":
         comment_form = CommentsForm(request.POST)
         if comment_form.is_valid():
-            comment = comment_form.save()
-            comment.blog = blog
-            comment.posted_by = request.user
-            comment.save()
+            obj = comment_form.save(commit=False)
+            obj.blog = blog
+            obj.posted_by = user
+            obj.save()
             messages.success(request, "Comment saved")
-            return redirect(reverse('blog_details', slug=blog.slug))
+            return redirect('blog_details', slug=blog.slug)
         else:
             messages.error(request, "Something went wrong, please try again.")
             return redirect('blog')
