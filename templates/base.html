@@ -55,10 +55,15 @@
       <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
           <ul class="navbar-nav w-100 justify-content-center">
               <li class="nav-item active">
-                  <a class="nav-link" href="#">Home</a>
+                  <a class="nav-link" href="{% url 'index' %}">Home</a>
               </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="{% url 'products' %}">Products</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="{% url 'products' %}" role="button" aria-haspopup="true" aria-expanded="false">Products</a>
+                <div class="dropdown-menu">
+                  {% for category in categories %}
+                    <a class="dropdown-item" href="{% url 'products' %}?category={{ category.name }}">{{ category.friendly_name }}</a>
+                  {% endfor %}
+                </div>
               </li>
               <li class="nav-item">
                   <a class="nav-link" href="{% url 'blogs' %}">Blog</a>
