@@ -90,10 +90,16 @@
                     </td>
                 </tr>
                 {% endfor %}
-                <div class="text-center">
-                    <p class="lead">Basket total: € {{ checkout_total|floatformat:2 }} </p>
-                </div>
             </table>
+            <div class="text-center">
+                {% if checkout_total > free_delivery_threshold %}
+                    <p class="lead">Delivery: FREE </p>
+                {% else %}
+                    <p class="lead">Delivery: € {{ delivery|floatformat:2 }} </p>
+                    <p class="lead">Spend € {{ free_delivery_delta }} more for free delivery.</p>
+                {% endif %}
+                <p class="lead">Basket total: € {{ checkout_total|floatformat:2 }} </p>
+            </div>
         </div>
     </div>
     <div class="text-center">

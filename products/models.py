@@ -31,8 +31,6 @@ class Product(models.Model):
     name = models.CharField(max_length=254)
     description = models.TextField()
     condition = models.TextField()
-    date = models.DateField(auto_now_add=False, blank=True,
-                            null=True, editable=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     has_sizes = models.BooleanField(default=False, null=True, blank=True)

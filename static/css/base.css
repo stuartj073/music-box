@@ -231,6 +231,10 @@ path {
     width:80%;
 }
 
+.form-group button a {
+    display:inline;
+}
+
 .vl {
     border-left: 6px solid green;
     height: 500px;
@@ -479,6 +483,9 @@ td.col {
     width:10%;
 }
 
+.update-form form {
+    float:left;
+}
 
 /************************************* PRODUCTS DETAILS ***/
 

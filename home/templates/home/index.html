@@ -32,22 +32,4 @@
             </div>
         </div>
     </div>
-{% block postloadjs %}
-    {{ block.super }}
-    <script>
-        window.addEventListener('DOMContentLoaded', (event) => {
-        console.log('DOM fully loaded and parsed');
-        });
-        
-        function addToBag() {
-            btn = document.getElementsByTagName('button');
-
-            btn.addEventListener('click', function(){
-                console.log("hi");
-            });
-        }
-
-    </script>
-{% endblock %}
-
 {% endblock %}

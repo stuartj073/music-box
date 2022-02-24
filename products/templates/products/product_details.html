@@ -52,10 +52,6 @@
                     <p>Condition: {{ product.condition }}</p>
                 {% endif %}
                 <p>€ {{ product.price }}</p>
-                {% if product.date %}
-                    <p>{{ product.date }}</p>
-                {% endif %}
-
                 {% if user.is_authenticated %}
                     <form class="form" action="{% url 'add_to_basket' product.id %}" method="POST">
                         {% csrf_token %}
