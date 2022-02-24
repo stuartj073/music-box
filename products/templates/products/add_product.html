@@ -2,10 +2,12 @@
 {% load static %}
 {% load crispy_forms_filters %}
 {% block content %}
+<!-- Heading  -->
 <hr>
 <h1>Add product</h1>
 <hr>
-<div class="blog-form">
+<!-- Add product form  -->
+<div class="text-center">
     <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
         {% csrf_token %}
         {% for field in form %}
