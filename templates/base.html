@@ -79,7 +79,7 @@
               {% if basket %}
                 <li class="nav-item">
                     <div>
-                      <a class="nav-link" href="{% url 'basket' %}"><i class="fa-solid fa-bag-shopping"></i></a>
+                      <a class="nav-link" href="{% url 'basket' %}"><i class="fa-solid fa-bag-shopping"></i><sup>[{{ basket_item_count }}]</sup></a>
                     </div>
                     <p class="my-0">
                       {% if checkout_total %}

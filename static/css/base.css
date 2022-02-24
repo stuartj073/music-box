@@ -80,6 +80,13 @@ nav {
     font-size: 2rem;
 }
 
+sup {
+    top: -0.5em;
+    left: 10px;
+    color: #fff;
+    font-size: 2rem;
+}
+
 .dropdown-item {
     display: block;
     width: 100%;
