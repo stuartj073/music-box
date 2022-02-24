@@ -86,7 +86,7 @@ The following features were included within the site:
 
 
 ## Testing
-
+Testing can be found here [here](TESTING.md).
 
 ## Technologies used
 
