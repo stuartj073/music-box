@@ -15,6 +15,7 @@ def profile(request):
     """ Display a user's profile. """
     profile = get_object_or_404(Users, user=request.user)
     reviews = ProductReview.objects.filter(user=profile)
+    orders = profile.orders.all()
 
     if request.method == "POST":
         form = UserForm(request.POST, instance=profile)
@@ -25,7 +26,6 @@ def profile(request):
             messages.error(request, "Info not saved. Try again.")
     else:
         form = UserForm(instance=profile)
-    orders = profile.orders.all()
 
     template = 'profiles/profiles.html'
 

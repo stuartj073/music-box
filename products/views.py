@@ -73,23 +73,6 @@ def product_detail(request, product_id):
     return render(request, 'products/product_details.html', context)
 
 
-def product_cat(request, category_id):
-    """
-    Return all products associated with category
-    """
-    category = get_object_or_404(Category, pk=category_id)
-    products = Product.objects.filter(category=category)
-
-    template = 'products/product.html'
-
-    context = {
-        'category': category,
-        'products': products,
-    }
-
-    return render(request, template, context)
-
-
 @login_required
 def add_product(request):
     """ Present add product form to user based off the model. """

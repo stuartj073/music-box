@@ -522,13 +522,15 @@ td.col {
     top: 20%;
     left:40%;
     z-index: 99999999999;
+    min-width: 300px;
+    min-height: 200px;
 }
 
 .messages-success {
     padding: 10px;
     border: 2px solid grey;
-    height: 200px;
-    width: 300px;
+    min-height: 200px;
+    min-width: 300px;
     background-color: rgba(214, 204, 209, 1);
     color: white;
     font-size: 2rem;

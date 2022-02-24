@@ -16,6 +16,9 @@ class ProductReview(models.Model):
     date = models.DateField(auto_now_add=True, blank=False,
                             null=False)
 
+    class Meta:
+        ordering = ['-date']
+
     def __str__(self):
         return self.title
 

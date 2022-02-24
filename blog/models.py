@@ -62,6 +62,9 @@ class Comments(models.Model):
     date = models.DateField(auto_now=True)
     comment = models.TextField()
 
+    class Meta:
+        ordering = ['-date']
+
     def __str__(self):
         return  self.blog.title
 

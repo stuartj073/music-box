@@ -32,6 +32,9 @@ class Order(models.Model):
     stripe_pid = models.CharField(max_length=254, null=False, blank=False,
                                   default='')
 
+    class Meta:
+        ordering = ['-date']
+
     def _generate_order_number(self):
         """ Create unique order number. """
         return uuid.uuid4().hex.upper()
