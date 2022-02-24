@@ -8,13 +8,16 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
+
+<!-- Heading  -->
 <hr>
 <h1>Profile</h1>
 <hr>
 
-    <h2 class="mt-4 mb-4">Order History info</h2>
-    <div class="row">
-        {% for order in orders %}
+<!-- Past Orders  -->
+<h2 class="mt-4 mb-4">Order History info</h2>
+<div class="row">
+    {% for order in orders %}
         <div class="past-order text-center">
             <div class="row">
                 <div class="col-md-4">
@@ -33,43 +36,47 @@
                 </div>
             </div>
         </div>
-        {% endfor %}
-    </div>
-    <hr>
-    <h2>Your reviews</h2>
-    <hr>
-    <div class="row">
-        {% for review in reviews %}
+    {% endfor %}
+</div>
+<hr>
+
+<!-- Past reviews  -->
+<h2>Your reviews</h2>
+<hr>
+<div class="row">
+    {% for review in reviews %}
         <div class="col-12 col-md-6 col-lg-4 mb-8">
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h4 class="card-text mb-4"><strong><i>
-                        <a href="{% url 'review_detail' review.id %}">
-                            {{ review.name }}
-                        </a></i></strong>
+                                <a href="{% url 'review_detail' review.id %}">
+                                    {{ review.name }}
+                                </a></i></strong>
                     </h4>
                     <p class="card-text mb-4">{{ review.title }}</p>
                     <div class="row">
                         <div class="col-md-6">
                             <p class="card-text">Posted on: </p>
                         </div>
-                        <div class="col-md-6"> 
+                        <div class="col-md-6">
                             <p class="card-text">{{ review.date }}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        {% endfor %}
-    </div>
-    <hr>
-    <h2 class="mt-4 mb-4">Shipping info</h2>
-    <hr>
-    <div class="form">         
-        <form action="{% url 'profile' %}" method="POST" class="mt-5 mb-5">
-            {% csrf_token %}
-            {{ form|crispy }}
-            <button type="submit" class="btn btn-info">Update information</button>
-        </form>
-    </div>
+    {% endfor %}
+</div>
+<hr>
+
+<!-- Shipping details  -->
+<h2 class="mt-4 mb-4">Shipping info</h2>
+<hr>
+<div class="form">
+    <form action="{% url 'profile' %}" method="POST" class="mt-5 mb-5">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-info">Update information</button>
+    </form>
+</div>
 {% endblock %}
