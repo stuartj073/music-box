@@ -84,6 +84,27 @@ The 'i' closing tag was removed from the Register link.
 The button element was removed from the 'see our products' link leaving only the anchor tag along with it's styling.
 The type attribute from the script tags were also removed.
 
+2. Products/shop page
+![Remember me](/docs/readme/testing/home-page.png)
+
+- The products page displayed the same javascript 'type' attribute error as the home page. This was removed and the error was then eradicated.
+
+3. Add product page
+![Remember me](/docs/readme/testing/add-product.png)
+
+4. Product details page
+![Remember me](/docs/readme/testing/product-details.png)
+
+5. Edit product page
+![Remember me](/docs/readme/testing/edit-product.png)
+
+6. Product reviews
+![Remember me](/docs/readme/testing/product-reviews.png)
+- The 'h2' heading was removed for the empty heading warning.
+The extra closing 'section' tag was removed.
+
+
+
 
 
 
