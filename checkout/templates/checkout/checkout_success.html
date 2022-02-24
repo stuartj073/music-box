@@ -48,13 +48,5 @@
         Click <a href="{% url 'products' %}">here</a> to return to the products page
     </h5>
 </div>
-
-
-{% for item in order.lineitems.all %}
-<div class="row">
-    <div class="col-12">
-        <h6>{{ item.product_name }}</h6>
-    </div>
-</div>
 {% endfor %}
 {% endblock %}

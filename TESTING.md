@@ -76,7 +76,7 @@ Admin privelleges include the overall control of all content created and uploade
 I utlised the W3C validator to ensure every page on the site was up to standard and that there was no html errors left unturned.
 
 1. Home page
-![Remember me](/docs/readme/testing/home-page.png)
+![Home](/docs/readme/testing/home-page.png)
 
 - The home page encompassed a few errors upon being passed into the validator.
 Firstly, the href attribute for the categories page under the products nav link was throwing an error due to a space in the href. This was fixed by changing the href links to be that of the 'friendly_name' of the categories.
@@ -85,30 +85,45 @@ The button element was removed from the 'see our products' link leaving only the
 The type attribute from the script tags were also removed.
 
 2. Products/shop page
-![Remember me](/docs/readme/testing/home-page.png)
+![Products](/docs/readme/testing/home-page.png)
 
 - The products page displayed the same javascript 'type' attribute error as the home page. This was removed and the error was then eradicated.
 
 3. Add product page
-![Remember me](/docs/readme/testing/add-product.png)
+![Add product](/docs/readme/testing/add-product.png)
 
 4. Product details page
-![Remember me](/docs/readme/testing/product-details.png)
+![Product details](/docs/readme/testing/product-details.png)
 
 5. Edit product page
-![Remember me](/docs/readme/testing/edit-product.png)
+![Edit product](/docs/readme/testing/edit-product.png)
 
 6. Product reviews
-![Remember me](/docs/readme/testing/product-reviews.png)
+![Product reviews](/docs/readme/testing/product-reviews.png)
 - The 'h2' heading was removed for the empty heading warning.
 The extra closing 'section' tag was removed.
 
+7. Individual Review
+![Ind review](/docs/readme/testing/ind-review.png)
 
+8. Edit review
+![Edit review](/docs/readme/testing/edit-review.png)
 
+9. Blogs
+![Blogs](/docs/readme/testing/blogs.png)
 
+10. Update Blog
+![update blog](/docs/readme/testing/update-blog.png)
 
+10. Basket
+![Basket](/docs/readme/testing/basket.png)
 
+11. Checkout
+![Checkout](/docs/readme/testing/checkout.png)
 
+12. Checkout success
+![Checkout success](/docs/readme/testing/checkout-success.png)
+- This error was in relation to a heading I had copied over from another template in reference to a product object which had not been defined in the checkout success view and thus rendered an empty h6 heading. The heading was removed.
 
 
 

@@ -8,8 +8,8 @@
     <div class="col-12 col-md-6">
         <div class="blog-entry">
             <h1 class="mt-5 mb-2">{{ blog.title }}</h1>
-            {% if product.image_url %}
-                <img src="{{ product.image_url }}" alt="product-image">
+            {% if blog.image_url %}
+                <img src="{{ blog.image_url }}" alt="product-image">
             {% endif %}
             <p>{{ blog.topic }}</p>
             <p>{{ blog.description }}</p>
@@ -51,19 +51,19 @@
         <h4 class="mt-5 mb-4">Responses!</h4>
         <div class="comment-container">
             {% if blog.comments.all %}
-            {% for comment in blog.comments.all %}
-            <div class="comment">
-                <p>{{ comment.comment }}</p>
-                <hr>
-                <p>{{ comment.posted_by }}</p>
-                <p>{{ comment.date }}</p>
-            </div>
-            {% endfor %}
-        {% else %}
-        <div class="text-center">
-            <p class="lead">There are no comments here yet.<br> Please find the form below to respond.</p>
-        </div>
-        {% endif %}
+                {% for comment in blog.comments.all %}
+                    <div class="comment">
+                        <p>{{ comment.comment }}</p>
+                        <hr>
+                        <p>{{ comment.posted_by }}</p>
+                        <p>{{ comment.date }}</p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="text-center">
+                    <p class="lead">There are no comments here yet.<br> Please find the form below to respond.</p>
+                </div>
+            {% endif %}
         </div>
     </div>
 </div>
