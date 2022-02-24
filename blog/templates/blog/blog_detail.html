@@ -48,18 +48,21 @@
         </div>
     </div>
     <div class="col-12 col-md-6">
-        <h4 class="mt-5 mb-4"><i>Thread</i></h4>
+        <h4 class="mt-5 mb-4">Thread</h4>
         <div class="comment-container">
             {% if blog.comments.all %}
             {% for comment in blog.comments.all %}
             <div class="comment">
                 <p>{{ comment.comment }}</p>
+                <hr>
                 <p>{{ comment.posted_by }}</p>
                 <p>{{ comment.date }}</p>
             </div>
             {% endfor %}
         {% else %}
-            <p class="lead">There are no comments here yet. Please find the form below to respond.</p>
+        <div class="text-center">
+            <p class="lead">There are no comments here yet.<br> Please find the form below to respond.</p>
+        </div>
         {% endif %}
         </div>
     </div>

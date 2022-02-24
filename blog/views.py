@@ -64,18 +64,16 @@ def update_blog(request, slug):
     """ Allow user to update their own blog posts. """
 
     blog = Blog.objects.get(slug=slug)
-    user=request.user
 
     if request.method == "POST":
         form = BlogForm(request.POST or None, request.FILES or None, instance=blog)
-        if user == blog.user:
-            if form.is_valid():
-                obj = form.save(commit=False)
-                obj.save()
-                messages.success(request, "Blog has been updated.")
-                return redirect(reverse('blog_details', args=[obj.slug]))
-            else:
-                messages.error("Form invalid, please try again.")
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.save()
+            messages.success(request, "Blog has been updated.")
+            return redirect(reverse('blog_details', args=[obj.slug]))
+        else:
+            messages.error("Form invalid, please try again.")
     else:
         form = BlogForm(instance=blog)
 

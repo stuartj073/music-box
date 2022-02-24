@@ -711,6 +711,7 @@ select#id_country {
     text-align: center;
     padding:15px;
     margin:10px auto;
+    border:.5px solid #495057;
 }
 
 .form-control {
