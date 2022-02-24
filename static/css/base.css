@@ -418,6 +418,10 @@ form {
     text-align: center;
 }
 
+.update-form .input-group {
+    display: flex;
+}
+
 .basket-item form {
     text-align: center;
 }

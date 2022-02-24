@@ -64,14 +64,17 @@
                                                     <i class="fas fa-plus fa-sm"></i>
                                                 </span>
                                             </button>
-                                        </div>
-                                        <br>                                
-                                        <div>
-                                            <button type="submit" class="btn btn-light mt-2">Update</button>
-                                        </div>
-                                        <a class="remove-item btn btn-danger mt-2 rounded-5" id="remove_{{ item.item_id }}" data-size="{{ item.size }}">
-                                            Remove
-                                        </a>
+                                        </div>  
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div>
+                                                    <button type="submit" class="btn btn-success mt-2 mx-1"><i class="fa-solid fa-plus"></i></button>
+                                                </div>
+                                                <a class="remove-item btn btn-danger mt-2 rounded-5" id="remove_{{ item.item_id }}" data-size="{{ item.size }}">
+                                                    <i class="fa-solid fa-xmark"></i>
+                                                </a>
+                                            </div>
+                                        </div>                         
                                         {% if item.product.has_sizes %}
                                             <input type="hidden" name="product_size" value="{{ item.size }}">
                                         {% endif %}

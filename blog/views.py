@@ -89,7 +89,6 @@ def blog_details(request, slug):
     """ Show each blog on its individual page. """
     
     blog = Blog.objects.get(slug=slug)
-    user = get_object_or_404(Users, user=request.user)
     context = {}
 
     context['blog'] = blog
@@ -99,7 +98,7 @@ def blog_details(request, slug):
         if comment_form.is_valid():
             obj = comment_form.save(commit=False)
             obj.blog = blog
-            obj.posted_by = user
+            obj.posted_by = request.user
             obj.save()
             messages.success(request, "Comment saved")
             return redirect('blog_details', slug=blog.slug)
