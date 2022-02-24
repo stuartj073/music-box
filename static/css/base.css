@@ -513,6 +513,57 @@ td.col {
     letter-spacing: 2px;
 }
 
+.messages-info {
+    padding: 10px;
+    border: 2px solid grey;
+    height: 200px;
+    width: 300px;
+    background-color: rgba(82, 80, 175, 0.8);
+    color: white;
+    font-size: 2rem;
+    border-radius: 5px;
+    text-align:center;
+    -webkit-animation: fadeinout .5s linear forwards;
+    animation: fadeinout 5s linear forwards;
+    opacity: 0;
+    font-family: 'Amatic SC', cursive;
+    letter-spacing: 2px;
+}
+
+.messages-warning {
+    padding: 10px;
+    border: 2px solid grey;
+    height: 200px;
+    width: 300px;
+    background-color: rgba(209, 63, 5, 0.8);
+    color: white;
+    font-size: 2rem;
+    border-radius: 5px;
+    text-align:center;
+    -webkit-animation: fadeinout .5s linear forwards;
+    animation: fadeinout 5s linear forwards;
+    opacity: 0;
+    font-family: 'Amatic SC', cursive;
+    letter-spacing: 2px;
+}
+
+.messages-danger {
+    padding: 10px;
+    border: 2px solid grey;
+    height: 200px;
+    width: 300px;
+    background-color: rgba(236, 0, 0, 0.8);
+    color: white;
+    font-size: 2rem;
+    border-radius: 5px;
+    text-align:center;
+    -webkit-animation: fadeinout .5s linear forwards;
+    animation: fadeinout 5s linear forwards;
+    opacity: 0;
+    font-family: 'Amatic SC', cursive;
+    letter-spacing: 2px;
+}
+
 @-webkit-keyframes fadeinout {
     10% {opacity: 0;}
 }
@@ -530,42 +581,6 @@ td.col {
     width: 60px;
     background-color: #495057;
     margin: 20px auto;
-}
-
-.messages-warning {
-    padding: 10px;
-    border: 2px solid grey;
-    height: 200px;
-    width: 300px;
-    background-color: rgba(209, 63, 5, 0.8);
-    color: white;
-    font-size: 2rem;
-    border-radius: 5px;
-    text-align:center;
-}
-
-.messages-info {
-    padding: 10px;
-    border: 2px solid grey;
-    height: 200px;
-    width: 300px;
-    background-color: rgba(82, 80, 175, 0.8);
-    color: white;
-    font-size: 2rem;
-    border-radius: 5px;
-    text-align:center;
-}
-
-.messages-error {
-    padding: 10px;
-    border: 2px solid grey;
-    height: 200px;
-    width: 300px;
-    background-color: rgba(236, 0, 0, 0.8);
-    color: white;
-    font-size: 2rem;
-    border-radius: 5px;
-    text-align:center;
 }
 
 .message-body:hover {
