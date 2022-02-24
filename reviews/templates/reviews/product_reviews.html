@@ -1,10 +1,13 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+
+<!-- Heading  -->
 <hr>
 <h1>Past Reviews</h1>
 <hr>
 
+<!-- All reviews  -->
 {% if reviews %}
     <div class="row">
         {% for review in reviews %}
@@ -21,10 +24,11 @@
                 </div>
             </div>
         {% endfor %}
-        {% else %}
-        <div class="text-center">
-            <p>Sorry, there are no reviews associated with this product yet.</p>
-        </div>
+{% else %}
+    <div class="text-center">
+        <p>Sorry, there are no reviews associated with this product yet.</p>
     </div>
+</div>
 {% endif %}
+
 {% endblock %}

@@ -2,11 +2,11 @@
 {% load static %}
 {% load crispy_forms_filters %}
 {% block content %}
-<header>
-    <hr>
-    <h2>Edit Review</h2>
-    <hr>
-</header>
+<!-- Heading  -->
+<hr>
+<h2>Edit Review</h2>
+<hr>
+<!-- Edit review form  -->
 <form class="review-form" method="POST" action="{% url 'edit_review' review.id %}">
     {% csrf_token %}
     {{ form.title | as_crispy_field }}
