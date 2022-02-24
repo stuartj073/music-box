@@ -101,7 +101,7 @@
                 <a class="nav-link" href="{% url 'account_login' %}">Log in</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'account_signup' %}"></i>Register</a>
+                <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
               </li>
             {% endif %}
           </ul>
@@ -173,7 +173,7 @@
   </footer>
   <!-- Footer -->
     {% block postloadjs %}
-    <script type="text/javascript">
+    <script>
         $('.toast').toast('show');
 
         $('.top-link').click(function(e) {

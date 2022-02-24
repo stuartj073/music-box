@@ -58,7 +58,7 @@
   <div class="category-list">
     <a class="btn btn-info rounded-5" href="{% url 'products' %}">All Products</a>
     {% for category in categories %}
-      <a class="btn btn-info rounded-5" href="{% url 'products' %}?category={{ category.name }}">{{ category.friendly_name }}</a>
+      <a class="btn btn-info rounded-5" href="{% url 'products' %}?category={{ category.friendly_name }}">{{ category.friendly_name }}</a>
     {% endfor %}
   </div>
 

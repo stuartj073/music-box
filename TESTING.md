@@ -1,3 +1,9 @@
+# Testing
+
+## Manual Testing
+
+### User Stories
+
 - To see the products and/or categories available to me for purchase.
 
 - See a written backdrop to the site and the see the main ethos of the site.
@@ -61,6 +67,23 @@ Located on each relevant page will include the option for a user to contribute w
 Admin privelleges include the overall control of all content created and uploaded to the site. Each page that has any data of any kind is available to be edited and deleted by admin.
 
 ![Admin](/docs/readme/readme-images/admin.png)
+
+
+## Automated Testing
+
+### W3C Validator
+
+I utlised the W3C validator to ensure every page on the site was up to standard and that there was no html errors left unturned.
+
+1. Home page
+![Remember me](/docs/readme/testing/home-page.png)
+
+- The home page encompassed a few errors upon being passed into the validator.
+Firstly, the href attribute for the categories page under the products nav link was throwing an error due to a space in the href. This was fixed by changing the href links to be that of the 'friendly_name' of the categories.
+The 'i' closing tag was removed from the Register link. 
+The button element was removed from the 'see our products' link leaving only the anchor tag along with it's styling.
+The type attribute from the script tags were also removed.
+
 
 
 
