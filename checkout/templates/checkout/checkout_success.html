@@ -8,12 +8,14 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
+<!-- Heading  -->
 <hr>
 <h1>Checkout</h1>
 <hr>
 
 <h4 class="mt-2 mb-2">Order Successful!</h4>
 <hr>
+<!-- Order details  -->
 <div class="checkout-details mb-5">
     <h5>Order Detials</h5>
     <hr>
@@ -43,7 +45,8 @@
     </div>
 </div>
 
-<div class="shipping-form">
+<!-- Home link  -->
+<div class="text-center">
     <h5>Thanks for shopping with us! <br>
         Click <a href="{% url 'products' %}">here</a> to return to the products page
     </h5>
