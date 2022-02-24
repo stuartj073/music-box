@@ -22,7 +22,7 @@ class UserForm(forms.ModelForm):
             'default_postcode': 'Postcode',
         }
 
-        self.fields['default_phone_number'].widget.attrs['autofocus'] = True
+        self.fields['default_phone_number'].widget.attrs['autofocus'] = False
         for field in self.fields:
             if field != 'default_country':
                 if self.fields[field].required:
