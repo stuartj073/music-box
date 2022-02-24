@@ -4,9 +4,11 @@
 
 
 {% block content %}
+<!-- heading  -->
 <hr>
 <h1>Shopping bag</h1>
 <hr>
+<!-- Basket items  -->
 {% if basket_items %}
     <div class="row">
         <div class="table-responsive rounded"> 
@@ -39,6 +41,7 @@
                             <p>€ {{ item.product.price }}</p>
                         </div>
                     </td>
+                    <!-- Item quantity  -->
                     <td class="py-4 w-25">
                         <div class="item-total">
                             <form class="form update-form" method="POST"
@@ -91,6 +94,7 @@
                 </tr>
                 {% endfor %}
             </table>
+            <!-- Basket totals  -->
             <div class="text-center">
                 {% if checkout_total > free_delivery_threshold %}
                     <p class="lead">Delivery: FREE </p>
