@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+<!-- Heading  -->
 <hr>
 <h1>Blogs</h1>
 <hr>
@@ -8,20 +9,21 @@
     <a href="{% url 'add_blog' %}"  class="btn btn-secondary rounded-5">Add Blog <i class="fas fa-pencil-alt"></i></a>
 </div>
 
+<!-- All blogs  -->
 <div class="row">
-{% for blog in blogs %}
-<div class="col-12 col-md-6 col-lg-4">
-    <div class="card mb-4" style="width: 18rem;">
-        <div class="card-body">
-        <h5 class="card-title"><i class="fa-solid fa-book"></i>
-            {{ blog.title }}
-        </h5>
-        <h5 class="card-title">Created by: {{ blog.user }}</h5>
-            <a class="btn btn-secondary mt-2 mb-2 rounded-5" href="{% url 'blog_details' blog.slug %}">More info</a>
+    {% for blog in blogs %}
+    <div class="col-12 col-md-6 col-lg-4">
+        <div class="card mb-4" style="width: 18rem;">
+            <div class="card-body">
+            <h5 class="card-title"><i class="fa-solid fa-book"></i>
+                {{ blog.title }}
+            </h5>
+            <h5 class="card-title">Created by: {{ blog.user }}</h5>
+                <a class="btn btn-secondary mt-2 mb-2 rounded-5" href="{% url 'blog_details' blog.slug %}">More info</a>
+            </div>
         </div>
     </div>
-</div>
-{% endfor %}
+    {% endfor %}
 </div>
 
 {% endblock %}
