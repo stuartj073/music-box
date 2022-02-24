@@ -32,6 +32,8 @@ a:hover {
 
 h1, h2, h3, h4, h5 {
     text-align:center;
+    font-family: 'Amatic SC', cursive;
+    letter-spacing: 1px;
 }
 
 .container-body {
@@ -582,7 +584,7 @@ td.col {
     letter-spacing: 2px;
 }
 
-.messages-danger {
+.messages-error {
     padding: 10px;
     border: 2px solid grey;
     height: 200px;
