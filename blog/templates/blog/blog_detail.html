@@ -14,11 +14,12 @@
             <p>{{ blog.topic }}</p>
             <p>{{ blog.description }}</p>
             <p>Created by: {{ blog.user }}</p>
-            {% if blog.user == request.user %}
-                <a class="btn btn-warning mt-3" href="{% url 'update_blog' blog.slug %}">
-                    Edit
-                </a>
-                <div class="container d-flex justify-content-center mt-2 mb-2"> <button class="btn btn-danger " data-toggle="modal" data-target="#my-modal">Delete</button>
+            {% if request.user.is_superuser %}
+                <div class="container d-flex justify-content-center mt-2 mb-2"> 
+                    <a class="btn btn-warning mt-3 mx-2" href="{% url 'update_blog' blog.slug %}">
+                        Edit
+                    </a>
+                    <button class="btn btn-danger  mt-3 mx-2" data-toggle="modal" data-target="#my-modal">Delete</button>
                     <div id="my-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content border-0">
