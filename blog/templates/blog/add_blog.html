@@ -4,9 +4,11 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
+<!-- Heading  -->
 <hr>
 <h1>Add blog</h1>
 <hr>
+<!-- Add blog form  -->
 <div class="blog-form">
     <form method="POST" action="{% url 'add_blog' %}" class="form mb-2" enctype="multipart/form-data">
         {% csrf_token %}
@@ -20,7 +22,6 @@
             Add Product
         </button>
     </form>
-</div>
 </div>
 
 {% endblock %}
