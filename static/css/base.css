@@ -252,6 +252,13 @@ path {
     width:100%;
 }
 
+.btn-light {
+    color: #fff;
+    background-color: #212529;
+    border-color: #212529;
+    border: 0.4rem;
+}
+
 
 /************************************* REVIEWS ***/
 
