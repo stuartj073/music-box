@@ -1,5 +1,5 @@
 from django.db import models
-from profiles.models import Users
+from django.contrib.auth.models import User
 
 from django.db.models.signals import pre_save
 from django.utils.text import slugify
@@ -33,7 +33,7 @@ class Blog(models.Model):
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
     description = models.TextField()
     date = models.DateField(auto_now_add=True)
-    user = models.ForeignKey(Users, on_delete=models.CASCADE, default="")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default="")
     image = models.URLField(max_length=1024, null=True, blank=True)
 
     class Meta:
@@ -58,7 +58,7 @@ class Comments(models.Model):
     blog posts
     """
     blog = models.ForeignKey(Blog, related_name="comments", on_delete=models.CASCADE)
-    posted_by = models.ForeignKey(Users, on_delete=models.CASCADE)
+    posted_by = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateField(auto_now=True)
     comment = models.TextField()
 
