@@ -47,7 +47,7 @@
                     <!-- Item quantity  -->
                     <td class="py-4 w-25">
                         <div class="item-total">
-                            <form class="form update-form" method="POST"
+                            <form method="POST"
                                 action="{% url 'edit_basket' item.product.id %}">
                                 {% csrf_token %}
                                 <div class="form-group">
