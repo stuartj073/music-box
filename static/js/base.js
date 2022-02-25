@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 // Show toast messages
 $('.toast').toast('show');
 
