@@ -24,7 +24,9 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    """ More specific information about particular good. """
+    """ 
+    Product information 
+    """
     category = models.ForeignKey('Category', null=True, blank=True,
                                  on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)                                 

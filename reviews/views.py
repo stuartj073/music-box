@@ -103,7 +103,9 @@ def edit_review(request, review_id):
 
 @login_required
 def delete_review(request, review_id):
-    """ Delete specific blog post for user. """
+    """ 
+    Delete specific blog post for user
+    """
     
     review = get_object_or_404(ProductReview, pk=review_id)
 

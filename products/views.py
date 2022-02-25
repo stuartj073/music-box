@@ -9,11 +9,11 @@ from django.contrib import messages
 from .forms import ProductForm
 from .models import Product, Category
 
-# Create your views here.
-
 
 def products(request):
-    """ Show all products along with search and sort features. """
+    """ 
+    Show all products along with search and sort features 
+    """
 
     products = Product.objects.order_by('-price')
     query = None
@@ -75,7 +75,9 @@ def product_detail(request, product_id):
 
 @login_required
 def add_product(request):
-    """ Present add product form to user based off the model. """
+    """ 
+    Present add product form to user based off the model
+    """
     if request.method == "POST":
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
@@ -101,7 +103,9 @@ def add_product(request):
 
 @login_required
 def edit_product(request, product_id):
-    """ Allow user to update their own blog posts. """
+    """ 
+    Allow user to update their own blog posts
+    """
 
     product = get_object_or_404(Product, pk=product_id)
 
@@ -128,7 +132,9 @@ def edit_product(request, product_id):
 
 @login_required
 def delete_product(request, product_id):
-    """ Delete specific blog post for user. """
+    """ 
+    Delete specific blog post for user
+    """
     
     product = get_object_or_404(Product, pk=product_id)
     product.delete()

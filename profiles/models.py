@@ -7,7 +7,9 @@ from django.dispatch import receiver
 
 
 class Users(models.Model):
-    """ Model to display the info needed to register account. """
+    """ 
+    Model to display the info needed to register account
+    """
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     default_phone_number = models.CharField(max_length=20,

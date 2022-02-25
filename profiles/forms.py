@@ -2,6 +2,7 @@ from django import forms
 from checkout.models import Order
 from .models import Users
 
+
 class UserForm(forms.ModelForm):
     class Meta:
         model = Users

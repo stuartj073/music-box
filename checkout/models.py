@@ -10,7 +10,9 @@ from products.models import Product
 from profiles.models import Users
 
 class Order(models.Model):
-    """ Information needed for each transaction. """
+    """ 
+    Information needed for each transaction
+    """
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user_profile = models.ForeignKey(Users, on_delete=models.SET_NULL, null=True,
                                      blank=True, related_name='orders')
@@ -36,7 +38,9 @@ class Order(models.Model):
         ordering = ['-date']
 
     def _generate_order_number(self):
-        """ Create unique order number. """
+        """ 
+        Create unique order number
+        """
         return uuid.uuid4().hex.upper()
 
     def update_total(self):
@@ -67,7 +71,9 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
-    """ Information on individual item in a basket. """
+    """ 
+    Information on individual item in a basket 
+    """
     order = models.ForeignKey(Order, null=False, blank=False,on_delete=models.CASCADE, related_name='lineitems')
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
     quantity = models.IntegerField(null=False, blank=False, default=0)

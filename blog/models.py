@@ -9,24 +9,24 @@ from django.dispatch import receiver
 
 class Topic(models.Model):
     """ Allow user to select a topic to blog about. """
+    
     class Meta:
-        """ Adjust plural form in admin. """
         verbose_name_plural = "Topics"
 
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
     def __str__(self):
-        """ Return string representation of name. """
         return self.name
 
     def get_friendly_name(self):
-        """ Return string representation of type field. """
         return self.friendly_name
 
 
 class Blog(models.Model):
-    """ Allow users to create blog posts on all things music. """
+    """ 
+    Allow users to create blog posts on all things music 
+    """
 
     title = models.CharField(max_length=50)
     slug = models.SlugField(max_length=200, unique=True)

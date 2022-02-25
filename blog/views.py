@@ -9,8 +9,9 @@ from profiles.models import Users
 
 
 def blogs(request):
-    """ Display all blog posts by users. """
-
+    """
+    Display all blog posts by users 
+    """
     blogs = Blog.objects.all()
     topic = Topic.objects.all()
 
@@ -24,7 +25,9 @@ def blogs(request):
 
 @login_required
 def add_blog(request):
-    """ Add blog to blogs page. """
+    """ 
+    Add blog to blogs page
+    """
     user = get_object_or_404(Users, user=request.user)
     if request.method == "POST":
         form = BlogForm(request.POST or None, request.FILES or None)
@@ -52,7 +55,9 @@ def add_blog(request):
 
 @login_required
 def delete_blog(request, slug):
-    """ Delete specific blog post for user. """
+    """ 
+    Delete specific blog post for user 
+    """
     blog = Blog.objects.get(slug=slug)
     blog.delete()
     messages.success(request, "Blog deleted.")
@@ -61,7 +66,9 @@ def delete_blog(request, slug):
 
 @login_required
 def update_blog(request, slug):
-    """ Allow user to update their own blog posts. """
+    """ 
+    Allow user to update their own blog posts
+    """
 
     blog = Blog.objects.get(slug=slug)
 
@@ -86,7 +93,9 @@ def update_blog(request, slug):
 
 
 def blog_details(request, slug):
-    """ Show each blog on its individual page. """
+    """ 
+    Show each blog on its individual page
+    """
     
     blog = Blog.objects.get(slug=slug)
     context = {}
