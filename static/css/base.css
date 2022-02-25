@@ -97,7 +97,6 @@ sup {
     padding: 0.25rem 1.5rem;
     clear: both;
     background-color: #495057;
-    font-weight: 400;
     color: #fff;
     text-align: inherit;
     white-space: nowrap;
@@ -319,10 +318,6 @@ button.search-button.button.btn-info.rounded-5 {
 
 .search-bar form {
     margin:0 auto;
-}
-
-.center-search button {
-   size:.5rem; 
 }
 
 /************************************* FORMS ***/
@@ -565,7 +560,7 @@ td.col {
     font-size: 2rem;
     border-radius: 5px;
     text-align:center;
-    -webkit-animation: fadeinout .5s linear forwards;
+    -webkit-animation: fadeinout 5s linear forwards;
     animation: fadeinout 5s linear forwards;
     opacity: 0;
     font-family: 'Amatic SC', cursive;
@@ -582,7 +577,7 @@ td.col {
     font-size: 2rem;
     border-radius: 5px;
     text-align:center;
-    -webkit-animation: fadeinout .5s linear forwards;
+    -webkit-animation: fadeinout 5s linear forwards;
     animation: fadeinout 5s linear forwards;
     opacity: 0;
     font-family: 'Amatic SC', cursive;
@@ -599,7 +594,7 @@ td.col {
     font-size: 2rem;
     border-radius: 5px;
     text-align:center;
-    -webkit-animation: fadeinout .5s linear forwards;
+    -webkit-animation: fadeinout 5s linear forwards;
     animation: fadeinout 5s linear forwards;
     opacity: 0;
     font-family: 'Amatic SC', cursive;
@@ -616,7 +611,7 @@ td.col {
     font-size: 2rem;
     border-radius: 5px;
     text-align:center;
-    -webkit-animation: fadeinout .5s linear forwards;
+    -webkit-animation: fadeinout 5s linear forwards;
     animation: fadeinout 5s linear forwards;
     opacity: 0;
     font-family: 'Amatic SC', cursive;
@@ -624,11 +619,11 @@ td.col {
 }
 
 @-webkit-keyframes fadeinout {
-    10% {opacity: 0;}
+    0% {opacity: 0;}
 }
   
 @keyframes fadeinout {
-    50% {opacity: 1;}
+    0% {opacity: 1;}
 }
 
 .tick {
