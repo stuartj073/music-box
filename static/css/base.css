@@ -451,6 +451,10 @@ form {
     padding:3px;
 }
 
+p.lead {
+    text-transform: capitalize;
+}
+
 td.item-description {
     margin-left: 5px;
     width: 40%;
