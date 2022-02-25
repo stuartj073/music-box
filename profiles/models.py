@@ -30,11 +30,14 @@ class Users(models.Model):
     def __str__(self):
         return self.user.username
 
+    class Meta:
+        verbose_name_plural = 'Profiles'
+
 
 @receiver(post_save, sender=User)
 def create_or_update_user(sender, instance, created, **kwargs):
     """ 
-    Create/update user.
+    Create/update user
     """
     if created:
         Users.objects.create(user=instance)

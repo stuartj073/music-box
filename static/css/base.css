@@ -130,8 +130,8 @@ li.nav-item {
     margin: 10px;
 }
 
-li .nav-item:hover {
-    color:#fff;
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: #fff;
 }
 
 a.navbar-brand.d-flex.w-50.mr-auto {
