@@ -1,4 +1,4 @@
-/*jshint esversion: 6 */
+/* jshint esversion: 8, jquery: true */
 
 // Update the item quantity every reload
 $('.update-link').click(function (e) {

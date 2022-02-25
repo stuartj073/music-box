@@ -128,7 +128,7 @@ The extra closing 'section' tag was removed.
 ### JSHint Validator
 
 - Base.js
-![Base js](/docs/readme/testing/checkout-success.png)
+![Base js](/docs/readme/testing/stripejs1.png)
 
 The '$' warnings was ignored as these are required to write jQuery functions.
 

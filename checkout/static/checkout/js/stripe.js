@@ -1,4 +1,4 @@
-/*jshint esversion: 6 */
+/* jshint esversion: 8, jquery: true */
 
 /*
     Core logic/payment flow for this comes from here:

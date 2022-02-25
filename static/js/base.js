@@ -1,4 +1,4 @@
-/*jshint esversion: 6 */
+/* jshint esversion: 8, jquery: true */
 // Show toast messages
 $('.toast').toast('show');
 
