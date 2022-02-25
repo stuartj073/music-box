@@ -120,7 +120,7 @@ For version control I used Git and to host the site itself I used Heroku. For th
 
 (docs/readme/readme-images/forking.png)
 
-- To clone by the command line simply click the button beside the green button titled 'code', there you will be given various options on how you would like to clone the repository. You must then type 'git clone' into your own workspace along with the repo URL and enter.
+- To clone by the command line simply click the button beside the green button titled `code`, there you will be given various options on how you would like to clone the repository. You must then type `git clone` into your own workspace along with the repo URL and enter.
 
 In order to make a local copy of this project, you can clone it. In your IDE Terminal, type the following command to clone my repository:
 
@@ -144,15 +144,15 @@ The following steps were taken in setting up heroku:
 1. Log in/ Register to heroku.
 2. Create a new app and fill in all relevant information. (This button is located on the top right of the screen after successfully logging in.)
 (docs/readme/readme-images/heroku-part1.png)
-3. To configure the connection on gitpod a requirements.txt file has to be created. This can be accomplished by the following CLI command 'pip3 freeze > requirements.txt'.
-4. A Procfile must then be created with CLI command 'web: gunicorn music-box.wsgi:application'. Ensure there is no extra blank lines in the file as this can cause the file to be incorrectly read.
-5. If you have used the fixtures feature from django then the following command can load these files onto heroku. 'python3 manage.py loaddata files.json'.
-6. Log into heroku from the CLI by typing 'heorku login -i'.
+3. To configure the connection on gitpod a requirements.txt file has to be created. This can be accomplished by the following CLI command `pip3 freeze > requirements.txt`.
+4. A Procfile must then be created with CLI command `web: gunicorn music-box.wsgi:application`. Ensure there is no extra blank lines in the file as this can cause the file to be incorrectly read.
+5. If you have used the fixtures feature from django then the following command can load these files onto heroku. `python3 manage.py loaddata files.json`.
+6. Log into heroku from the CLI by typing `heorku login -i`.
 7. Temporarily disable collectstatic (DISABLE_COLLECTSTATIC=1) as we deploy.
 8. Add your unique heroku app name to the ALLOWED_HOSTS section of settings.py and commit the changes.
-9. Deply to heroku by using the 'git push heroku main' command. If the git remote isn't initialised you must initialise it by running 'heroku git:remote -a'.
+9. Deply to heroku by using the `git push heroku main` command. If the git remote isn't initialised you must initialise it by running `heroku git:remote -a`.
 10. Create a separate superuser to be used on the deployed site.
-11. Return to the heroku site and relevant app name. Located the deploy tab for the app and navigate through to the method section choosing 'Github' as the option.
+11. Return to the heroku site and relevant app name. Located the deploy tab for the app and navigate through to the method section choosing `Github` as the option.
 12. Search for the github repositoray and connect.
 (docs/readme/readme-images/heroku-part2.png)
 13. You can now either choose to automatically deploy or manually deploy. Automatic deploy will deploy the project as per every change that is pushed from git to your heroku app.
@@ -172,14 +172,14 @@ choosing the closest region to you.
 4. In the properties tab enable the static website hosting option using the default values of index.html and errors.html.
 5. Set up the the CORS configuration tab as follows:
 (docs/readme/readme-images/cors.png)
-6. Create a security policy: S3 Bucket Policy allowing all principles by adding a '*' , Amazon S3 services and Get Object action. 
-7. Paste the ARN from your bucket policy and add a statement. Generate policy, copying and pasting into Bucket Policy adding '/*' at the end of the resource key to allow use of all pages.
+6. Create a security policy: S3 Bucket Policy allowing all principles by adding a `*` , Amazon S3 services and Get Object action. 
+7. Paste the ARN from your bucket policy and add a statement. Generate policy, copying and pasting into Bucket Policy adding `/*` at the end of the resource key to allow use of all pages.
 8. Under public access select access to all List Objects.
 9. Create a group for the bucket through IAM. 
 10. Create policy by importing AWS S3 Full Access and add ARN from bucket to the policy resources. Attach policy to the group.
 11. Create a user giving programmatic access and add user to the group. 
 12. Download the CSV file to save the access key ID and the secret access key to be added to the environment and configuration variables.
-13. Add AWS_STORAGE_BUCKET_NAME, AWS_S£_REGION_NAME = 'eu-west-2' to settings.py.
+13. Add AWS_STORAGE_BUCKET_NAME, AWS_S£_REGION_NAME = `eu-west-2` to settings.py.
 14. Push changes to GitHub and check that all static files have been successfully implemented into the Build Log.
 15. DISABLE_COLLECTSTATIC can now be deleted.
 
@@ -192,15 +192,15 @@ For this project, I utilised Gmails automated email service, the following steps
 1. Change the DEFAULT_FROM_EMAIL value to your own email in settings.py.
 2. Log into your Gmail account and navigate to the settings page.
 (docs/readme/readme-images/gmail-part1.png)
-3. Click 'Account and Imports' and choose 'other Google Account Settings.'
+3. Click `Account and Imports` and choose `other Google Account Settings`.
 (docs/readme/readme-images/gmail-part2.png)
-4. Navigate to the security tab and select 'Signing in to Google.'
-(docs/readme/readme-images/gmail-part3.png)
-5. Turn on the 2-step verification If you haven't and then click 'Get Started'.
+4. Navigate to the security tab and select `Signing in to Google.`
+(docs/readme/readme-images/gmail-part2.png)
+5. Turn on the 2-step verification If you haven't and then click `Get Started`.
 6. Sign in and verify your account turning on 2-step verification.
-7. Navigate back to 'Security' and go onto 'App Passwords'.
-8. Enter your password again and set App to 'mail', Device to 'other' and type in 'Django'.
-9. The following code that appears correlates to your 'EMAIL_HOST_PASS' and 'EMAIL_HOST_USER' variables. These are then added to the respective environment and configuration variables.
+7. Navigate back to `Security` and go onto `App Passwords`.
+8. Enter your password again and set App to ``mail`, Device to `other` and type in `Django`.
+9. The following code that appears correlates to your `EMAIL_HOST_PASS` and `EMAIL_HOST_USER` variables. These are then added to the respective environment and configuration variables.
 
 
 ## Credits

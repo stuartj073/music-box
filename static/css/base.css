@@ -561,8 +561,8 @@ td.col {
     border: 2px solid grey;
     min-height: 200px;
     min-width: 300px;
-    background-color: #495057;
-    color: #fff;
+    background-color: light-grey;
+    color: #495057;
     font-size: 2rem;
     border-radius: 5px;
     text-align:center;
