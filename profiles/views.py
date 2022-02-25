@@ -12,7 +12,10 @@ from reviews.models import ProductReview
 # Create your views here.
 
 def profile(request):
-    """ Display a user's profile. """
+    """ 
+    Display a user's profile
+    """
+    
     profile = get_object_or_404(Users, user=request.user)
     reviews = ProductReview.objects.filter(user=request.user)
     orders = profile.orders.all()

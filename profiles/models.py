@@ -38,6 +38,4 @@ def create_or_update_user(sender, instance, created, **kwargs):
     """
     if created:
         Users.objects.create(user=instance)
-    instance.user.save()
-
-
+    instance.users.save()
