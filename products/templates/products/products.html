@@ -89,11 +89,11 @@
         <a href="{% url 'products' %}?category={{ product.category.name }}">{{ product.category.friendly_name }}</a>
       </p>
       <p class="lead">€{{ product.price }}</p>
-    </div>
-    <div class="text-center">
-      <a class="btn btn-light mt-1 mb-5 rounded-5" href="{% url 'product_detail' product.id %}">
-        More details
-      </a>      
+      <div class="text-center">
+        <a class="btn btn-light mt-1 mb-5 rounded-5" href="{% url 'product_detail' product.id %}">
+          More details
+        </a>      
+      </div>
     </div>
   </div>
   {% endfor %}
