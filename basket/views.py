@@ -1,12 +1,11 @@
-from django.shortcuts import render, redirect, get_object_or_404, HttpResponse, reverse
+from django.shortcuts import (render, redirect, 
+    get_object_or_404, HttpResponse, reverse)
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 from products.models import Product
-
 from basket.contexts import basket_contents
 
-# Create your views here.
 
 @login_required
 def basket(request):

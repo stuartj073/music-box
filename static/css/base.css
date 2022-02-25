@@ -80,6 +80,10 @@ nav {
     font-size: 2rem;
 }
 
+.navbar-light .navbar-nav .nav-link {
+    color: #fff;
+}
+
 sup {
     top: -0.5em;
     left: 10px;
