@@ -31,7 +31,7 @@ class Users(models.Model):
         return self.user.username
 
 
-@receiver(post_save, sender=Users)
+@receiver(post_save, sender=User)
 def create_or_update_user(sender, instance, created, **kwargs):
     """ 
     Create/update user.
