@@ -14,7 +14,7 @@ from reviews.models import ProductReview
 def profile(request):
     """ Display a user's profile. """
     profile = get_object_or_404(Users, user=request.user)
-    reviews = ProductReview.objects.filter(user=profile)
+    reviews = ProductReview.objects.filter(user=request.user)
     orders = profile.orders.all()
 
     if request.method == "POST":

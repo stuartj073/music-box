@@ -30,7 +30,7 @@ def add_blog(request):
         form = BlogForm(request.POST or None, request.FILES or None)
         if form.is_valid():
             blog = form.save(commit=False)
-            blog.user = user
+            blog.user = request.user
             blog.save()
             messages.success(request, "Blog saved")
             return redirect(reverse('blog_details', args=[blog.slug]))

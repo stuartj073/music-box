@@ -52,7 +52,7 @@ def add_review(request, product_id):
         if form.is_valid():
             review = form.save()
             review.name = product
-            review.user = user 
+            review.user = request.user 
             review.save()
             messages.success(request, "New product review created.")
             return redirect(reverse('review_detail', args=[review.id]))

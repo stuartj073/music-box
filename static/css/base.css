@@ -567,8 +567,8 @@ td.col {
 .messages-info {
     padding: 10px;
     border: 2px solid grey;
-    height: 200px;
-    width: 300px;
+    min-height: 200px;
+    min-width: 300px;
     background-color: rgba(82, 80, 175, 0.8);
     color: white;
     font-size: 2rem;
