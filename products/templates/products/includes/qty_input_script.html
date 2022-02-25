@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 <script type="text/javascript">
     window.addEventListener('DOMContentLoaded', (event) => {
         console.log('DOM fully loaded and parsed');
@@ -27,7 +28,6 @@
         $(closestInput).val(currentValue + 1);
         var itemId = $(this).data('item_id');
         handleEnableDisable(itemId);
-        console.log("INCREMENT")
     });
 
     // Check enable/disable every time the input is changed
@@ -43,6 +43,5 @@
        $(closestInput).val(currentValue - 1);
        var itemId = $(this).data('item_id');
        handleEnableDisable(itemId);
-       console.log("DECREMENT")
     });
 </script>

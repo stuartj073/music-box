@@ -142,5 +142,17 @@ The same steps were taken as base.js and the 'Stripe' variable warning was ignor
 The 'template literal syntax' issue was fixed as I included the snippet '/*jshint esversion: 6 */'
 at the top of the file. This was to allow JSHitn to recognise ECMAScript 6 features it otherwise wouldn't.
 
+- Basket.js
+
+![Basket](/docs/readme/testing/stripejs2.png)
+
+The missing semi-colons were added.
+
+- Quantity selector script
+
+![Quantity](/docs/readme/testing/quantityjs.png)
+
+The console.log statements were removed from the file.
+
 
 
