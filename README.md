@@ -122,6 +122,14 @@ For version control I used Git and to host the site itself I used Heroku. For th
 
 - To clone by the command line simply click the button beside the green button titled 'code', there you will be given various options on how you would like to clone the repository. You must then type 'git clone' into your own workspace along with the repo URL and enter.
 
+In order to make a local copy of this project, you can clone it. In your IDE Terminal, type the following command to clone my repository:
+
+- `git clone https://github.com/stuartj073/music-box.git`
+
+Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/stuartj073/music-box)
+
 #### Other requirements
 
 - Ensure that all packages are installed by using the pip3 install command in the CLI. 
