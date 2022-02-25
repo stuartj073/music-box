@@ -521,6 +521,11 @@ td.col {
     border:1px solid black;
 }
 
+.card-details p a {
+    color:#495057;
+    font-weight: 900;
+}
+
 .card-details hr {
     color:black;
     height:2px;
