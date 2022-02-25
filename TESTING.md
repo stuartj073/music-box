@@ -125,5 +125,22 @@ The extra closing 'section' tag was removed.
 ![Checkout success](/docs/readme/testing/checkout-success.png)
 - This error was in relation to a heading I had copied over from another template in reference to a product object which had not been defined in the checkout success view and thus rendered an empty h6 heading. The heading was removed.
 
+### JSHint Validator
+
+- Base.js
+![Base js](/docs/readme/testing/checkout-success.png)
+
+The '$' warnings was ignored as these are required to write jQuery functions.
+
+- Stripe.js
+
+![Stripe js 1](/docs/readme/testing/stripejs1.png)
+![Stripe js 2](/docs/readme/testing/stripejs2.png)
+
+The same steps were taken as base.js and the 'Stripe' variable warning was ignored as this is required by stripe to authorize paymetns.
+
+The 'template literal syntax' issue was fixed as I included the snippet '/*jshint esversion: 6 */'
+at the top of the file. This was to allow JSHitn to recognise ECMAScript 6 features it otherwise wouldn't.
+
 
 
