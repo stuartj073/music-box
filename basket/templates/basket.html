@@ -47,40 +47,30 @@
                     <!-- Item quantity  -->
                     <td class="py-4 w-25">
                         <div class="item-total">
-                            <form method="POST"
+                            <form class="form update-form" method="POST"
                                 action="{% url 'edit_basket' item.product.id %}">
                                 {% csrf_token %}
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <button class="decrement-qty btn btn-sm btn-black rounded-0"
-                                                data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
-                                                <span>
-                                                    <i class="fas fa-minus fa-sm"></i>
-                                                </span>
-                                            </button>
-                                        </div>
-                                        <input class="form-control form-control-sm qty_input" type="number"
+                                        <div class="row">
+                                            <div class="col-12 col-md-6">
+                                                <input class="form-control form-control-sm qty_input" type="number"
                                             name="amount" value="{{ item.quantity }}" min="1" max="99"
                                             data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
-                                        <div class="input-group-append">
-                                            <button class="increment-qty btn btn-sm btn-black rounded-0"
-                                                data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
-                                                <span>
-                                                    <i class="fas fa-plus fa-sm"></i>
-                                                </span>
-                                            </button>
-                                        </div>  
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div>
-                                                    <button type="submit" class="btn btn-success mt-2 mx-1"><i class="fa-solid fa-plus"></i></button>
-                                                </div>
-                                                <a class="remove-item btn btn-danger mt-2 rounded-5" id="remove_{{ item.item_id }}" data-size="{{ item.size }}">
-                                                    <i class="fa-solid fa-xmark"></i>
-                                                </a>
                                             </div>
-                                        </div>                         
+                                            <div class="col-12 col-md-6">
+                                                <div class="col-12">
+                                                    <div>
+                                                        <a class="btn btn-info mb-1" type="submit">
+                                                            Update
+                                                        </a>
+                                                    </div>
+                                                    <a class="btn btn-danger" id="remove_{{ item.item_id }}" data-size="{{ item.size }}">
+                                                        Remove
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>              
                                         {% if item.product.has_sizes %}
                                             <input type="hidden" name="product_size" value="{{ item.size }}">
                                         {% endif %}
