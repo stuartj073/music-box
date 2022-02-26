@@ -7,7 +7,7 @@ from django.dispatch import receiver
 
 
 class Users(models.Model):
-    """ 
+    """
     Model to display the info needed to register account
     """
 
@@ -36,7 +36,7 @@ class Users(models.Model):
 
 @receiver(post_save, sender=User)
 def create_or_update_user(sender, instance, created, **kwargs):
-    """ 
+    """
     Create/update user
     """
     if created:

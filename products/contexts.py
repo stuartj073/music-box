@@ -4,9 +4,10 @@ from django.shortcuts import get_object_or_404
 
 from .models import Product, Category
 
+
 def categories(request):
     """
-    List of categories made available 
+    List of categories made available
     for all apps
     """
 

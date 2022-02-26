@@ -256,4 +256,10 @@ The console.log statements were removed from the file.
 ![Products](/docs/readme/testing/products-pep8-7.png)
 ![Products](/docs/readme/testing/products-pep8-8.png)
 
+#### Profiles app
 
+![Profiles](/docs/readme/testing/profiles-pep8-1.png)
+![Profiles](/docs/readme/testing/profiles-pep8-2.png)
+![Profiles](/docs/readme/testing/profiles-pep8-3.png)
+![Profiles](/docs/readme/testing/profiles-pep8-4.png)
+![Profiles](/docs/readme/testing/profiles-pep8-5.png)

@@ -9,13 +9,12 @@ from checkout.models import Order
 
 from reviews.models import ProductReview
 
-# Create your views here.
 
 def profile(request):
-    """ 
+    """
     Display a user's profile
     """
-    
+
     profile = get_object_or_404(Users, user=request.user)
     reviews = ProductReview.objects.filter(user=request.user)
     orders = profile.orders.all()
@@ -49,7 +48,7 @@ def orders(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
 
     template = 'checkout/checkout_success.html'
-    
+
     context = {
         'order': order,
         'from_profile': from_profile,
