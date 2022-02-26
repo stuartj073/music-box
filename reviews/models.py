@@ -4,13 +4,13 @@ from django.contrib.auth.models import User
 
 
 class ProductReview(models.Model):
-    """ 
+    """
     Allow user to create review based on a specific product
     """
     name = models.ForeignKey(Product, null=True, blank=True,
-                                 on_delete=models.SET_NULL)
+                             on_delete=models.SET_NULL)
     user = models.ForeignKey(User, null=True, blank=True,
-                                 on_delete=models.CASCADE)
+                             on_delete=models.CASCADE)
     title = models.TextField(max_length=30, default="Review Title")
     description = models.TextField()
     date = models.DateField(auto_now_add=True, blank=False,
@@ -21,4 +21,3 @@ class ProductReview(models.Model):
 
     def __str__(self):
         return self.title
-

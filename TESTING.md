@@ -220,6 +220,10 @@ The console.log statements were removed from the file.
 
 ### PEP 8 
 
+In general I would say that I need to implement a more "clean as you code" approach when writing python. As can be seen from quite a few files there are a number of `trailing whitespace/ line-over/under indented and no new line` warnings. In the future I will be much more stringent on pep8 compliance as I continue to work on future projects.
+
+All errors that have been noted in the below screenshots were corrected and passed through the pep8 validator once more to ensure that the code passed validation.
+
 #### Basket app
 
 ![Basket](/docs/readme/testing/basket-pep8-1.png)
@@ -263,3 +267,11 @@ The console.log statements were removed from the file.
 ![Profiles](/docs/readme/testing/profiles-pep8-3.png)
 ![Profiles](/docs/readme/testing/profiles-pep8-4.png)
 ![Profiles](/docs/readme/testing/profiles-pep8-5.png)
+
+#### Reviews app
+
+![Reviews](/docs/readme/testing/reviews-pep8-1.png)
+![Reviews](/docs/readme/testing/reviews-pep8-2.png)
+![Reviews](/docs/readme/testing/reviews-pep8-3.png)
+![Reviews](/docs/readme/testing/reviews-pep8-4.png)
+![Reviews](/docs/readme/testing/reviews-pep8-5.png)

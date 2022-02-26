@@ -15,7 +15,7 @@ def product_reviews(request, product_id):
 
     reviews = ProductReview.objects.filter(name=product)
 
-    template =  'reviews/product_reviews.html'
+    template = 'reviews/product_reviews.html'
 
     context = {
         'reviews': reviews,
@@ -25,7 +25,7 @@ def product_reviews(request, product_id):
 
 
 def review_detail(request, review_id):
-    """ 
+    """
     Show individual review
     """
     review = get_object_or_404(ProductReview, pk=review_id)
@@ -40,8 +40,8 @@ def review_detail(request, review_id):
 
 
 def add_review(request, product_id):
-    """ 
-    Render form to allow user to write review on 
+    """
+    Render form to allow user to write review on
     any given product
     """
     user = Users.objects.get(user=request.user)
@@ -52,7 +52,7 @@ def add_review(request, product_id):
         if form.is_valid():
             review = form.save()
             review.name = product
-            review.user = request.user 
+            review.user = request.user
             review.save()
             messages.success(request, "New product review created.")
             return redirect(reverse('review_detail', args=[review.id]))
@@ -103,14 +103,13 @@ def edit_review(request, review_id):
 
 @login_required
 def delete_review(request, review_id):
-    """ 
+    """
     Delete specific blog post for user
     """
-    
+
     review = get_object_or_404(ProductReview, pk=review_id)
 
     review.delete()
-    
+
     messages.success(request, "Review deleted")
     return redirect(reverse('products'))
-
