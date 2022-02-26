@@ -174,7 +174,9 @@ choosing the closest region to you.
 3. Uncheck the block all public access option and then create bucket.
 4. In the properties tab enable the static website hosting option using the default values of index.html and errors.html.
 5. Set up the the CORS configuration tab as follows:
+
 ![CORS](docs/readme/readme-images/cors.png)
+
 6. Create a security policy: S3 Bucket Policy allowing all principles by adding a `*` , Amazon S3 services and Get Object action. 
 7. Paste the ARN from your bucket policy and add a statement. Generate policy, copying and pasting into Bucket Policy adding `/*` at the end of the resource key to allow use of all pages.
 8. Under public access select access to all List Objects.
@@ -194,11 +196,17 @@ For this project, I utilised Gmails automated email service, the following steps
 
 1. Change the DEFAULT_FROM_EMAIL value to your own email in settings.py.
 2. Log into your Gmail account and navigate to the settings page.
+
 ![Gmail](docs/readme/readme-images/gmail-part1.png)
+
 3. Click `Account and Imports` and choose `other Google Account Settings`.
+
 ![Gmail](docs/readme/readme-images/gmail-part2.png)
+
 4. Navigate to the security tab and select `Signing in to Google.`
+
 ![Gmail](docs/readme/readme-images/gmail-part2.png)
+
 5. Turn on the 2-step verification If you haven't and then click `Get Started`.
 6. Sign in and verify your account turning on 2-step verification.
 7. Navigate back to `Security` and go onto `App Passwords`.
