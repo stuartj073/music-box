@@ -6,3 +6,9 @@ $('.toast').toast('show');
 $('.top-link').click(function(e) {
     window.scrollTo(0,0);
 });
+
+$(document).ready(function() {
+    // messages timeout for 10 sec 
+    setTimeout(function() {
+        $('.message-container').fadeOut('slow');
+    }, 5000);

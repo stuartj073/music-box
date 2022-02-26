@@ -386,7 +386,7 @@ form {
 }
 
 
-/************************************* MESSAGES ***/
+/************************************* NAV-ITEMS ***/
 
 .user {
     height:50px;
@@ -582,9 +582,10 @@ td.col {
 /************************************* MESSAGES ***/
 
 .message-container {
+    left: 50%;
+    transform: translate(-50%, 0);
     position: fixed;
     top: 20%;
-    left:40%;
     z-index: 99999999999;
     min-width: 300px;
     min-height: 200px;
@@ -595,14 +596,12 @@ td.col {
     border: 2px solid grey;
     min-height: 200px;
     min-width: 300px;
-    background-color: light-grey;
+    background-color: #ced4da;
     color: #495057;
     font-size: 2rem;
     border-radius: 5px;
     text-align:center;
-    -webkit-animation: fadeinout 5s linear forwards;
-    animation: fadeinout 5s linear forwards;
-    opacity: 0;
+    opacity: 1;
     font-family: 'Amatic SC', cursive;
     letter-spacing: 2px;
 }
@@ -828,6 +827,14 @@ p a:hover {
 
 .card path {
     color:#495057;
+}
+
+@media (max-width:320px) {
+    .cover {
+        width:100%;
+        left:0;
+        padding:10px;
+    }
 }
 
 @media (max-width:620px) {
