@@ -829,7 +829,10 @@ p a:hover {
     color:#495057;
 }
 
-@media (max-width:320px) {
+
+/************************************* MEDIA QUERIES ***/
+
+@media (max-width:300px) {
     .cover {
         width:100%;
         left:0;

@@ -7,8 +7,9 @@ $('.top-link').click(function(e) {
     window.scrollTo(0,0);
 });
 
-$(document).ready(function() {
-    // messages timeout for 10 sec 
-    setTimeout(function() {
-        $('.message-container').fadeOut('slow');
-    }, 5000);
+
+$(function() {
+    $('.message-container').fadeIn(5000, function() {
+        $(this).fadeOut(2000)
+    });
+});
