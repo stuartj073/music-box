@@ -22,13 +22,17 @@
                         More details
                     </a>
                 </div>
+            </div>
         {% endfor %}
+        </div>
     </div>
 {% else %}
     <div class="text-center">
         <p>Sorry, there are no reviews associated with this product yet.</p>
     </div>
-</div>
 {% endif %}
+<div class="text-center">
+    <a class="btn btn-info rounded-5 mt-5" href="{% url 'products' %}">Back to Products</a>
+</div>
 
 {% endblock %}

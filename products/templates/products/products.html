@@ -40,8 +40,8 @@
 {% endif %}
 
 <!-- Add product/sort buttons  -->
-<div class="product-buttons mx-auto mb-4">
-  {% if user.is_authenticated %}
+<div class="product-buttons mx-auto mb-4 mt-4">
+  {% if request.user.is_superuser %}
     <a href="{% url 'add_product' %}" class="btn btn-secondary rounded-5">
       Add Product <i class="fas fa-pencil-alt"></i>
     </a>

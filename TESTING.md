@@ -2,6 +2,70 @@
 
 ## Manual Testing
 
+Throughout the project I maintained a steady and constant method of testing the sites functionality. From responsiveness to all javascript and python functions, I was always ensuring that links, buttons and pages were behaving as expected.
+
+Each page had specific functionality I wanted enacted throughout them and the following pages were tested and ensured that everything was working as was up to date for the project.
+
+#### Home Page
+- The link to the products page was working as expected.
+- All navbar elements were rendering subsequent pages as expected.
+- When logged out/unregistered the `Log in & Register` links were displayed in the top right of the navbar.
+- When logged in the `Basket` feature will be displayed in the top right of the navbar (dependent on whether the basket was populated with goods or not) as was the `Profile icon`.
+- The `Back to top` link in the footer was working and prompted me to return to the top of the screen whenever executed.
+
+#### Log in page
+- Returning visitors that have checked the `remember me` button for logging in will avail of the auto-fill feature for signing in.
+- The respective sign in and remember me links prompt the user to be logged in or to submit a request to change their password.
+
+#### Products page
+- The products page displayed all relevant products along with their respective links to the individual product details page along with the category name which will render all products associated with that category to the products page.
+- All category headings were working.
+- The sort products button worked as expected
+- The search bar effectively returned any product associated with the search as well as returning a `No products matched your query` response for empty search results.
+- When the admin was logged in the add product button will be rendered on the page.
+
+#### Checkout page
+- A users details will be auto-filled when filling out the form if they have already provided information on the site for previous orders or if they have successully saved their shipping information on their profile page.
+
+#### Individual product page
+- When logged in, the user will have the option of adding the product to the basket through the input form (as well as choosing the quantity of each item).
+- If logged in as super user the edit and delete buttons associated with the product will too appear along with the modal for the delete button to add extra protection against accidentally removing an item.
+- If not logged in, the `sign in` option will display for visitors.
+
+#### Add products page
+- When all relevant fields were filled out and the form was submitted a success message will appear as well as the product being entered to the site.
+- The cancel button also worked in bringing the user back to the products page.
+
+#### Edit product
+- Edit product page is only accessible if logged in as super user, which was reflected in the results.
+- After successfully editing a product a success message will appear signalling the product had been successfully updated.
+- The cancel button also worked in bringing the user back to the products page.
+
+#### Product Reviews
+- All users have access to the product reviews page.
+- Reviews will render on the page with working links to their respective individual review pages. If there were no reviews associated with a product then an empty search will be rendered, as was reflected in the results. 
+- If logged in as super user the delete modal will appear with the option to either go through with the deletion of the review or to cancel and drop down the modal.
+
+#### Add Review 
+- When all relevant fields were filled out and the form was submitted a success message will appear as well as the review being entered to the site.
+- The cancel button also worked in bringing the user back to the products page.
+
+#### Blogs
+- All blogs were rendering as expected on the site.
+- If logged in, the `add blog` button will appear for the user as well as the link to sign in if a visitor wished to create a blog entry.
+- The links to the individual blog entries were working as expected.
+
+
+#### Individual blog page
+- If not logged in the user will only be able to see the blog entry along with the comments associated with the said entry. A link will also be displayed prompting the user to the login page if they wished to comment on a blog entry post.
+- If logged in a form will be displayed underneat the blog entry and comments allowing the user to freely respond to the blog entry in question.
+
+#### Profiles page
+- If logged in the user will have access to their own personal profile page accessible in the top right of the nav element.
+- All past order details and reviews associated with the user will display on the page as well as their own shipping details which they can update whenever they please.
+
+#### Edit Review
+
 ### User Stories
 
 - To see the products and/or categories available to me for purchase.
@@ -152,7 +216,7 @@ The missing semi-colons were added.
 
 ![Quantity](/docs/readme/testing/quantityjs.png)
 
-The console.log statements were removed from the file.
+The console.log statements were removed from the file. 
 
 
 

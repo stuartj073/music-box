@@ -6,9 +6,11 @@
 <h1>Blogs</h1>
 <hr>
 {% if user.is_authenticated %}
-<div class="product-buttons m-20">
-    <a href="{% url 'add_blog' %}"  class="btn btn-secondary rounded-5">Add Blog <i class="fas fa-pencil-alt"></i></a>
-</div>
+    <div class="product-buttons m-20">
+        <a href="{% url 'add_blog' %}"  class="btn btn-secondary rounded-5">Add Blog <i class="fas fa-pencil-alt"></i></a>
+    </div>
+{% else %}
+    <p class="text-center"> <a href="{% url 'account_login' %}">Sign in</a> to add to create a blog entry.</p>
 {% endif %}
 
 <!-- All blogs  -->
