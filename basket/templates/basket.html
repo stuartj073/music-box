@@ -77,7 +77,10 @@
                                     </div>
                                 </div>
                             </form>
-                            <a class="update-link text-info"><small>Update</small></a>
+                            <a class="update-link  btn btn-info mb-1 mt-1"><small>Update</small></a>
+                            <a class="btn btn-danger remove-item" id="remove_{{ item.item_id }}" data-size="{{ item.size }}">
+                                Remove
+                            </a>
                         </div>
                     </td>
                     <td class="py-4">
@@ -105,6 +108,7 @@
         <a class="btn btn-secondary rounded-5 mb-2" href="{% url 'checkout' %}">Proceed to checkout</a>
     </div>
 {% else %}
+<!-- Show a link to add to basket -->
 <div class="row">
     <div class="col-12">
         <div class="alert alert-dark" role="alert">
