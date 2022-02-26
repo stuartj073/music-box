@@ -68,7 +68,17 @@ Each page had specific functionality I wanted enacted throughout them and the fo
 
 ### User Stories
 
+- I want to land on a site that makes sense immediately.
+
+When first landing on the site I have tried to make the very ethos of it as obvious as possible. Using the backdrop of the cover image along with the message container I felt that the main purpose of the site was plain to see, especially given that there was a products button that would link the visitor straight to the shops page allowing them to browse through what the site has to offer.
+
+![Landing](docs/readme/testing/landing.png)
+
 - To see the products and/or categories available to me for purchase.
+
+Navigating to the products page will show the customer all the products on offer from the musicbox site. A list of the different categories can be seen from navbar dropdown, underneath the products search bar and in the product details itself just under the products name.
+
+![Landing](docs/readme/testing/products-page.png)
 
 - See a written backdrop to the site and the see the main ethos of the site.
 
@@ -115,17 +125,22 @@ For products, blog entries, comments and reviews users will be able to perform a
 
 - I want to have/see feedback for every action I perform on the site.
 
-Using the in-built django 'toasts' feature I have created by own custom toast message that will appear and disapear after a few seconds. The message will appear for every edit/delete and upload a user makes.
+Using the in-built django 'messages' feature I have created by own custom message that will appear and disapear after a few seconds. The message will appear for every edit/delete and upload a user makes.
 
 ![Toasts](/docs/readme/readme-images/toasts.png)
 
-- To upload items/reviews/blog posts onto the site.
+- To upload reviews/blog posts onto the site.
 
 Located on each relevant page will include the option for a user to contribute with their own data. Below is an example of how a user can upload a blog to the site.
 
 ![Blog](/docs/readme/readme-images/blogs.png)
 
-- I want to have control over all user's actions on the site.
+- As admin, I want to have control over all user's actions on the site.
+
+Making use of django's admin tab, those that are superusers/admins will have access to all data created within the site. This gives admin/superusers the authority to perform actions such as removing a product/review/blog or user as well as editing any content within the site that they be deemed inappropriate or offensive.
+
+![Admin](docs/readme/testing/admin-privelleges.png)
+
 - I want to ensure all information provided on the site is just and correct.
 
 Admin privelleges include the overall control of all content created and uploaded to the site. Each page that has any data of any kind is available to be edited and deleted by admin.

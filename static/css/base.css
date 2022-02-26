@@ -832,6 +832,10 @@ p a:hover {
     .form-control {
         max-width:100%;
     }
+
+    .comment {
+        width:100%;
+    }
 }
 
 
