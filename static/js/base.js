@@ -7,9 +7,8 @@ $('.top-link').click(function(e) {
     window.scrollTo(0,0);
 });
 
-
-$(function() {
-    $('.message-container').fadeIn(5000, function() {
-        $(this).fadeOut(2000)
-    });
-});
+$(function(){
+    setTimeout(function(){
+        $('.message-container').fadeOut(1000)
+    }, 3000)
+})
