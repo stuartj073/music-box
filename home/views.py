@@ -3,11 +3,9 @@ from django.db.models import Q
 from products.models import Product, Category
 from django.contrib import messages
 
-# Create your views here.
-
 
 def index(request):
-    """ 
+    """
     Index page request
     """
 
@@ -15,16 +13,24 @@ def index(request):
 
 
 def error_404(request, exception):
-    """ 
-    A view to return the 404 page 
+    """
+    A view to return the 404 page
     """
 
     return render(request, '404.html')
 
 
 def error_500(request, exception=None):
-    """ 
-    A view to return the 500 page 
     """
-    
+    A view to return the 500 page
+    """
+
     return render(request, '500.html')
+
+
+def error_403(request, exception=None):
+    """
+    A view to return the 403 page
+    """
+
+    return render(request, '403.html')

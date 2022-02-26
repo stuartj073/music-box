@@ -658,6 +658,15 @@ td.col {
     letter-spacing: 2px;
 }
 
+/************************************* ERROR ***/
+
+.error {
+    margin:20px;
+}
+
+.error path {
+    color:#495057;
+}
 
 @-webkit-keyframes fadeinout {
     0% {opacity: 0;}
