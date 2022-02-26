@@ -71,8 +71,8 @@ def update_blog(request, slug):
     blog = Blog.objects.get(slug=slug)
 
     if request.method == "POST":
-        form = BlogForm(request.POST or None, 
-            request.FILES or None, instance=blog)
+        form = BlogForm(request.POST or None,
+                        request.FILES or None, instance=blog)
         if form.is_valid():
             obj = form.save(commit=False)
             obj.save()
@@ -92,10 +92,10 @@ def update_blog(request, slug):
 
 
 def blog_details(request, slug):
-    """ 
+    """
     Show each blog on its individual page
     """
-    
+
     blog = Blog.objects.get(slug=slug)
     context = {}
 
@@ -122,4 +122,3 @@ def blog_details(request, slug):
     }
 
     return render(request, 'blog/blog_detail.html', context)
-
