@@ -76,6 +76,9 @@ The following features were included within the site:
 
 - The blog page allows customers to enter information about anything related to music. Each blog will be allowed to view on their individual blog page as well as the option to edit and delte if the appropriate user is logged in.
 
+#### Database
+
+![Database](docs/readme/readme-images/database.png)
 
 
 ### Skeleton
