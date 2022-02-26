@@ -226,5 +226,12 @@ The console.log statements were removed from the file.
 ![Basket](/docs/readme/testing/basket-pep-8-2.png)
 ![Basket](/docs/readme/testing/basket-pep-8-3.png)
 
+#### Blog app
+
+![Blog](/docs/readme/testing/blog-app-1.png)
+![Blog](/docs/readme/testing/blog-app-2.png)
+![Blog](/docs/readme/testing/blog-app-3.png)
+![Blog](/docs/readme/testing/blog-app-4.png)
+
 
 

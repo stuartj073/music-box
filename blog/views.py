@@ -5,12 +5,10 @@ from .forms import BlogForm, CommentsForm
 from django.contrib import messages
 from profiles.models import Users
 
-# Create your views here.
-
 
 def blogs(request):
     """
-    Display all blog posts by users 
+    Display all blog posts by users
     """
     blogs = Blog.objects.all()
     topic = Topic.objects.all()
@@ -25,7 +23,7 @@ def blogs(request):
 
 @login_required
 def add_blog(request):
-    """ 
+    """
     Add blog to blogs page
     """
     user = get_object_or_404(Users, user=request.user)
@@ -55,8 +53,8 @@ def add_blog(request):
 
 @login_required
 def delete_blog(request, slug):
-    """ 
-    Delete specific blog post for user 
+    """
+    Delete specific blog post for user
     """
     blog = Blog.objects.get(slug=slug)
     blog.delete()
@@ -66,14 +64,15 @@ def delete_blog(request, slug):
 
 @login_required
 def update_blog(request, slug):
-    """ 
+    """
     Allow user to update their own blog posts
     """
 
     blog = Blog.objects.get(slug=slug)
 
     if request.method == "POST":
-        form = BlogForm(request.POST or None, request.FILES or None, instance=blog)
+        form = BlogForm(request.POST or None, 
+            request.FILES or None, instance=blog)
         if form.is_valid():
             obj = form.save(commit=False)
             obj.save()

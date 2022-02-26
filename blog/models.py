@@ -9,7 +9,7 @@ from django.dispatch import receiver
 
 class Topic(models.Model):
     """ Allow user to select a topic to blog about. """
-    
+
     class Meta:
         verbose_name_plural = "Topics"
 
@@ -24,8 +24,8 @@ class Topic(models.Model):
 
 
 class Blog(models.Model):
-    """ 
-    Allow users to create blog posts on all things music 
+    """
+    Allow users to create blog posts on all things music
     """
 
     title = models.CharField(max_length=50)
@@ -43,7 +43,6 @@ class Blog(models.Model):
         return self.title
 
 
-
 def pre_save_blog_post_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:
         instance.slug = slugify(f'{instance.user} - {instance.title}')
@@ -53,11 +52,12 @@ pre_save.connect(pre_save_blog_post_receiver, sender=Blog)
 
 
 class Comments(models.Model):
-    """ 
+    """
     Allow users to comment on eachother's
     blog posts
     """
-    blog = models.ForeignKey(Blog, related_name="comments", on_delete=models.CASCADE)
+    blog = models.ForeignKey(Blog, related_name="comments", 
+                             on_delete=models.CASCADE)
     posted_by = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateField(auto_now=True)
     comment = models.TextField()
@@ -66,5 +66,5 @@ class Comments(models.Model):
         ordering = ['-date']
 
     def __str__(self):
-        return  self.blog.title
+        return self.blog.title
 
