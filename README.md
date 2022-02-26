@@ -102,7 +102,51 @@ Testing can be found here [here](TESTING.md).
 - CSS3
 - Javascript
 
-### Frameworks, Libraries and Programs
+### Frameworks % Libraries 
+
+1. [Django](https://www.djangoproject.com/)
+
+2. [Balsamiq](https://balsamiq.com/)
+- For wireframes.
+
+3. [Git](https://git-scm.com/)
+- Used as version control with commits being pushed on to Github.
+
+4. [Github](https://github.com/)
+- Was used as the host for all work committed throughout the entire project before deploying on Heroku. All project files were hosted here and I made use of the Github 'issues' feature throughout my production process.
+
+5. [Gitpod](https://www.gitpod.io/)
+- Used as the IDE which was linked up to my github account.
+
+6. [Heroku](https://dashboard.heroku.com/)
+- Cloud application used to host my site.
+
+7. [PEP8](http://pep8online.com/)
+- Used to validate all python code in the project.
+
+8. [JSHint](https://jshint.com/)
+- Validator for all JavaScript code.
+
+9. [W3C Validator](https://validator.w3.org/)
+- Used to validate all HTML5 code.
+
+10. [Jigsaw](https://jigsaw.w3.org/css-validator/)
+- Used to validate all CSS files.
+
+11. [Google Fonts](https://fonts.google.com/)
+- Used to obtain the fonts for the site.
+
+12. [Postgres](https://www.postgresql.org/)
+- Database used for our data.
+
+13. [Stripe](https://stripe.com/en-ie)
+- Used for the online payment system.
+
+14. [AWS](https://aws.amazon.com/)
+- Used to host all static and medial files.
+
+15. [Chrome Developer tools](https://developer.chrome.com/docs/devtools/)
+- Used throughout my entire production process for styling/responsiveness and most importantly testing.
 
 
 ## Deployment 
