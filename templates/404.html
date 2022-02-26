@@ -2,10 +2,12 @@
 
 
 {% block content %}
-
-<div class="text-center">
-    <h1>ERROR 404</h1>
-    <p>Please click <a href="{% url 'index' %}">here</a> to return to the site.</p>
+<div class="error">
+    <div class="text-center">
+        <h1>ERROR 404.....</h1>
+        <p>So sorry about that <i class="fa-solid fa-face-sad-cry"></i></p><br>
+        <p>Please click <a href="{% url 'index' %}">here</a> to return to the site.</p>
+    </div>
 </div>
 
 {% endblock %}
