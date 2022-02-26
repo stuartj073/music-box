@@ -1,4 +1,7 @@
-from django.shortcuts import render, reverse, redirect, get_object_or_404, HttpResponse
+from django.shortcuts import (
+    render, reverse, redirect, get_object_or_404,
+    HttpResponse
+)
 from django.contrib import messages
 from django.conf import settings
 from django.views.decorators.http import require_POST
@@ -43,16 +46,16 @@ def checkout(request):
         basket = request.session.get('basket', {})
 
         form_data = {
-            'first_name' : request.POST['first_name'],
-            'surname' : request.POST['surname'],
-            'email' : request.POST['email'],
-            'phone_number' : request.POST['phone_number'],
-            'street_address1' : request.POST['street_address1'],
-            'street_address2' : request.POST['street_address2'],
-            'town_or_city' : request.POST['town_or_city'],
-            'county' : request.POST['county'],
-            'country' : request.POST['country'],
-            'postcode' : request.POST['postcode'],
+            'first_name': request.POST['first_name'],
+            'surname': request.POST['surname'],
+            'email': request.POST['email'],
+            'phone_number': request.POST['phone_number'],
+            'street_address1': request.POST['street_address1'],
+            'street_address2': request.POST['street_address2'],
+            'town_or_city': request.POST['town_or_city'],
+            'county': request.POST['county'],
+            'country': request.POST['country'],
+            'postcode': request.POST['postcode'],
         }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
@@ -72,7 +75,8 @@ def checkout(request):
                         )
                         order_line_item.save()
                     else:
-                        for size, quantity in item_data['items_by_size'].items():
+                        for size, quantity in item_data[
+                                    'items_by_size'].items():
                             order_line_item = OrderLineItem(
                                 order=order,
                                 product=product,
@@ -111,7 +115,7 @@ def checkout(request):
         )
 
         order_form = OrderForm()
-    
+
     if not stripe_public_key:
         messages.error(request, 'Stripe public key is missing. \
             Check your environment variables.')
@@ -124,12 +128,11 @@ def checkout(request):
         'client_secret': intent.client_secret,
     }
 
-
     return render(request, template, context)
 
 
 def checkout_success(request, order_number):
-    """ 
+    """
     Render when checkout has been succesful
     """
     save_info = request.session.get('save_info')

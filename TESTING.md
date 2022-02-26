@@ -222,9 +222,9 @@ The console.log statements were removed from the file.
 
 #### Basket app
 
-![Basket](/docs/readme/testing/basket-pep-8-1.png)
-![Basket](/docs/readme/testing/basket-pep-8-2.png)
-![Basket](/docs/readme/testing/basket-pep-8-3.png)
+![Basket](/docs/readme/testing/basket-pep8-1.png)
+![Basket](/docs/readme/testing/basket-pep8-2.png)
+![Basket](/docs/readme/testing/basket-pep8-3.png)
 
 #### Blog app
 
@@ -233,5 +233,27 @@ The console.log statements were removed from the file.
 ![Blog](/docs/readme/testing/blog-app-3.png)
 ![Blog](/docs/readme/testing/blog-app-4.png)
 
+#### Checkout app
+
+![Checkout](/docs/readme/testing/checkout-pep8-1.png)
+![Checkout](/docs/readme/testing/checkout-pep8-2.png)
+![Checkout](/docs/readme/testing/checkout-pep8-3.png)
+![Checkout](/docs/readme/testing/checkout-pep8-4.png)
+![Checkout](/docs/readme/testing/checkout-pep8-5.png)
+![Checkout](/docs/readme/testing/checkout-pep8-6.png)
+![Checkout](/docs/readme/testing/checkout-pep8-7.png)
+![Checkout](/docs/readme/testing/checkout-pep8-8.png)
+![Checkout](/docs/readme/testing/checkout-pep8-9.png)
+
+#### Products app
+
+![Products](/docs/readme/testing/products-pep8-1.png)
+![Products](/docs/readme/testing/products-pep8-2.png)
+![Products](/docs/readme/testing/products-pep8-3.png)
+![Products](/docs/readme/testing/products-pep8-4.png)
+![Products](/docs/readme/testing/products-pep8-5.png)
+![Products](/docs/readme/testing/products-pep8-6.png)
+![Products](/docs/readme/testing/products-pep8-7.png)
+![Products](/docs/readme/testing/products-pep8-8.png)
 
 

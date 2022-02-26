@@ -11,8 +11,8 @@ from .models import Product, Category
 
 
 def products(request):
-    """ 
-    Show all products along with search and sort features 
+    """
+    Show all products along with search and sort features
     """
 
     products = Product.objects.order_by('-price')
@@ -32,19 +32,20 @@ def products(request):
             if not query:
                 messages.error(request, ("You didn't specify your search"))
                 return redirect(reverse('products'))
-     
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+
+            queries = Q(name__icontains=query) |
+            Q(description__icontains=query)
             products = products.filter(queries)
             if not products:
                 print("Sorry nothing was found")
-     
+
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
             if sortkey == 'name':
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
-            
+
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
@@ -75,7 +76,7 @@ def product_detail(request, product_id):
 
 @login_required
 def add_product(request):
-    """ 
+    """
     Present add product form to user based off the model
     """
     if request.method == "POST":
@@ -103,7 +104,7 @@ def add_product(request):
 
 @login_required
 def edit_product(request, product_id):
-    """ 
+    """
     Allow user to update their own blog posts
     """
 
@@ -132,10 +133,10 @@ def edit_product(request, product_id):
 
 @login_required
 def delete_product(request, product_id):
-    """ 
+    """
     Delete specific blog post for user
     """
-    
+
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.success(request, "Product deleted")
