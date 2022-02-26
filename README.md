@@ -115,13 +115,13 @@ For version control I used Git and to host the site itself I used Heroku. For th
 - Firstly, I had to create a repository on github. Located on either the github landing page (on the top left), or under the repositories tab located under tje github username tab (located on the top right) there lies a button that allows you to create a new repository. 
 - Upon navigation to the create repository tab I then filled out the relevant info required for setting up my repository, using the code institute built in template along with the name of my repository along
 
-(docs/readme/readme-images/repo-set-up.png).
+![Repo](docs/readme/readme-images/repo-set-up.png).
 
 #### Forking and cloning
 
 - To fork the project simply log into github and just under the navbar to the right will be option to fork the respository. The fork should now be in your respositories tab.
 
-(docs/readme/readme-images/forking.png)
+![Forking](docs/readme/readme-images/forking.png)
 
 - To clone by the command line simply click the button beside the green button titled `code`, there you will be given various options on how you would like to clone the repository. You must then type `git clone` into your own workspace along with the repo URL and enter.
 
@@ -136,7 +136,7 @@ Alternatively, if using Gitpod, you can click below to create your own workspace
 #### Other requirements
 
 - Ensure that all packages are installed by using the pip3 install command in the CLI. 
-(docs/readme/readme-images/requirements.png)
+![Requirements](docs/readme/readme-images/requirements.png)
 
 ### Heroku
 
@@ -161,7 +161,7 @@ The following steps were taken in setting up heroku:
 13. You can now either choose to automatically deploy or manually deploy. Automatic deploy will deploy the project as per every change that is pushed from git to your heroku app.
 14. Create a secret key varibale to be used for the env file and heroku configuration variables.
 15. Connect The AWS bucket to configuration variables with all relevant keys and values.
-(docs/readme/readme-images/heroku-part3.png)
+![Heroku](docs/readme/readme-images/heroku-part3.png)
 
 #### Amazon AWS
 The next step was to utilise a hosting platform for all media and static files for the site. For this project, I availed of Amazon AWS.
