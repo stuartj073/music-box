@@ -1,5 +1,6 @@
-from django.shortcuts import (render, redirect, 
-    get_object_or_404, HttpResponse, reverse)
+from django.shortcuts import (
+    render, redirect, get_object_or_404,
+    HttpResponse, reverse)
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
@@ -24,7 +25,7 @@ def add_to_basket(request, item_id):
     if 'product_size' in request.POST:
         size = request.POST['product_size']
     basket = request.session.get('basket', {})
-    
+
     if size:
         if item_id in list(basket.keys()):
             if size in basket[item_id]['items_by_size'].keys():
@@ -51,7 +52,9 @@ def add_to_basket(request, item_id):
                               f'amount to {basket[item_id]}'))
         else:
             basket[item_id] = amount
-            messages.success(request, f'{product.name} has been added to your basket.')
+            messages.success(
+                request,
+                f'{product.name} has been added to your basket.')
 
     request.session['basket'] = basket
     return redirect(redirect_url)

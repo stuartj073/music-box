@@ -9,7 +9,6 @@ class BlogForm(forms.ModelForm):
         model = Blog
         exclude = ('slug', 'user',)
 
-
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
@@ -17,10 +16,10 @@ class BlogForm(forms.ModelForm):
 class CommentsForm(forms.ModelForm):
     """ 
     Create comments form using the comments
-    model 
+    model
     """
     class Meta:
         model = Comments
-        fields = ['comment',]
+        fields = ['comment', ]
 
 

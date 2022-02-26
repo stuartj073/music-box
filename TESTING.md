@@ -218,5 +218,13 @@ The missing semi-colons were added.
 
 The console.log statements were removed from the file. 
 
+### PEP 8 
+
+#### Basket app
+
+![Basket](/docs/readme/testing/basket-pep-8-1.png)
+![Basket](/docs/readme/testing/basket-pep-8-2.png)
+![Basket](/docs/readme/testing/basket-pep-8-3.png)
+
 
 
