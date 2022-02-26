@@ -33,8 +33,8 @@ def products(request):
                 messages.error(request, ("You didn't specify your search"))
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) |
-            Q(description__icontains=query)
+            queries = (Q(name__icontains=query) |
+            Q(description__icontains=query))
             products = products.filter(queries)
             if not products:
                 print("Sorry nothing was found")

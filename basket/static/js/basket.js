@@ -4,6 +4,7 @@
 $('.update-link').click(function (e) {
     var form = $(this).prev('.update-form');
     form.submit();
+    console.log("HI")
 });
 
 // Remove relevant item and reload on click
@@ -21,4 +22,5 @@ $('.remove-item').click(function (e) {
         .done(function () {
             location.reload();
         });
+    console.log("HI")
 });

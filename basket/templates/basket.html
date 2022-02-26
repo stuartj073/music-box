@@ -48,7 +48,7 @@
                     <td class="py-4 w-25">
                         <div class="item-total">
                             <form class="form update-form" method="POST"
-                                action="{% url 'edit_basket' item.product.id %}">
+                                action="{% url 'edit_basket' item.item_id %}">
                                 {% csrf_token %}
                                 <div class="form-group">
                                     <div class="input-group">
@@ -61,11 +61,11 @@
                                             <div class="col-12 col-md-6">
                                                 <div class="col-12">
                                                     <div>
-                                                        <a class="btn btn-info mb-1 mt-1" type="submit">
+                                                        <a class="update-link btn btn-info mb-1 mt-1" id type="submit">
                                                             Update
                                                         </a>
                                                     </div>
-                                                    <a class="btn btn-danger" id="remove_{{ item.item_id }}" data-size="{{ item.size }}">
+                                                    <a class="btn btn-danger remove-item" id="remove_{{ item.item_id }}" data-size="{{ item.size }}">
                                                         Remove
                                                     </a>
                                                 </div>
@@ -77,6 +77,7 @@
                                     </div>
                                 </div>
                             </form>
+                            <a class="update-link text-info"><small>Update</small></a>
                         </div>
                     </td>
                     <td class="py-4">
@@ -120,5 +121,29 @@
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/qty_input_script.html' %}
-<script src="{% static 'basket/js/basket.js' %}"></script>
+<script>
+    $('.update-link').click(function (e) {
+    var form = $(this).prev('.update-form');
+    form.submit();
+    console.log("HI")
+});
+
+// Remove relevant item and reload on click
+$('.remove-item').click(function (e) {
+    var csrfToken = "{{ csrf_token }}";
+    var itemId = $(this).attr('id').split('remove_')[1];
+    var size = $(this).data('size');
+    var url = `/basket/remove/${itemId}`;
+    var data = {
+        'csrfmiddlewaretoken': csrfToken,
+        'size': size
+    };
+
+    $.post(url, data)
+        .done(function () {
+            location.reload();
+        });
+    console.log("HI")
+});
+</script>
 {% endblock %}
