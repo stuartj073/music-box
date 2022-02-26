@@ -852,9 +852,9 @@ p a:hover {
         font-size: 0.5rem;
     }
 
-    /* .card-details {
+    .alert {
         width:100%;
-    } */
+    }
 
     nav  {
         text-align: center;
