@@ -154,8 +154,7 @@ Admin privelleges include the overall control of all content created and uploade
 
 I utlised the W3C validator to ensure every page on the site was up to standard and that there was no html errors left unturned.
 
-1. Home page
-[Home](docs/readme/testing/home-page.png)
+1. [Home](docs/readme/testing/home-page.png)
 
 - The home page encompassed a few errors upon being passed into the validator.
 Firstly, the href attribute for the categories page under the products nav link was throwing an error due to a space in the href. This was fixed by changing the href links to be that of the 'friendly_name' of the categories.
@@ -163,45 +162,33 @@ The 'i' closing tag was removed from the Register link.
 The button element was removed from the 'see our products' link leaving only the anchor tag along with it's styling.
 The type attribute from the script tags were also removed.
 
-2. Products/shop page
-[Products](docs/readme/testing/home-page.png)
+2. [Products](docs/readme/testing/home-page.png)
 
 - The products page displayed the same javascript 'type' attribute error as the home page. This was removed and the error was then eradicated.
 
-3. Add product page
-[Add product](docs/readme/testing/add-product.png)
+3. [Add product](docs/readme/testing/add-product.png)
 
-4. Product details page
-[Product details](docs/readme/testing/product-details.png)
+4. [Product details](docs/readme/testing/product-details.png)
 
-5. Edit product page
-![Edit product](/docs/readme/testing/edit-product.png)
+5. [Edit product](/docs/readme/testing/edit-product.png)
 
-6. Product reviews
-[Product reviews](docs/readme/testing/product-reviews.png)
+6. [Product reviews](docs/readme/testing/product-reviews.png)
 - The 'h2' heading was removed for the empty heading warning.
 The extra closing 'section' tag was removed.
 
-7. Individual Review
-[Ind review](docs/readme/testing/ind-review.png)
+7. [Ind review](docs/readme/testing/ind-review.png)
 
-8. Edit review
-[Edit review](docs/readme/testing/edit-review.png)
+8. [Edit review](docs/readme/testing/edit-review.png)
 
-9. Blogs
-[Blogs](docs/readme/testing/blogs.png)
+9. [Blogs](docs/readme/testing/blogs.png)
 
-10. Update Blog
-[update blog](docs/readme/testing/update-blog.png)
+10. [update blog](docs/readme/testing/update-blog.png)
 
-10. Basket
-[Basket](docs/readme/testing/basket.png)
+10. [Basket](docs/readme/testing/basket.png)
 
-11. Checkout
-[Checkout](docs/readme/testing/checkout.png)
+11. [Checkout](docs/readme/testing/checkout.png)
 
-12. Checkout success
-[Checkout success](docs/readme/testing/checkout-success.png)
+12. [Checkout success](docs/readme/testing/checkout-success.png)
 - This error was in relation to a heading I had copied over from another template in reference to a product object which had not been defined in the checkout success view and thus rendered an empty h6 heading. The heading was removed.
 
 ### Jigsaw CSS Validator
@@ -212,30 +199,23 @@ The extra closing 'section' tag was removed.
 
 ### JSHint Validator
 
-- Base.js
-![Base js](/docs/readme/testing/stripejs1.png)
+- [Base js](/docs/readme/testing/stripejs1.png)
 
 The '$' warnings was ignored as these are required to write jQuery functions.
 
-- Stripe.js
-
-![Stripe js 1](/docs/readme/testing/stripejs1.png)
-![Stripe js 2](/docs/readme/testing/stripejs2.png)
+- [Stripe js 1](/docs/readme/testing/stripejs1.png)
+- [Stripe js 2](/docs/readme/testing/stripejs2.png)
 
 The same steps were taken as base.js and the 'Stripe' variable warning was ignored as this is required by stripe to authorize paymetns.
 
 The 'template literal syntax' issue was fixed as I included the snippet '/*jshint esversion: 6 */'
 at the top of the file. This was to allow JSHitn to recognise ECMAScript 6 features it otherwise wouldn't.
 
-- Basket.js
-
-![Basket](/docs/readme/testing/stripejs2.png)
+- [Basket](/docs/readme/testing/stripejs2.png)
 
 The missing semi-colons were added.
 
-- Quantity selector script
-
-![Quantity](/docs/readme/testing/quantityjs.png)
+- [Quantity script](/docs/readme/testing/quantityjs.png)
 
 The console.log statements were removed from the file. 
 
@@ -247,52 +227,52 @@ All errors that have been noted in the below screenshots were corrected and pass
 
 #### Basket app
 
-![Basket](/docs/readme/testing/basket-pep8-1.png)
-![Basket](/docs/readme/testing/basket-pep8-2.png)
-![Basket](/docs/readme/testing/basket-pep8-3.png)
+[Basket 1](/docs/readme/testing/basket-pep8-1.png)
+[Basket 2](/docs/readme/testing/basket-pep8-2.png)
+[Basket 3](/docs/readme/testing/basket-pep8-3.png)
 
 #### Blog app
 
-![Blog](/docs/readme/testing/blog-app-1.png)
-![Blog](/docs/readme/testing/blog-app-2.png)
-![Blog](/docs/readme/testing/blog-app-3.png)
-![Blog](/docs/readme/testing/blog-app-4.png)
+[Blog 1](/docs/readme/testing/blog-app-1.png)
+[Blog 2](/docs/readme/testing/blog-app-2.png)
+[Blog 3](/docs/readme/testing/blog-app-3.png)
+[Blog 4](/docs/readme/testing/blog-app-4.png)
 
 #### Checkout app
 
-![Checkout](/docs/readme/testing/checkout-pep8-1.png)
-![Checkout](/docs/readme/testing/checkout-pep8-2.png)
-![Checkout](/docs/readme/testing/checkout-pep8-3.png)
-![Checkout](/docs/readme/testing/checkout-pep8-4.png)
-![Checkout](/docs/readme/testing/checkout-pep8-5.png)
-![Checkout](/docs/readme/testing/checkout-pep8-6.png)
-![Checkout](/docs/readme/testing/checkout-pep8-7.png)
-![Checkout](/docs/readme/testing/checkout-pep8-8.png)
-![Checkout](/docs/readme/testing/checkout-pep8-9.png)
+[Checkout 1](/docs/readme/testing/checkout-pep8-1.png)
+[Checkout 2](/docs/readme/testing/checkout-pep8-2.png)
+[Checkout 3](/docs/readme/testing/checkout-pep8-3.png)
+[Checkout 4](/docs/readme/testing/checkout-pep8-4.png)
+[Checkout 5](/docs/readme/testing/checkout-pep8-5.png)
+[Checkout 6](/docs/readme/testing/checkout-pep8-6.png)
+[Checkout 7](/docs/readme/testing/checkout-pep8-7.png)
+[Checkout 8](/docs/readme/testing/checkout-pep8-8.png)
+[Checkout 9](/docs/readme/testing/checkout-pep8-9.png)
 
 #### Products app
 
-![Products](/docs/readme/testing/products-pep8-1.png)
-![Products](/docs/readme/testing/products-pep8-2.png)
-![Products](/docs/readme/testing/products-pep8-3.png)
-![Products](/docs/readme/testing/products-pep8-4.png)
-![Products](/docs/readme/testing/products-pep8-5.png)
-![Products](/docs/readme/testing/products-pep8-6.png)
-![Products](/docs/readme/testing/products-pep8-7.png)
-![Products](/docs/readme/testing/products-pep8-8.png)
+[Products 1](/docs/readme/testing/products-pep8-1.png)
+[Products 2](/docs/readme/testing/products-pep8-2.png)
+[Products 3](/docs/readme/testing/products-pep8-3.png)
+[Products 4](/docs/readme/testing/products-pep8-4.png)
+[Products 5](/docs/readme/testing/products-pep8-5.png)
+[Products 6](/docs/readme/testing/products-pep8-6.png)
+[Products 7](/docs/readme/testing/products-pep8-7.png)
+[Products 8](/docs/readme/testing/products-pep8-8.png)
 
 #### Profiles app
 
-![Profiles](/docs/readme/testing/profiles-pep8-1.png)
-![Profiles](/docs/readme/testing/profiles-pep8-2.png)
-![Profiles](/docs/readme/testing/profiles-pep8-3.png)
-![Profiles](/docs/readme/testing/profiles-pep8-4.png)
-![Profiles](/docs/readme/testing/profiles-pep8-5.png)
+[Profiles 1](/docs/readme/testing/profiles-pep8-1.png)
+[Profiles 2](/docs/readme/testing/profiles-pep8-2.png)
+[Profiles 3](/docs/readme/testing/profiles-pep8-3.png)
+[Profiles 4](/docs/readme/testing/profiles-pep8-4.png)
+[Profiles 5](/docs/readme/testing/profiles-pep8-5.png)
 
 #### Reviews app
 
-![Reviews](/docs/readme/testing/reviews-pep8-1.png)
-![Reviews](/docs/readme/testing/reviews-pep8-2.png)
-![Reviews](/docs/readme/testing/reviews-pep8-3.png)
-![Reviews](/docs/readme/testing/reviews-pep8-4.png)
-![Reviews](/docs/readme/testing/reviews-pep8-5.png)
+[Reviews 1](/docs/readme/testing/reviews-pep8-1.png)
+[Reviews 2](/docs/readme/testing/reviews-pep8-2.png)
+[Reviews 3](/docs/readme/testing/reviews-pep8-3.png)
+[Reviews 4](/docs/readme/testing/reviews-pep8-4.png)
+[Reviews 5](/docs/readme/testing/reviews-pep8-5.png)
