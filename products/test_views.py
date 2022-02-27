@@ -1,5 +1,6 @@
 from django.test import TestCase
 from django.shortcuts import reverse
+from django.contrib.messages import get_messages
 
 from django.contrib.auth.models import User
 from .models import Category, Product
@@ -21,11 +22,11 @@ class TestProductViews(TestCase):
         self.client.force_login(self.admin)
 
         self.category = Category.objects.create(
-                name = 'test',
+                name='test',
                 friendly_name='Test 1',
             )
         self.product = Product.objects.create(
-            category = self.category,
+            category=self.category,
             name='product1',
             description='testing 12345',
             condition='mint',
@@ -59,5 +60,25 @@ class TestProductViews(TestCase):
         """
         Test product details view
         """
-        response = self.client.get(f'/products/product_details/{self.product.id}')
+        response = self.client.get(f'/products/product_details/\n'
+                                   f'{self.product.id}/')
         self.assertEqual(response.status_code, 200)
+
+    def test_product_detail_accessible_by_name(self):
+        """
+        Test product detail name link is accessible
+        """
+        response = self.client.get(reverse('product_detail',
+                                   args=f'{self.product.id}'))
+        self.assertEqual(response.status_code, 200)
+
+    def test_search_function(self):
+        """
+        Test the search bar for test product
+        """
+        response = self.client.get(
+            '/products/?', {'q': f'{self.product.name}'}
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.context['search_term'],
+                         'product1')
