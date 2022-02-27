@@ -92,9 +92,14 @@ The following features were included within the site:
 
 ### Skeleton
 
+At project inception I created wireframes for both mobile and dekstop. Although plans changed quite a bit throughout what was a very long two months of work, the general structure and layout didn't differ too much from these original blueprints.
+
+[Desktop](wireframes/desktop)
+[Phone](wireframes/phone)
 
 
 ### Surface
+
 
 
 ### Wireframes
