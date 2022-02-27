@@ -11,7 +11,7 @@ from basket.contexts import basket_contents
 @login_required
 def basket(request):
     """ Show basket page for user. """
-    return render(request, "basket.html")
+    return render(request, "basket/basket.html")
 
 
 @login_required
