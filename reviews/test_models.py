@@ -38,6 +38,6 @@ class TestProductModel(TestCase):
 
     def test_product_str_method(self):
         """
-        Test that category returns string
+      Test that category returns string
         """
         self.assertEqual(str(self.review.name), 'product1')
