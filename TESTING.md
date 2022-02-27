@@ -150,6 +150,12 @@ Admin privelleges include the overall control of all content created and uploade
 
 ## Automated Testing
 
+### Unit Testing
+
+Unit testing was carried out a bit later in the project than I had originally intended on. Overall report results came to 68% coverage.
+
+[Unit Testing Results](docs/readme/testing/unit-testing.png)
+
 ### W3C Validator
 
 I utlised the W3C validator to ensure every page on the site was up to standard and that there was no html errors left unturned.
