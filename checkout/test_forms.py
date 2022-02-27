@@ -9,7 +9,7 @@ class TestCheckoutForms(TestCase):
 
     def test_empty_checkout_form(self):
         """
-        Test blank form is invalid
+        Test name form is required
         """
 
         form = OrderForm({
@@ -31,7 +31,7 @@ class TestCheckoutForms(TestCase):
 
     def test_surname_is_required(self):
         """
-        Test blank form is invalid
+        Test surname  is required
         """
 
         form = OrderForm({
@@ -53,7 +53,7 @@ class TestCheckoutForms(TestCase):
 
     def test_email_is_required(self):
         """
-        Test blank form is invalid
+        Test email is required
         """
 
         form = OrderForm({
@@ -75,7 +75,7 @@ class TestCheckoutForms(TestCase):
 
     def test_phone_is_required(self):
         """
-        Test blank form is invalid
+        Test phone is required
         """
 
         form = OrderForm({
@@ -97,7 +97,7 @@ class TestCheckoutForms(TestCase):
 
     def test_street_address_is_required(self):
         """
-        Test blank form is invalid
+        Test address is required
         """
 
         form = OrderForm({
@@ -119,7 +119,7 @@ class TestCheckoutForms(TestCase):
 
     def test_town_or_city_is_required(self):
         """
-        Test blank form is invalid
+        Test town/city is required
         """
 
         form = OrderForm({
@@ -141,7 +141,7 @@ class TestCheckoutForms(TestCase):
 
     def test_country_is_required(self):
         """
-        Test blank form is invalid
+        Test country is required
         """
 
         form = OrderForm({
