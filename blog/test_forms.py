@@ -4,7 +4,7 @@ from .forms import BlogForm, CommentsForm
 
 class TestBlogForm(TestCase):
     """
-    Tests for blog form 
+    Tests for blog form
     """
 
     def test_title_is_required(self):
@@ -17,7 +17,8 @@ class TestBlogForm(TestCase):
         form = BlogForm({'description': ''})
         self.assertFalse(form.is_valid())
         self.assertIn('description', form.errors.keys())
-        self.assertEqual(form.errors['description'][0], 'This field is required.')
+        self.assertEqual(form.errors['description'][0],
+                         'This field is required.')
 
     def test_image_field_is_not_required(self):
         form = BlogForm({'title': 'Test'})
