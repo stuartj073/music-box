@@ -281,3 +281,7 @@ For this project, I utilised Gmails automated email service, the following steps
 I'd like to place on record my sincere thanks to my mentor Tim Nelson. Tim was a bundle of joy to work with and it was an absolute pleasure to have worked with such a professional and insightful person for what was an incredibly stressful few months working on this project.
 
 I'd also like to thank the wider Code Institute community through the slack channel for any queries I had throughout my time on the project.
+
+## Reflections
+
+In hindsight, I will be paying attention much more to the concept of unit testing. It is something that I paid less and less attention to as I struggled with various different aspects of the project. I only began to see the true importance of unit testing toward the very end of the project and it will be something I intend to focus on in much greater detail with every subsequent project I will be working on.
