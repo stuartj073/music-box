@@ -49,11 +49,3 @@ class TestProductViews(TestCase):
         response = self.client.get(f'/reviews/product_reviews/\n'
                                    f'{self.review.id}/')
         self.assertEqual(response.status_code, 200)
-
-    # def test_products_page_uses_correct_template(self):
-    #     """
-    #     Test the correct template appears
-    #     """
-    #     response = self.client.get(reverse('products'))
-    #     self.assertEqual(response.status_code, 200)
-    #     self.assertTemplateUsed(response, 'products/products.html')
