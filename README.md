@@ -264,8 +264,12 @@ For this project, I utilised Gmails automated email service, the following steps
 
 ### Content
 
-
-#### Review Content
-
+- All images from the project were obtained through google images and [unsplash](https://unsplash.com/).
+- Inspiration for the navbar was taking from this [site](https://www.codeply.com/go/qhaBrcWp3v).
+- The content and make up of the site itself was created due to experiences I have had as a both a listener and producer of music. I feel that the whole aspect of a site that allows users to put forward their opinions and ideas works to create a site that functions not only as a community but also feeds the whole e-commerce side of things. Users may suggest 
 
 ### Acknowledgements
+
+I'd like to place on record my sincere thanks to my mentor Tim Nelson. Tim was a bundle of joy to work with and it was an absolute pleasure to have worked with such a professional and insightful person for what was an incredibly stressful few months working on this project.
+
+I'd also like to thank the wider Code Institute community through the slack channel for any queries I had throughout my time on the project.
