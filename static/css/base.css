@@ -603,6 +603,23 @@ td.col {
     opacity: 1;
     font-family: 'Amatic SC', cursive;
     letter-spacing: 2px;
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2s; /* Firefox < 16 */
+     -ms-animation: fadein 2s; /* Internet Explorer */
+      -o-animation: fadein 2s; /* Opera < 12.1 */
+         animation: fadein 2s;
+}
+
+@keyframes fadein {
+ from { opacity: 0; }
+ to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+ from { opacity: 0; }
+ to   { opacity: 1; }
+}
 }
 
 .messages-info {
@@ -614,12 +631,15 @@ td.col {
     color: #fff;
     font-size: 2rem;
     border-radius: 5px;
-    text-align:center;
-    -webkit-animation: fadeinout 5s linear forwards;
-    animation: fadeinout 5s linear forwards;
+    text-align:center;    
     opacity: 0;
     font-family: 'Amatic SC', cursive;
     letter-spacing: 2px;
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2s; /* Firefox < 16 */
+     -ms-animation: fadein 2s; /* Internet Explorer */
+      -o-animation: fadein 2s; /* Opera < 12.1 */
+         animation: fadein 2s;
 }
 
 .messages-warning {
@@ -635,6 +655,11 @@ td.col {
     opacity: 0;
     font-family: 'Amatic SC', cursive;
     letter-spacing: 2px;
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2s; /* Firefox < 16 */
+     -ms-animation: fadein 2s; /* Internet Explorer */
+      -o-animation: fadein 2s; /* Opera < 12.1 */
+         animation: fadein 2s;
 }
 
 .messages-error {
@@ -650,6 +675,11 @@ td.col {
     opacity: 0;
     font-family: 'Amatic SC', cursive;
     letter-spacing: 2px;
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2s; /* Firefox < 16 */
+     -ms-animation: fadein 2s; /* Internet Explorer */
+      -o-animation: fadein 2s; /* Opera < 12.1 */
+         animation: fadein 2s;
 }
 
 /************************************* ERROR ***/
@@ -717,6 +747,7 @@ footer path {
 
 .center-list {
     text-align: center;
+    margin: 10px;
 }
 
 /************************************* CHECKOUT ***/
