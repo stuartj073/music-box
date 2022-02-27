@@ -1,5 +1,10 @@
 # Rate My Record
 
+An idea I have thought about over the last number of years has been that of intertwining both a community whereby music enthusiasts and producers alike could share ideas, respond to one another and have a space whereby they can add to their arsenal of musical equipment. This project aims to explore the divide between e-commerce sites and that of music blog sites. 
+
+With an informed outlook on a particular piece of equipment/machinery or instrument, members of the site can then browse the site picking up whichever item they feel would benefit their own studio or personal playing zone.
+
+Aside from that, I aim for the site to be also enjoyed by those looking to just make a purchase on the site.
 
 ## User Stories 
 ### As a first time visitor...
@@ -266,7 +271,6 @@ For this project, I utilised Gmails automated email service, the following steps
 
 - All images from the project were obtained through google images and [unsplash](https://unsplash.com/).
 - Inspiration for the navbar was taking from this [site](https://www.codeply.com/go/qhaBrcWp3v).
-- The content and make up of the site itself was created due to experiences I have had as a both a listener and producer of music. I feel that the whole aspect of a site that allows users to put forward their opinions and ideas works to create a site that functions not only as a community but also feeds the whole e-commerce side of things. Users may suggest 
 
 ### Acknowledgements
 
