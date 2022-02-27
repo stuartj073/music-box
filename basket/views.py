@@ -103,16 +103,21 @@ def edit_basket(request, item_id):
 
 def remove_from_basket(request, item_id):
     """Remove the item from the shopping basket"""
-
+    print("REMOVE_FUNC")
     try:
+        print("ADDED BY JO: INSIDE REMOVE FUNCTION TRY BLOCK")
         product = get_object_or_404(Product, pk=item_id)
         size = None
+        print("ADDED BY JO: size on line 111 (should be None):", size)
         if 'product_size' in request.POST:
             size = request.POST['product_size']
+        print("ADDED BY JO: size on line 114 (should be None or size depending on request):", size)
         basket = request.session.get('basket', {})
-
+        print(basket)
         if size:
+            print("ADDED BY JO: inside IF SIZE on line 117")
             del basket[item_id]['items_by_size'][size]
+            print("del basket")
             if not basket[item_id]['items_by_size']:
                 basket.pop(item_id)
             messages.success(request,
@@ -120,14 +125,16 @@ def remove_from_basket(request, item_id):
                               f'{product.name} from your basket'))
             print("REMOVE SIZE")
         else:
+            print("ADDED BY JO: INSIDE ELSE ON LINE 128")
             basket.pop(item_id)
             messages.success(request, f'Removed {product.name} from your basket')
             return redirect(reverse('basket'))
             print("REMOVE")
-
         request.session['basket'] = basket
+        print("here")
         return HttpResponse(status=200)
 
     except Exception as e:
+        print("ADDED BY JO: Exception thrown on line 138:", e)
         messages.error(request, f'Error removing item: {e}')
         return HttpResponse(status=500)
