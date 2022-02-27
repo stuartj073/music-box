@@ -204,6 +204,12 @@ The extra closing 'section' tag was removed.
 ![Checkout success](/docs/readme/testing/checkout-success.png)
 - This error was in relation to a heading I had copied over from another template in reference to a product object which had not been defined in the checkout success view and thus rendered an empty h6 heading. The heading was removed.
 
+### Jigsaw CSS Validator
+
+[CSS](docs/readme/testing/css.png)
+
+- Only the one issue from the CSS code validator. The style rule was removed after identifying it.
+
 ### JSHint Validator
 
 - Base.js
