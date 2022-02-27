@@ -118,10 +118,12 @@ def remove_from_basket(request, item_id):
             messages.success(request,
                              (f'Removed size {size.upper()} '
                               f'{product.name} from your basket'))
+            print("REMOVE SIZE")
         else:
             basket.pop(item_id)
             messages.success(request, f'Removed {product.name} from your basket')
             return redirect(reverse('basket'))
+            print("REMOVE")
 
         request.session['basket'] = basket
         return HttpResponse(status=200)

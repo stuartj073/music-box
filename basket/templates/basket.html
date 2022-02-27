@@ -51,7 +51,7 @@
                                 {% csrf_token %}
                                 <div class="input-group input-group-{{ item.item_id }}">
                                     <div class="input-group-prepend">
-                                        <button class="decrement-qty btn btn-sm btn-black rounded-5 decrement-qty_{{ item.item_id }} 
+                                        <button class="d-none d-md-block decrement-qty btn btn-sm btn-black rounded-5 decrement-qty_{{ item.item_id }} 
                                             {% if item.size %}decrement-size_{{ item.item_id }}_{{ item.size }}{% endif %}" 
                                             data-item_id="{{ item.item_id }}" data-size="{{ item.size }}">
                                             <span>
@@ -64,7 +64,7 @@
                                         name="amount" value="{{ item.quantity }}" min="1" max="99"
                                         data-item_id="{{ item.item_id }}" data-size="{{ item.size }}">
                                     <div class="input-group-append">
-                                        <button class="increment-qty btn btn-sm btn-black rounded-5 increment-qty_{{ item.item_id }} 
+                                        <button class="d-none d-md-block increment-qty btn btn-sm btn-black rounded-5 increment-qty_{{ item.item_id }} 
                                             {% if item.size %}increment-size_{{ item.item_id }}_{{ item.size }}{% endif %}"
                                             data-item_id="{{ item.item_id }}" data-size="{{ item.size }}">
                                             <span>
@@ -145,7 +145,6 @@ $('.remove-item').click(function (e) {
         .done(function () {
             location.reload();
         });
-    console.log("HI")
 });
 </script>
 {% endblock %}
