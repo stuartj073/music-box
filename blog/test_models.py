@@ -11,10 +11,10 @@ class TestBlogModels(TestCase):
         Create test blog
         """
         self.blog = Comments.objects.create(
-            title='Test Blog',
-            topic='Album',
-            description = 'Testingalbum',
+            title="Test",
+            topic="Album",
+            description="Testingalbum",
         )
 
     def test_blog_string(self):
-        self.assertEqual(str(self.blog), 'Test Blog')
+        self.assertEqual(str(self.blog), 'Test')
