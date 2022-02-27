@@ -6,6 +6,8 @@ With an informed outlook on a particular piece of equipment/machinery or instrum
 
 Aside from that, I aim for the site to be also enjoyed by those looking to just make a purchase on the site.
 
+![Am I responsive](docs/readme/readme-images/amiresponsive.png)
+
 ## User Stories 
 ### As a first time visitor...
 

@@ -73,8 +73,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-X_FRAME_OPTIONS = 'ALLOW-FROM https://music-box-stuartj.herokuapp.com/'
-
 ROOT_URLCONF = 'music_box.urls'
 
 TEMPLATES = [
