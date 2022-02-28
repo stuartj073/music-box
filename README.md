@@ -119,6 +119,16 @@ After spending quite some time searching on stack overflow and comparing code wi
 [bug 1](docs/readme/readme-images/bugs-1.png)
 [bug 2](docs/readme/readme-images/bugs-2.png)
 
+## Unsolved bugs
+
+I had great issue with the basket input form in getting them to render nicely on smaller screens. I tried various different css styling rules over the last number of weeks but to no avail and so I decided to include a `d-sm-none` class to both the increment and decrement button for the basket. Otherwise the buttons would present quite disorganised as seen in the image below.
+
+[bug](docs/readme/readme-images/bug-2.png)
+
+
+
+
+
 ## Technologies used
 
 ### Languages

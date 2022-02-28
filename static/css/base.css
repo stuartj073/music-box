@@ -240,6 +240,10 @@ path {
     display:inline;
 }
 
+form button path {
+    color: #495057;
+}
+
 .form-group {
     margin-bottom: 0.3rem;
 }
