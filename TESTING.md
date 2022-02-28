@@ -4,7 +4,7 @@
 
 Throughout the project I maintained a steady and constant method of testing the sites functionality. From responsiveness to all JavaScript and python functions, I was always ensuring that links, buttons and pages were behaving as expected.
 
-The site's responsive was regularly tested on my Samsung s10, a friends iPhone SE, my HP laptop, and my larger Samsung desktop screen. Style rule changes were made for all screen sizes through extensive media queries.
+The site's responsive was regularly tested on my Samsung s10, a friends iPhone SE, my HP laptop, and my larger Samsung desktop screen. The site was also tested on Internet explorer and Mozilla Firefox with both rendering a neat looking website. Style rule changes were made for all screen sizes through extensive media queries.
 
 Each page had specific functionality I wanted enacting throughout them and the following pages were tested and ensured that everything was working as was up to date for the project.
 
