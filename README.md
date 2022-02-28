@@ -69,7 +69,7 @@ The following features were included within the site:
 
 - Direct messaging feature. Which allows user's to contact eachother regarding blog posts or products.
 - Shop coupons. Eventually, I would like to incorporate a shop 'coupons' feature that rewards active members and those that are making quite a lot of purchase orders. With the project only in its inception I would prefer to leave this feature to a later time.
-
+- I'd like for user's that are not signed up to be able to add items to their basket as well as paying for them in the checkout view. This will be explored over the coming weeks.
 
 ### Structure
 
