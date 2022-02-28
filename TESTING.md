@@ -214,6 +214,8 @@ The '$' warnings was ignored as these are required to write jQuery functions.
 - [Stripe js 1](/docs/readme/testing/stripejs1.png)
 - [Stripe js 2](/docs/readme/testing/stripejs2.png)
 
+- The `print("DUSHT")` statement was removed also. This was included by complete accident and had caused the checkout page to initiate the print function on the computer asking If I would like the whole form to be printed off. 
+
 The same steps were taken as base.js and the 'Stripe' variable warning was ignored as this is required by stripe to authorize payments.
 
 The 'template literal syntax' issue was fixed as I included the snippet '/*jshint esversion: 6 */'

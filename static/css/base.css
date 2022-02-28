@@ -371,9 +371,11 @@ form {
     text-align:center;
 }
 
+#payment-form input, select, .StripeElement {
+    max-width:80%;
+}
 
 /************************************* DELETE MODAL ***/
-
 
 .card-header {
     border-radius: 12px !important
@@ -797,7 +799,7 @@ select#id_country {
     box-sizing: border-box;
     height: 40px;
     padding: 10px 12px;
-    max-width: 50%;
+    max-width: 80%;
     margin: 0 auto;
     border: 1px solid transparent;
     border-radius: 0px;
