@@ -33,19 +33,9 @@ class TestBlogViews(TestCase):
         response = self.client.get(reverse('blogs'))
         self.assertEqual(response.status_code, 200)
 
-    # def test_post_string_method_returns(self):
-    #     blog = Blog.objects.create(title="Test")
-    #     self.assertEqual(str(blog), "Test")
-
     def test_blogs_display(self):
         blogs = Blog.objects.all()
         for blog in blogs:
             response = self.client.get(reverse('blogs'))
             self.assertEqual(response.status_code, 200)
             self.assertContains(response, blog.id)
-
-    # def test_get_blog_details_page(self):
-    #     blog = Blog.objects.create(title='Test')
-    #     response = self.client.get(f'blog/blog_details/{blog.id}')
-    #     self.assertEqual(response.status_code, 200)
-    #     self.assertTemplateUsed(response, 'blog/blog_details')

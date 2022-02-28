@@ -11,8 +11,7 @@
             <h1 class="mt-5 mb-2">{{ blog.title }}</h1>
             <p>{{ blog.topic }}</p>
             <p>{{ blog.description }}</p>
-            <p>Created by: {{ blog.user }}</p>
-            
+            <p>Created by: {{ blog.user }}</p> 
             {% if request.user.is_superuser %}
                 <div class="container d-flex justify-content-center mt-2 mb-2"> 
                     <a class="btn btn-warning mt-3 mx-2" href="{% url 'update_blog' blog.slug %}">

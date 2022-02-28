@@ -91,8 +91,6 @@ def checkout(request):
                     )
                     order.delete()
                     return redirect(reverse('basket'))
-                # print("A", intent)
-
             # Save user's info to profile
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success',
