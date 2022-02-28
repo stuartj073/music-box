@@ -268,6 +268,14 @@ form button path {
     width: 100%;
 }
 
+.center-search .input-group {
+    display:block;
+}
+
+.center-search .input-group path {
+    color:#fff;
+}
+
 .input-group-prepend, .input-group-append {
     display:inline;
     color:black;
@@ -488,7 +496,7 @@ a.btn.btn-info.mb-1 {
 }
 
 p.lead {
-    text-transform: capitalize;
+
 }
 
 td.item-description {
@@ -737,6 +745,10 @@ footer path {
     color:#495057;
 }
 
+.social-links {
+    margin:0 auto;
+}
+
 .social-links li {
     list-style-type: none;
     display:inline;
@@ -750,7 +762,7 @@ footer path {
 
 .center-list {
     text-align: center;
-    margin: 10px;
+    margin: 10px auto;
 }
 
 /************************************* CHECKOUT ***/
