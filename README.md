@@ -87,6 +87,8 @@ The following features were included within the site:
 
 #### Database
 
+The data schema graph for the project was created using the Django `extensions` package along with `pyparsing  pydot`.
+
 ![Database](docs/readme/readme-images/database.png)
 
 
