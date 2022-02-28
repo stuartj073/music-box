@@ -9,9 +9,6 @@
     <div class="col-12 col-md-6">
         <div class="blog-entry">
             <h1 class="mt-5 mb-2">{{ blog.title }}</h1>
-            {% if blog.image_url %}
-                <img src="{{ blog.image_url }}" alt="product-image">
-            {% endif %}
             <p>{{ blog.topic }}</p>
             <p>{{ blog.description }}</p>
             <p>Created by: {{ blog.user }}</p>
