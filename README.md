@@ -110,6 +110,15 @@ For the body I chose "#F1F2EB" as I felt it contrasted the navbar quite well and
 ## Testing
 Testing can be found here [here](TESTING.md).
 
+## Bugs
+
+- After changing the styling of basket input form a few days out from the project deadline, the `remove_from_basket` function began to start acting up. It was removing multiple items of the same product (if it had different sizes) every time I clicked the remove button. 
+
+After spending quite some time searching on stack overflow and comparing code with the boutique ado project I turned to tutor support as we worked together discovering that the issue lied in the size variable where I copied the literal name of the data attribute of the form (`data-product_size`) instead of simply writing in (`product_size`). 
+
+[bug 1](docs/readme/readme-images/bugs-1.png)
+[bug 2](docs/readme/readme-images/bugs-2.png)
+
 ## Technologies used
 
 ### Languages
@@ -282,7 +291,14 @@ For this project, I utilised Gmails automated email service, the following steps
 ### Content
 
 - All images from the project were obtained through google images and [unsplash](https://unsplash.com/).
+
+### Coding
+
 - Inspiration for the navbar was taking from this [site](https://www.codeply.com/go/qhaBrcWp3v).
+- I used the Boutique Ado walkthrough project quite a lot in order to understand the bare bones of working with Django. After carefully disecting the videos I began to understand how certain operations were performed and went on to employ these practices as I carried out my project.
+- I relied heavily on Stack Overflow throughout the project as well as the slack channel for the MS4. Seeing other people that have experienced the same problem not only helped to clarify problems for me but it also relieved quite a lot of stress as I'd come to understand that so many other people were finding themselves in the same situation as me.
+- Tutor support played a key role in sorting out an issue I was having with my Email forms as well as an issue I had with regard to the `remove_from_basket` function (Big thanks to Jo & Oisin!).
+
 
 ### Acknowledgements
 
