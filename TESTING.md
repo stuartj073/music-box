@@ -2,11 +2,11 @@
 
 ## Manual Testing
 
-Throughout the project I maintained a steady and constant method of testing the sites functionality. From responsiveness to all javascript and python functions, I was always ensuring that links, buttons and pages were behaving as expected.
+Throughout the project I maintained a steady and constant method of testing the sites functionality. From responsiveness to all JavaScript and python functions, I was always ensuring that links, buttons and pages were behaving as expected.
 
 The site's responsive was regularly tested on my Samsung s10, a friends iPhone SE, my HP laptop, and my larger Samsung desktop screen. Style rule changes were made for all screen sizes through extensive media queries.
 
-Each page had specific functionality I wanted enacted throughout them and the following pages were tested and ensured that everything was working as was up to date for the project.
+Each page had specific functionality I wanted enacting throughout them and the following pages were tested and ensured that everything was working as was up to date for the project.
 
 #### Home Page
 - The link to the products page was working as expected.
@@ -24,14 +24,14 @@ Each page had specific functionality I wanted enacted throughout them and the fo
 - All category headings were working.
 - The sort products button worked as expected
 - The search bar effectively returned any product associated with the search as well as returning a `No products matched your query` response for empty search results.
-- When the admin was logged in the add product button will be rendered on the page.
+- When the admin was logged in,  the `add product ` button will be rendered on the page.
 
 #### Checkout page
 - A users details will be auto-filled when filling out the form if they have already provided information on the site for previous orders or if they have successully saved their shipping information on their profile page.
 
 #### Individual product page
 - When logged in, the user will have the option of adding the product to the basket through the input form (as well as choosing the quantity of each item).
-- If logged in as super user the edit and delete buttons associated with the product will too appear along with the modal for the delete button to add extra protection against accidentally removing an item.
+- If logged in as super user the edit and delete buttons associated with the product will too appear along with the modal for the `delete` button to add extra protection against accidentally removing an item.
 - If not logged in, the `sign in` option will display for visitors.
 
 #### Add products page
@@ -46,7 +46,7 @@ Each page had specific functionality I wanted enacted throughout them and the fo
 #### Product Reviews
 - All users have access to the product reviews page.
 - Reviews will render on the page with working links to their respective individual review pages. If there were no reviews associated with a product then an empty search will be rendered, as was reflected in the results. 
-- If logged in as super user the delete modal will appear with the option to either go through with the deletion of the review or to cancel and drop down the modal.
+- If logged in as super user the delete modal will appear with the option to either go through with the deletion of the review or to cancel and drop-down the modal.
 
 #### Add Review 
 - When all relevant fields were filled out and the form was submitted a success message will appear as well as the review being entered to the site.
@@ -60,7 +60,7 @@ Each page had specific functionality I wanted enacted throughout them and the fo
 
 #### Individual blog page
 - If not logged in the user will only be able to see the blog entry along with the comments associated with the said entry. A link will also be displayed prompting the user to the login page if they wished to comment on a blog entry post.
-- If logged in a form will be displayed underneat the blog entry and comments allowing the user to freely respond to the blog entry in question.
+- If logged in a form will be displayed underneath the blog entry and comments allowing the user to freely respond to the blog entry in question.
 
 #### Profiles page
 - If logged in the user will have access to their own personal profile page accessible in the top right of the nav element.
@@ -84,7 +84,7 @@ Navigating to the products page will show the customer all the products on offer
 
 - See a written backdrop to the site and the see the main ethos of the site.
 
-Upon landing on the home screen of the music box site an about section will be situated just underneath the landing page image. This will fully explain the what it is the site is all about
+Upon landing on the home screen of the music box site an about section will be situated just underneath the landing page image. This will fully explain the reason behind the site.
 
  ![Ethos](/docs/readme/readme-images/ethos.png)
 
@@ -121,13 +121,13 @@ When a user is logged in they will be given access to their individual profile p
 
 - I want to be able to perform CRUD operations on any feature of the site where appropriate.
 
-For products, blog entries, comments and reviews users will be able to perform all CRUD operations for pieces of data they have created themselves. Admin will also have access to these privelleges.
+For products, blog entries, comments and reviews users will be able to perform all CRUD operations for pieces of data they have created themselves. Admin will also have access to these privilleges.
 
 ![CRUD](/docs/readme/readme-images/crud.png)
 
 - I want to have/see feedback for every action I perform on the site.
 
-Using the in-built django 'messages' feature I have created by own custom message that will appear and disapear after a few seconds. The message will appear for every edit/delete and upload a user makes.
+Using the in-built Django 'messages' feature I have created by own custom message that will appear and disapear after a few seconds. The message will appear for every edit/delete and upload a user makes.
 
 ![Toasts](/docs/readme/readme-images/toasts.png)
 
@@ -139,13 +139,13 @@ Located on each relevant page will include the option for a user to contribute w
 
 - As admin, I want to have control over all user's actions on the site.
 
-Making use of django's admin tab, those that are superusers/admins will have access to all data created within the site. This gives admin/superusers the authority to perform actions such as removing a product/review/blog or user as well as editing any content within the site that they be deemed inappropriate or offensive.
+Making use of Django's admin tab, those that are superusers/admins will have access to all data created within the site. This gives admin/superusers the authority to perform actions such as removing a product/review/blog or user as well as editing any content within the site that they be deemed inappropriate or offensive.
 
 ![Admin](docs/readme/testing/admin-privelleges.png)
 
 - I want to ensure all information provided on the site is just and correct.
 
-Admin privelleges include the overall control of all content created and uploaded to the site. Each page that has any data of any kind is available to be edited and deleted by admin.
+Admin privilleges include the overall control of all content created and uploaded to the site. Each page that has any data of any kind is available to be edited and deleted by admin.
 
 ![Admin](/docs/readme/readme-images/admin.png)
 
@@ -160,7 +160,7 @@ Unit testing was carried out a bit later in the project than I had originally in
 
 ### W3C Validator
 
-I utlised the W3C validator to ensure every page on the site was up to standard and that there was no html errors left unturned.
+I utilised the W3C validator to ensure every page on the site was up to standard and that there was no HTML errors left unturned.
 
 1. [Home](docs/readme/testing/home-page.png)
 
@@ -172,7 +172,7 @@ The type attribute from the script tags were also removed.
 
 2. [Products](docs/readme/testing/home-page.png)
 
-- The products page displayed the same javascript 'type' attribute error as the home page. This was removed and the error was then eradicated.
+- The products page displayed the same JavaScript 'type' attribute error as the home page. This was removed and the error was then eradicated.
 
 3. [Add product](docs/readme/testing/add-product.png)
 
@@ -214,10 +214,10 @@ The '$' warnings was ignored as these are required to write jQuery functions.
 - [Stripe js 1](/docs/readme/testing/stripejs1.png)
 - [Stripe js 2](/docs/readme/testing/stripejs2.png)
 
-The same steps were taken as base.js and the 'Stripe' variable warning was ignored as this is required by stripe to authorize paymetns.
+The same steps were taken as base.js and the 'Stripe' variable warning was ignored as this is required by stripe to authorize payments.
 
 The 'template literal syntax' issue was fixed as I included the snippet '/*jshint esversion: 6 */'
-at the top of the file. This was to allow JSHitn to recognise ECMAScript 6 features it otherwise wouldn't.
+at the top of the file. This was to allow JSHint to recognise ECMAScript 6 features it otherwise wouldn't.
 
 - [Basket](/docs/readme/testing/stripejs2.png)
 
@@ -229,7 +229,7 @@ The console.log statements were removed from the file.
 
 ### PEP 8 
 
-In general I would say that I need to implement a more "clean as you code" approach when writing python. As can be seen from quite a few files there are a number of `trailing whitespace/ line-over/under indented and no new line` warnings. In the future I will be much more stringent on pep8 compliance as I continue to work on future projects.
+In general, I would say that I need to implement a more "clean as you code" approach when writing python. As can be seen from quite a few files there are a number of `trailing whitespace/ line-over/under indented and no new line` warnings. In the future I will be much more stringent on pep8 compliance as I continue to work on future projects.
 
 All errors that have been noted in the below screenshots were corrected and passed through the pep8 validator once more to ensure that the code passed validation.
 

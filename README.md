@@ -121,7 +121,7 @@ After spending quite some time searching on stack overflow and comparing code wi
 
 ## Unsolved bugs
 
-I had great issue with the basket input form in getting them to render nicely on smaller screens. I tried various different css styling rules over the last number of weeks but to no avail, and so I decided to include a `d-sm-none` class to both the increment and decrement button for the basket. Otherwise, the buttons would present quite disorganised as seen in the image below.
+I had great issue with the basket input form in getting them to render nicely on smaller screens. I tried various different CSS styling rules over the last number of weeks but to no avail, and so I decided to include a `d-sm-none` class to both the increment and decrement button for the basket. Otherwise, the buttons would present quite disorganised as seen in the image below.
 
 ![bug](docs/readme/readme-images/bug-2.png)
 
@@ -136,7 +136,7 @@ I had great issue with the basket input form in getting them to render nicely on
 - Python 
 - HTML5
 - CSS3
-- Javascript
+- JavaScript
 
 ### Frameworks & Libraries 
 
@@ -231,7 +231,7 @@ The following steps were taken in setting up heroku:
 (docs/readme/readme-images/heroku-part1.png)
 3. To configure the connection on gitpod a requirements.txt file has to be created. This can be accomplished by the following CLI command `pip3 freeze > requirements.txt`.
 4. A Procfile must then be created with CLI command `web: gunicorn music-box.wsgi:application`. Ensure there is no extra blank lines in the file as this can cause the file to be incorrectly read.
-5. If you have used the fixtures feature from django then the following command can load these files onto heroku. `python3 manage.py loaddata files.json`.
+5. If you have used the fixtures feature from Django then the following command can load these files onto heroku. `python3 manage.py loaddata files.json`.
 6. Log into heroku from the CLI by typing `heorku login -i`.
 7. Temporarily disable collectstatic (DISABLE_COLLECTSTATIC=1) as we deploy.
 8. Add your unique heroku app name to the ALLOWED_HOSTS section of settings.py and commit the changes.
