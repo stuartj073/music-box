@@ -11,7 +11,7 @@ class ProductReview(models.Model):
                              on_delete=models.SET_NULL)
     user = models.ForeignKey(User, null=True, blank=True,
                              on_delete=models.CASCADE)
-    title = models.TextField(max_length=30, default="Review Title")
+    title = models.TextField(max_length=30)
     description = models.TextField()
     date = models.DateField(auto_now_add=True, blank=False,
                             null=False)
