@@ -97,12 +97,15 @@ At project inception I created wireframes for both mobile and dekstop. Although 
 [Desktop](wireframes/desktop)
 [Phone](wireframes/phone)
 
-
 ### Surface
 
+For this site I continued on with my same approach for the last two project in keeping the color content to a minimum as to not create a "colour-overload" experience for users to the site.
 
+For the navbar I chose a "#495057" colour along with a "#fff" colour for the font to make it stand out. 
 
-### Wireframes
+For the body I chose "#F1F2EB" as I felt it contrasted the navbar quite well and finally for the message success container I chose the "#CED4DA" colour.
+
+![Site colours](docs/readme/readme-images/site-colours.png)
 
 ## Testing
 Testing can be found here [here](TESTING.md).
