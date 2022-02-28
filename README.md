@@ -112,6 +112,8 @@ Testing can be found here [here](TESTING.md).
 
 ## Bugs
 
+- Having added the final touches to the project right before the deadline I wanted to parse the code through the [W3V](https://validator.w3.org/) one last time. Unfortunately the site was exepriencing difficulties and after attempting to access it on two different platforms I wasn't able to pass it through one more time. I do plan to pass it through again as soon as it begins to work once more.
+
 - After changing the styling of basket input form a few days out from the project deadline, the `remove_from_basket` function began to start acting up. It was removing multiple items of the same product (if it had different sizes) every time I clicked the remove button. 
 
 After spending quite some time searching on stack overflow and comparing code with the boutique ado project I turned to tutor support as we worked together discovering that the issue lied in the size variable where I copied the literal name of the data attribute of the form (`data-product_size`) instead of simply writing in (`product_size`). 
@@ -319,3 +321,5 @@ I'd also like to thank the wider Code Institute community through the slack chan
 ## Reflections
 
 In hindsight, I will be paying attention much more to the concept of unit testing. It is something that I paid less and less attention to as I struggled with various different aspects of the project. I only began to see the true importance of unit testing toward the very end of the project and it will be something I intend to focus on in much greater detail with every subsequent project I will be working on.
+
+I had also intended on a lot more content (blogs/reviews/products) being present on the site butI ultimately just ran out of time in the end. I plan to add more data to the project in the few days after the submission.

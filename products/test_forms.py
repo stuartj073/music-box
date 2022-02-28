@@ -25,7 +25,9 @@ class TestProductForm(TestCase):
         Test form without name requirement
         """
         form = ProductForm({
+            'name': '',
             'category': self.category,
             'description': 'Testing product',
-            'price': 2.00
+            'price': 2.00,
         })
+        self.assertFalse(form.is_valid())
