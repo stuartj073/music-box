@@ -68,7 +68,7 @@ The following features were included within the site:
 #### Features left to implement
 
 - Direct messaging feature. Which allows user's to contact eachother regarding blog posts or products.
-- Shop coupons. Eventually, I would like to incorporate a shop 'coupons' feature that rewards active members and those that are making quite a lot of purchase orders. With the project only in it's inception I would prefer to leave this feature to a later time.
+- Shop coupons. Eventually, I would like to incorporate a shop 'coupons' feature that rewards active members and those that are making quite a lot of purchase orders. With the project only in its inception I would prefer to leave this feature to a later time.
 
 
 ### Structure
@@ -83,7 +83,7 @@ The following features were included within the site:
 
 - Checkout page will render the payment form along with the amount the customer will have to pay. After successfully paying for the good the customer will be redirected to the payment success page which will outline a confirmation message.
 
-- The blog page allows customers to enter information about anything related to music. Each blog will be allowed to view on their individual blog page as well as the option to edit and delte if the appropriate user is logged in.
+- The blog page allows customers to enter information about anything related to music. Each blog will be allowed to view on their individual blog page as well as the option to edit and delete if the appropriate user is logged in.
 
 #### Database
 
@@ -116,14 +116,14 @@ Testing can be found here [here](TESTING.md).
 
 After spending quite some time searching on stack overflow and comparing code with the boutique ado project I turned to tutor support as we worked together discovering that the issue lied in the size variable where I copied the literal name of the data attribute of the form (`data-product_size`) instead of simply writing in (`product_size`). 
 
-[bug 1](docs/readme/readme-images/bugs-1.png)
-[bug 2](docs/readme/readme-images/bugs-2.png)
+![bug 1](docs/readme/readme-images/bugs-1.png)
+![bug 2](docs/readme/readme-images/bugs-2.png)
 
 ## Unsolved bugs
 
-I had great issue with the basket input form in getting them to render nicely on smaller screens. I tried various different css styling rules over the last number of weeks but to no avail and so I decided to include a `d-sm-none` class to both the increment and decrement button for the basket. Otherwise the buttons would present quite disorganised as seen in the image below.
+I had great issue with the basket input form in getting them to render nicely on smaller screens. I tried various different css styling rules over the last number of weeks but to no avail, and so I decided to include a `d-sm-none` class to both the increment and decrement button for the basket. Otherwise, the buttons would present quite disorganised as seen in the image below.
 
-[bug](docs/readme/readme-images/bug-2.png)
+![bug](docs/readme/readme-images/bug-2.png)
 
 
 
@@ -138,7 +138,7 @@ I had great issue with the basket input form in getting them to render nicely on
 - CSS3
 - Javascript
 
-### Frameworks % Libraries 
+### Frameworks & Libraries 
 
 1. [Django](https://www.djangoproject.com/)
 
